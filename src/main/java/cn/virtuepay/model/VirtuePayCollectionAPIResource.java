@@ -4,7 +4,7 @@ import cn.virtuepay.net.APIResource;
 
 import java.util.List;
 
-public abstract class XPayCollectionAPIResource<T> extends APIResource {
+public abstract class VirtuePayCollectionAPIResource<T> extends APIResource {
     String object;
     String url;
     Boolean hasMore;

@@ -4,14 +4,14 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
-import cn.virtuepay.model.XPayRawJsonObject;
+import cn.virtuepay.model.VirtuePayRawJsonObject;
 
 import java.lang.reflect.Type;
 
-public class XPayRawJsonObjectDeserializer implements JsonDeserializer<XPayRawJsonObject> {
-    public XPayRawJsonObject deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
+public class VirtuePayRawJsonObjectDeserializer implements JsonDeserializer<VirtuePayRawJsonObject> {
+    public VirtuePayRawJsonObject deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
             throws JsonParseException {
-        XPayRawJsonObject object = new XPayRawJsonObject();
+        VirtuePayRawJsonObject object = new VirtuePayRawJsonObject();
         object.json = json.getAsJsonObject();
         return object;
     }

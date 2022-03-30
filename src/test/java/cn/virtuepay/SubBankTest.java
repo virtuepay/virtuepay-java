@@ -10,13 +10,13 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-public class SubBankTest extends XPayTestBase {
+public class SubBankTest extends VirtuePayTestBase {
     /**
      * 银行支行列表查询
      */
     @Test public void testSubBankQuery() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
-        params.put("app", XPayTestData.getAppID());
+        params.put("app", VirtuePayTestData.getAppID());
         params.put("open_bank_code", "0308"); // 银行开户行编号
         params.put("prov", "浙江省"); // 省份
         params.put("city", "宁波市"); // 城市

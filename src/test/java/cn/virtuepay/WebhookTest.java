@@ -9,15 +9,15 @@ import static org.junit.Assert.assertTrue;
 /*
  * @author Afon, @date 17-03-28
  */
-public class WebhookTest extends XPayTestBase {
+public class WebhookTest extends VirtuePayTestBase {
     /**
      * 解析 webhooks 消息 (withdrawal)
      */
     @Test
     public void testWebhooksParseWithdrawal() {
-        String webhookData = XPayTestData.getWithdrawalWebhooksData();
+        String webhookData = VirtuePayTestData.getWithdrawalWebhooksData();
 
-        XPayObject obj = Webhooks.getObject(webhookData);
+        VirtuePayObject obj = Webhooks.getObject(webhookData);
 
         assertTrue("object should be an instance of Withdrawal", obj instanceof Withdrawal);
         assertEquals("object should be withdrawal", "withdrawal", ((Withdrawal) obj).getObject());
@@ -28,9 +28,9 @@ public class WebhookTest extends XPayTestBase {
      */
     @Test
     public void testWebhooksParseRecharge() {
-        String webhookData = XPayTestData.getRechargeSucceededEventData();
+        String webhookData = VirtuePayTestData.getRechargeSucceededEventData();
 
-        XPayObject obj = Webhooks.getObject(webhookData);
+        VirtuePayObject obj = Webhooks.getObject(webhookData);
 
         assertTrue("object should be an instance of Recharge", obj instanceof Recharge);
         assertEquals("object should be recharge", "recharge", ((Recharge) obj).getObject());
@@ -41,9 +41,9 @@ public class WebhookTest extends XPayTestBase {
      */
     @Test
     public void testWebhooksParseOrder() {
-        String webhookData = XPayTestData.getOrderSucceededEventData();
+        String webhookData = VirtuePayTestData.getOrderSucceededEventData();
 
-        XPayObject obj = Webhooks.getObject(webhookData);
+        VirtuePayObject obj = Webhooks.getObject(webhookData);
 
         assertTrue("object should be an instance of Order", obj instanceof Order);
         assertEquals("object should be order", "order", ((Order) obj).getObject());
@@ -54,9 +54,9 @@ public class WebhookTest extends XPayTestBase {
      */
     @Test
     public void testWebhooksParseAgreement() {
-        String webhookData = XPayTestData.getAgreementEventData();
+        String webhookData = VirtuePayTestData.getAgreementEventData();
 
-        XPayObject obj = Webhooks.getObject(webhookData);
+        VirtuePayObject obj = Webhooks.getObject(webhookData);
 
         assertTrue("object should be an instance of Agreement", obj instanceof Agreement);
         assertEquals("object should be agreement", "agreement", ((Agreement) obj).getObject());

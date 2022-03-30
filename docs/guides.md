@@ -51,7 +51,7 @@ try {
     //发起交易请求
     Payment payment = Payment.create(paymentMap);
     System.out.println(payment.toString());
-} catch (XPayException e) {
+} catch (VirtuePayException e) {
     e.printStackTrace();
 }
 ```

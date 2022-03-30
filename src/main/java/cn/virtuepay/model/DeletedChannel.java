@@ -3,7 +3,7 @@ package cn.virtuepay.model;
 /**
  * Created by Afon on 17/03/27.
  */
-public class DeletedChannel extends XPayObject {
+public class DeletedChannel extends VirtuePayObject {
     String channel;
     Boolean deleted;
 

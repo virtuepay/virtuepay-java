@@ -11,9 +11,9 @@ public class Webhooks {
      * 解析 event 中的 object
      *
      * @param eventStr
-     * @return XPayObject
+     * @return VirtuePayObject
      */
-    public static XPayObject getObject(String eventStr) {
+    public static VirtuePayObject getObject(String eventStr) {
         return eventParse(eventStr).getData().getObject();
     }
 

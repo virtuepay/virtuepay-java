@@ -2,7 +2,7 @@ package cn.virtuepay.sub_app;
 
 import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.Contact;
-import cn.virtuepay.XPayTestBase;
+import cn.virtuepay.VirtuePayTestBase;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 /*
  * @author Afon, @date 19-07-12
  */
-public class ContactTest extends XPayTestBase {
+public class ContactTest extends VirtuePayTestBase {
 
     /**
      * 证件上传

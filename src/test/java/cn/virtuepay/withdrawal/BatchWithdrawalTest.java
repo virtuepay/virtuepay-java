@@ -1,7 +1,7 @@
 package cn.virtuepay.withdrawal;
 
-import cn.virtuepay.XPayTestBase;
-import cn.virtuepay.XPayTestData;
+import cn.virtuepay.VirtuePayTestBase;
+import cn.virtuepay.VirtuePayTestData;
 import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.BatchWithdrawal;
 import cn.virtuepay.model.BatchWithdrawalCollection;
@@ -13,7 +13,7 @@ import java.util.Map;
 
 import static org.junit.Assert.*;
 
-public class BatchWithdrawalTest extends XPayTestBase {
+public class BatchWithdrawalTest extends VirtuePayTestBase {
     /**
      * 批量提现确认
      */
@@ -29,7 +29,7 @@ public class BatchWithdrawalTest extends XPayTestBase {
 
         assertEquals("object should be batch_withdrawal", "batch_withdrawal", obj.getObject());
         assertNotNull("id should not be null", obj.getId());
-        assertEquals("app", XPayTestData.getAppID(), obj.getApp());
+        assertEquals("app", VirtuePayTestData.getAppID(), obj.getApp());
         assertNotNull("amount should not be null", obj.getAmount());
         assertTrue("created should be greater than 0", obj.getCreated() > 0);
         assertNotNull("status should not be null", obj.getStatus());

@@ -2,7 +2,7 @@ package cn.virtuepay.order;
 
 import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.RoyaltyTransaction;
-import cn.virtuepay.XPayTestBase;
+import cn.virtuepay.VirtuePayTestBase;
 import cn.virtuepay.model.RoyaltyTransactionCollection;
 import org.junit.Test;
 
@@ -11,7 +11,7 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-public class RoyaltyTransactionTest extends XPayTestBase {
+public class RoyaltyTransactionTest extends VirtuePayTestBase {
     /**
      * 查询单个 royalty_transaction
      */

@@ -7,7 +7,7 @@ import cn.virtuepay.net.RequestOptions;
 
 import java.util.Map;
 
-public class PaymentRefundCollection extends XPayCollectionAPIResource<Refund> {
+public class PaymentRefundCollection extends VirtuePayCollectionAPIResource<Refund> {
 
     public PaymentRefundCollection list(Map<String, Object> params)
             throws VirtuePayException {

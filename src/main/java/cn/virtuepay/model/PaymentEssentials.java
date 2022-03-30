@@ -5,7 +5,7 @@ import java.util.Map;
 /**
  * Created by Afon on 16/11/04.
  */
-public class PaymentEssentials extends XPayObject {
+public class PaymentEssentials extends VirtuePayObject {
     String channel;
     String transactionNo;
     Map<String, Object> credential;

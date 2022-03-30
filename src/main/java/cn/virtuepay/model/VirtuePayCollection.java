@@ -2,7 +2,7 @@ package cn.virtuepay.model;
 
 import java.util.List;
 
-public abstract class XPayCollection<T> extends XPayObject {
+public abstract class VirtuePayCollection<T> extends VirtuePayObject {
     String object;
     String url;
     Boolean hasMore;

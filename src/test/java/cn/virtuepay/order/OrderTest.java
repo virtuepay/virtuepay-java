@@ -1,10 +1,9 @@
 package cn.virtuepay.order;
 
-import cn.virtuepay.XPayTestBase;
-import cn.virtuepay.XPayTestData;
+import cn.virtuepay.VirtuePayTestBase;
+import cn.virtuepay.VirtuePayTestData;
 import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.*;
-import com.xpay.model.*;
 import org.junit.Test;
 
 import java.util.*;
@@ -15,7 +14,7 @@ import static org.junit.Assert.assertNotNull;
 /*
  * @author Afon, @date 17-03-28
  */
-public class OrderTest extends XPayTestBase {
+public class OrderTest extends VirtuePayTestBase {
 
     /**
      * 创建 order
@@ -24,15 +23,15 @@ public class OrderTest extends XPayTestBase {
     public void testCreateOrder() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
 //        params.put("uid", "test_user_001"); // 用户在当前 app 下的 User ID, 可选
-        params.put("app", XPayTestData.getAppID()); // App ID, 必传
+        params.put("app", VirtuePayTestData.getAppID()); // App ID, 必传
         params.put("service_app", "5bf0a019ff3648f09bd37d47794ed81b"); // App ID, 必传
-        params.put("receipt_app", XPayTestData.getAppID()); // App ID, 必传
+        params.put("receipt_app", VirtuePayTestData.getAppID()); // App ID, 必传
         params.put("merchant_order_no", "2017" + System.currentTimeMillis()); // 商户订单号, 必传
         params.put("subject", "ORDER_SUBJECT"); // 商品的标题, 必传
         params.put("body", "ORDER_BODY"); // 商品的描述信息, 必传
         params.put("amount", 2); // 订单总金额，单位：分, 必传
         params.put("currency", "cny"); // 仅支持人民币 cny, 必传
-        params.put("uid",XPayTestData.userId);
+        params.put("uid", VirtuePayTestData.userId);
         params.put("client_ip", "192.168.1.125"); // 客户端的 IP 地址 (IPv4 格式，要求商户上传真实的，渠道可能会判断), 必传
         Map user1 = new HashMap<String, Object>();
         user1.put("user", "user_test_02_01");
@@ -125,7 +124,7 @@ public class OrderTest extends XPayTestBase {
         params.put("page", 1);
         params.put("per_page", 3);
         params.put("paid", true);
-        params.put("app", XPayTestData.getAppID());
+        params.put("app", VirtuePayTestData.getAppID());
         params.put("refunded", false);
 
         OrderCollection objs = Order.list(params); //查询 order 列表方法

@@ -3,7 +3,7 @@ package cn.virtuepay.net;
 import cn.virtuepay.exception.APIConnectionException;
 import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.VirtuePay;
-import cn.virtuepay.util.XPaySignature;
+import cn.virtuepay.util.VirtuePaySignature;
 import cn.virtuepay.util.StreamUtils;
 
 import java.io.FileInputStream;
@@ -34,7 +34,7 @@ public abstract class HttpClient {
      * @return the response
      * @throws VirtuePayException If the request fails for any reason
      */
-    public abstract XPayResponse request(XPayRequest request) throws VirtuePayException;
+    public abstract VirtuePayResponse request(VirtuePayRequest request) throws VirtuePayException;
 
     /**
      * Sends the given request to VirtuePay's API, retrying the request in cases of intermittent
@@ -44,9 +44,9 @@ public abstract class HttpClient {
      * @return the response
      * @throws VirtuePayException If the request fails for any reason
      */
-    public XPayResponse requestWithRetries(XPayRequest request) throws VirtuePayException {
+    public VirtuePayResponse requestWithRetries(VirtuePayRequest request) throws VirtuePayException {
         APIConnectionException requestException = null;
-        XPayResponse response = null;
+        VirtuePayResponse response = null;
         int retry = 0;
 
         while (true) {
@@ -94,7 +94,7 @@ public abstract class HttpClient {
      *
      * @return a string containing the value of the {@code X-VirtuePay-Client-User-Agent} header
      */
-    protected static String buildXPayClientUserAgentString() {
+    protected static String buildVirtuePayClientUserAgentString() {
         String[] propertyNames = {
                 "os.name",
                 "os.version",
@@ -116,7 +116,7 @@ public abstract class HttpClient {
         return APIResource.GSON.toJson(propertyMap);
     }
 
-    protected static String buildXPaySignature(XPayRequest request, String currentTime)
+    protected static String buildVirtuePaySignature(VirtuePayRequest request, String currentTime)
             throws IOException {
         StringBuilder sb = new StringBuilder();
         if (request.content != null) {
@@ -131,7 +131,7 @@ public abstract class HttpClient {
     }
 
     private boolean shouldRetry(
-            int numRetries, VirtuePayException exception, XPayRequest request, XPayResponse response) {
+            int numRetries, VirtuePayException exception, VirtuePayRequest request, VirtuePayResponse response) {
         // Do not retry if we are out of retries.
         if (numRetries >= request.options.getMaxNetworkRetries()) {
             return false;
@@ -199,7 +199,7 @@ public abstract class HttpClient {
             inputStream.close();
         }
 
-        return XPaySignature.sign(data, privatekey, APIResource.CHARSET.name());
+        return VirtuePaySignature.sign(data, privatekey, APIResource.CHARSET.name());
     }
 
 }

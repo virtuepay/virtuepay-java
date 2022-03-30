@@ -2,8 +2,8 @@ package cn.virtuepay.split;
 
 import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.ProfitTransactionCollection;
-import cn.virtuepay.XPayTestBase;
-import cn.virtuepay.XPayTestData;
+import cn.virtuepay.VirtuePayTestBase;
+import cn.virtuepay.VirtuePayTestData;
 import cn.virtuepay.model.ProfitTransaction;
 import org.junit.Test;
 
@@ -12,11 +12,11 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-public class ProfitTransactionTest extends XPayTestBase {
+public class ProfitTransactionTest extends VirtuePayTestBase {
 
     @Test public void testListAll() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
-        params.put("app", XPayTestData.getAppID());
+        params.put("app", VirtuePayTestData.getAppID());
         params.put("page", 1);
         params.put("per_page", 3);
         ProfitTransactionCollection obj = ProfitTransaction.list(params);

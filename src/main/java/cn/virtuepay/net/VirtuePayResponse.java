@@ -3,7 +3,7 @@ package cn.virtuepay.net;
 /**
  * Handler VirtuePay response when you request payment from xpay
  */
-public class XPayResponse {
+public class VirtuePayResponse {
 
     private int responseCode;
     private String responseBody;
@@ -15,7 +15,7 @@ public class XPayResponse {
      * @param responseCode the HTTP Status Code
      * @param responseBody the response body
      */
-    public XPayResponse(int responseCode, String responseBody) {
+    public VirtuePayResponse(int responseCode, String responseBody) {
         this.responseCode = responseCode;
         this.responseBody = responseBody;
         this.responseHeaders = null;
@@ -26,7 +26,7 @@ public class XPayResponse {
      * @param responseBody the response body
      * @param responseHeaders the response headers
      */
-    public XPayResponse(int responseCode, String responseBody, HttpHeaders responseHeaders) {
+    public VirtuePayResponse(int responseCode, String responseBody, HttpHeaders responseHeaders) {
         this.responseCode = responseCode;
         this.responseBody = responseBody;
         this.responseHeaders = responseHeaders;

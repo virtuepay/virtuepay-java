@@ -18,7 +18,7 @@ import java.security.spec.X509EncodedKeySpec;
 
 import cn.virtuepay.model.Payment;
 import cn.virtuepay.model.Webhooks;
-import cn.virtuepay.model.XPayObject;
+import cn.virtuepay.model.VirtuePayObject;
 import org.apache.commons.codec.binary.Base64;
 
 /**
@@ -60,7 +60,7 @@ public class WebhooksVerifyExample {
         boolean result = verifyData(webhooksRawPostData, signature, getPubKey());
         System.out.println("验签结果：" + (result ? "通过" : "失败"));
 
-        XPayObject obj = Webhooks.getObject(webhooksRawPostData);
+        VirtuePayObject obj = Webhooks.getObject(webhooksRawPostData);
         Payment payment = (Payment) obj;
         System.out.println("webhook data:" + payment);
 

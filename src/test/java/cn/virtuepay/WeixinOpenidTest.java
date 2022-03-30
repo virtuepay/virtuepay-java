@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import java.io.UnsupportedEncodingException;
 
-public class WeixinOpenidTest extends XPayTestBase {
+public class WeixinOpenidTest extends VirtuePayTestBase {
     /**
      * 通过 appId, secret, code 获取微信公众号 openid 信息。
      */

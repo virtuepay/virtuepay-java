@@ -1,4 +1,4 @@
 package cn.virtuepay.model;
 
-public class BalanceSettlementCollection extends XPayCollection<BalanceSettlement> {
+public class BalanceSettlementCollection extends VirtuePayCollection<BalanceSettlement> {
 }

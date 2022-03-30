@@ -2,8 +2,8 @@ package cn.virtuepay.sub_app;
 
 import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.SubAppCollection;
-import cn.virtuepay.XPayTestBase;
-import cn.virtuepay.XPayTestData;
+import cn.virtuepay.VirtuePayTestBase;
+import cn.virtuepay.VirtuePayTestData;
 import cn.virtuepay.model.DeletedSubApp;
 import cn.virtuepay.model.SubApp;
 import org.junit.Test;
@@ -13,16 +13,16 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-public class SubAppTest extends XPayTestBase {
+public class SubAppTest extends VirtuePayTestBase {
     /**
      * 创建子商户 app
      */
     @Test
     public void testSubAppCreate() throws VirtuePayException {
-        String userId = XPayTestData.userId + "royalty_2";
+        String userId = VirtuePayTestData.userId + "royalty_2";
         String displayName = "royalty_2";
 
-        String parentId = XPayTestData.getAppID();
+        String parentId = VirtuePayTestData.getAppID();
         parentId = "e16cbf9a945345e6807aa0cc44dc27b3";
 
         Map<String, Object> params = new HashMap<>();
@@ -44,7 +44,7 @@ public class SubAppTest extends XPayTestBase {
      * 查询子商户 app
      */
     @Test public void testSubAppRetrieve() throws VirtuePayException {
-        String subAppId = XPayTestData.getAppID();
+        String subAppId = VirtuePayTestData.getAppID();
         // 查询子商户 app
         // 参数: SubApp id
         SubApp obj = SubApp.retrieve(subAppId);
@@ -61,7 +61,7 @@ public class SubAppTest extends XPayTestBase {
         params.put("page", 1);
         params.put("per_page", 30);
 //        params.put("level", 2);
-        params.put("parent_app", XPayTestData.getAppID());
+        params.put("parent_app", VirtuePayTestData.getAppID());
 //        params.put("created[gt]", 1624611679000L);
 //        params.put("created[gte]", 1624611750000L);
 //        params.put("created[lt]", 1624611750000L);

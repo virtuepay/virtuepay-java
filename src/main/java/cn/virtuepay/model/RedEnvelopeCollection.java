@@ -1,4 +1,4 @@
 package cn.virtuepay.model;
 
-public class RedEnvelopeCollection extends XPayCollection<RedEnvelope> {
+public class RedEnvelopeCollection extends VirtuePayCollection<RedEnvelope> {
 }

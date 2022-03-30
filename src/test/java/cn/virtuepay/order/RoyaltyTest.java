@@ -1,7 +1,7 @@
 package cn.virtuepay.order;
 
-import cn.virtuepay.XPayTestBase;
-import cn.virtuepay.XPayTestData;
+import cn.virtuepay.VirtuePayTestBase;
+import cn.virtuepay.VirtuePayTestData;
 import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.Royalty;
 import cn.virtuepay.model.RoyaltyCollection;
@@ -16,7 +16,7 @@ import java.util.Map;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class RoyaltyTest extends XPayTestBase {
+public class RoyaltyTest extends VirtuePayTestBase {
     /**
      * 批量更新 royalty
      */
@@ -56,9 +56,9 @@ public class RoyaltyTest extends XPayTestBase {
         params.put("page", 1);      // 可选
 //        params.put("royalty_settlement", null);  // 可选 关联的分润结算 ID
 //        params.put("royalty_transaction", null); // 可选 关联的分润结算明细 ID
-//        params.put("payer_app", XPayTestData.getAppID());      // 可选
-//        params.put("recipient_app", XPayTestData.getAppID());      // 可选
-//        params.put("source_app", XPayTestData.getAppID());      // 可选
+//        params.put("payer_app", VirtuePayTestData.getAppID());      // 可选
+//        params.put("recipient_app", VirtuePayTestData.getAppID());      // 可选
+//        params.put("source_app", VirtuePayTestData.getAppID());      // 可选
 //        params.put("source_no", "20171624691382721");      // 可选
 
         List source_nos = new ArrayList<String>();
@@ -87,7 +87,7 @@ public class RoyaltyTest extends XPayTestBase {
      */
     @Test public void testRoyaltyDataCreate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
-        params.put("app", XPayTestData.getAppID()); // 必传
+        params.put("app", VirtuePayTestData.getAppID()); // 必传
 //        params.put("payment", ""); // 条件可选，对于已经成功的 order 必传该字段
         List<Map<String, Object>> royaltyUsers = new ArrayList<>();
         Map<String, Object> user = new HashMap<String, Object>();
@@ -100,7 +100,7 @@ public class RoyaltyTest extends XPayTestBase {
         RoyaltyDataResult result = Royalty.createData(orderId, params);
 
         assertTrue("succeeded", result.getSucceeded());
-        assertEquals("app should be the same", XPayTestData.getAppID(), result.getApp());
+        assertEquals("app should be the same", VirtuePayTestData.getAppID(), result.getApp());
         assertEquals("order ID should returned as the same", orderId, result.getOrder());
     }
 }

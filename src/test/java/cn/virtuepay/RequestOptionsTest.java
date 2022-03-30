@@ -43,36 +43,36 @@ public class RequestOptionsTest {
 
     @Test
     public void testDefaultRequestOptionsBuilder() {
-        VirtuePay.apiKey = XPayTestData.getApiKey();
-        VirtuePay.appId = XPayTestData.getAppID();
-        VirtuePay.privateKey = XPayTestData.getPKCS8PrivateKey();
+        VirtuePay.apiKey = VirtuePayTestData.getApiKey();
+        VirtuePay.appId = VirtuePayTestData.getAppID();
+        VirtuePay.privateKey = VirtuePayTestData.getPKCS8PrivateKey();
 
         RequestOptions options = new RequestOptionsBuilder().build();
 
-        assertEquals("API Key should be", XPayTestData.getApiKey(), options.getApiKey());
-        assertEquals("App ID should be", XPayTestData.getAppID(), options.getAppId());
-        assertEquals("Private key should be", XPayTestData.getPKCS8PrivateKey(), options.getPrivateKey());
+        assertEquals("API Key should be", VirtuePayTestData.getApiKey(), options.getApiKey());
+        assertEquals("App ID should be", VirtuePayTestData.getAppID(), options.getAppId());
+        assertEquals("Private key should be", VirtuePayTestData.getPKCS8PrivateKey(), options.getPrivateKey());
     }
 
     @Test
     public void testDefaultRequestOptions() {
-        VirtuePay.apiKey = XPayTestData.getApiKey();
-        VirtuePay.appId = XPayTestData.getAppID();
-        VirtuePay.privateKey = XPayTestData.getPKCS8PrivateKey();
+        VirtuePay.apiKey = VirtuePayTestData.getApiKey();
+        VirtuePay.appId = VirtuePayTestData.getAppID();
+        VirtuePay.privateKey = VirtuePayTestData.getPKCS8PrivateKey();
 
         RequestOptions options = RequestOptions.getDefault();
 
-        assertEquals("API Key should be", XPayTestData.getApiKey(), options.getApiKey());
-        assertEquals("App ID should be", XPayTestData.getAppID(), options.getAppId());
-        assertEquals("Private key should be", XPayTestData.getPKCS8PrivateKey(), options.getPrivateKey());
+        assertEquals("API Key should be", VirtuePayTestData.getApiKey(), options.getApiKey());
+        assertEquals("App ID should be", VirtuePayTestData.getAppID(), options.getAppId());
+        assertEquals("Private key should be", VirtuePayTestData.getPKCS8PrivateKey(), options.getPrivateKey());
     }
 
     @Test
     public void testRequestOptionsRequest() throws VirtuePayException {
         RequestOptions options = new RequestOptionsBuilder()
-                .setApiKey(XPayTestData.getApiKey())
-                .setAppId(XPayTestData.getAppID())
-                .setPrivateKey(XPayTestData.getPKCS8PrivateKey())
+                .setApiKey(VirtuePayTestData.getApiKey())
+                .setAppId(VirtuePayTestData.getAppID())
+                .setPrivateKey(VirtuePayTestData.getPKCS8PrivateKey())
                 .build();
 
         String userId = "test_user_001";
@@ -82,6 +82,6 @@ public class RequestOptionsTest {
         assertNull("VirtuePay.appId should be null", VirtuePay.appId);
         assertEquals("object should be user", "user", obj.getObject());
         assertEquals("id", userId, obj.getId());
-        assertEquals("app", XPayTestData.getAppID(), obj.getApp());
+        assertEquals("app", VirtuePayTestData.getAppID(), obj.getApp());
     }
 }

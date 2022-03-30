@@ -9,13 +9,13 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-public class CardInfoTest extends XPayTestBase {
+public class CardInfoTest extends VirtuePayTestBase {
     /**
      * 通过卡号查询卡信息。
      */
     @Test public void testCardInfoQuery() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
-        params.put("app", XPayTestData.getAppID());
+        params.put("app", VirtuePayTestData.getAppID());
         params.put("bank_account", "6222280012469823");
 
         CardInfo obj = CardInfo.query(params);

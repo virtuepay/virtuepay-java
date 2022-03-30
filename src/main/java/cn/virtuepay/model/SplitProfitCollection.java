@@ -1,4 +1,4 @@
 package cn.virtuepay.model;
 
-public class SplitProfitCollection extends XPayCollection<SplitProfit> {
+public class SplitProfitCollection extends VirtuePayCollection<SplitProfit> {
 }

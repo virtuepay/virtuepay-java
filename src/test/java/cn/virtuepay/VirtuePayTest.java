@@ -20,10 +20,10 @@ public class VirtuePayTest {
 
     @BeforeClass
     public static void initApiKey() {
-        VirtuePay.overrideApiBase(XPayTestData.getApiBase());
-        VirtuePay.apiKey = XPayTestData.getApiKey();
+        VirtuePay.overrideApiBase(VirtuePayTestData.getApiBase());
+        VirtuePay.apiKey = VirtuePayTestData.getApiKey();
         // 建议使用 PKCS8 编码的私钥，可以用 openssl 将 PKCS1 转成 PKCS8
-        VirtuePay.privateKey = XPayTestData.getPKCS8PrivateKey();
+        VirtuePay.privateKey = VirtuePayTestData.getPKCS8PrivateKey();
         VirtuePay.DEBUG = true;
     }
 
@@ -40,7 +40,7 @@ public class VirtuePayTest {
     // 创建支付
     @Test
     public void testCreatePayment() {
-        String appId = XPayTestData.getAppID();
+        String appId = VirtuePayTestData.getAppID();
 
         Payment payment = null;
         Map<String, Object> pamentMap = new HashMap<String, Object>();
@@ -77,7 +77,7 @@ public class VirtuePayTest {
     // 撤销支付
     @Test
     public void testReversePayment() {
-        String appId = XPayTestData.getAppID();
+        String appId = VirtuePayTestData.getAppID();
 
         String pamentId = "53529572052992";
 
@@ -116,7 +116,7 @@ public class VirtuePayTest {
         try {
             Integer limit = 10;
             Map<String, Object> params = new HashMap<String, Object>();
-            params.put("app[id]", XPayTestData.getAppID());
+            params.put("app[id]", VirtuePayTestData.getAppID());
             params.put("limit", limit);
             params.put("created[gt]", 1623834297000L);
 //            params.put("created[gte]", 1623850026000L);
@@ -222,7 +222,7 @@ public class VirtuePayTest {
 
             params.put("description", "Your description.");
             Map<String, String> app = new HashMap<String, String>();
-            app.put("id", XPayTestData.getAppID());
+            app.put("id", VirtuePayTestData.getAppID());
             params.put("app", app);
             Transfer obj = Transfer.create(params);
             System.out.println(obj);
@@ -256,7 +256,7 @@ public class VirtuePayTest {
 
     // 批量获取转账
     public void list() {
-        String appId = XPayTestData.getAppID();
+        String appId = VirtuePayTestData.getAppID();
         Map<String, Object> param = new HashMap<String, Object>();
         param.put("limit", 3);
         param.put("app[id]", appId);
@@ -275,7 +275,7 @@ public class VirtuePayTest {
 
         String batchNo = "2017" + new Date().getTime();
         Map<String, Object> params = new HashMap<String, Object>();
-        params.put("app", XPayTestData.getAppID());
+        params.put("app", VirtuePayTestData.getAppID());
         params.put("amount", 1000);
         params.put("currency", "cny");
         params.put("type", "b2c");
@@ -317,9 +317,9 @@ public class VirtuePayTest {
 
     @Test
     public void testWebhooksParsePayment() {
-        String webhookData = XPayTestData.getPaymentWebhooksData();
+        String webhookData = VirtuePayTestData.getPaymentWebhooksData();
 
-        XPayObject obj = Webhooks.getObject(webhookData);
+        VirtuePayObject obj = Webhooks.getObject(webhookData);
 
         assertTrue("object should be an instance of Payment", obj instanceof Payment);
         assertEquals("object should be pament", "pament", ((Payment) obj).getObject());
@@ -327,9 +327,9 @@ public class VirtuePayTest {
 
     @Test
     public void testWebhooksParseBatchTransfer() {
-        String webhookData = XPayTestData.getBatchTransferWebhooksData();
+        String webhookData = VirtuePayTestData.getBatchTransferWebhooksData();
 
-        XPayObject obj = Webhooks.getObject(webhookData);
+        VirtuePayObject obj = Webhooks.getObject(webhookData);
 
         assertTrue("object should be an instance of BatchTransfer", obj instanceof BatchTransfer);
         assertEquals("object should be batch_transfer", "batch_transfer", ((BatchTransfer) obj).getObject());

@@ -1,7 +1,7 @@
 package cn.virtuepay.transfer;
 
-import cn.virtuepay.XPayTestBase;
-import cn.virtuepay.XPayTestData;
+import cn.virtuepay.VirtuePayTestBase;
+import cn.virtuepay.VirtuePayTestData;
 import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.Transfer;
 import cn.virtuepay.model.TransferCollection;
@@ -15,7 +15,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Transfers 企业付款 示例
  */
-public class TransferTest extends XPayTestBase {
+public class TransferTest extends VirtuePayTestBase {
     /**
      * 创建 Transfer 对象- alipay 渠道
      */
@@ -37,7 +37,7 @@ public class TransferTest extends XPayTestBase {
         params.put("description", "alipay transfer description");
 
         Map<String, Object> app = new HashMap<>();
-        app.put("id", XPayTestData.getAppID());
+        app.put("id", VirtuePayTestData.getAppID());
         params.put("app", app);
 
         Map<String, Object> extra = new HashMap<>();
@@ -69,7 +69,7 @@ public class TransferTest extends XPayTestBase {
         params.put("description", "allinpay transfer description");
 
         Map<String, Object> app = new HashMap<>();
-        app.put("id", XPayTestData.getAppID());
+        app.put("id", VirtuePayTestData.getAppID());
         params.put("app", app);
 
         Map<String, Object> extra = new HashMap<>();
@@ -107,7 +107,7 @@ public class TransferTest extends XPayTestBase {
         params.put("description", "jdpay transfer description");
 
         Map<String, Object> app = new HashMap<>();
-        app.put("id", XPayTestData.getAppID());
+        app.put("id", VirtuePayTestData.getAppID());
         params.put("app", app);
 
         Map<String, Object> extra = new HashMap<>();
@@ -141,7 +141,7 @@ public class TransferTest extends XPayTestBase {
         params.put("description", "unionpay transfer description");
 
         Map<String, Object> app = new HashMap<>();
-        app.put("id", XPayTestData.getAppID());
+        app.put("id", VirtuePayTestData.getAppID());
         params.put("app", app);
 
         Map<String, Object> extra = new HashMap<>();
@@ -188,7 +188,7 @@ public class TransferTest extends XPayTestBase {
         params.put("recipient", "o9zPms1OLVHU1r701mOHP0s-uK9c");
 
         Map<String, Object> app = new HashMap<>();
-        app.put("id", XPayTestData.getAppID());
+        app.put("id", VirtuePayTestData.getAppID());
         params.put("app", app);
 
         Map<String, Object> extra = new HashMap<>();
@@ -218,10 +218,10 @@ public class TransferTest extends XPayTestBase {
         params.put("type", "b2c");
         params.put("description", "wx_pub transfer description");
         // 接收者 id， 渠道为 balance 时，为用户在当前 app 下的用户 id。
-        params.put("recipient", XPayTestData.userId);
+        params.put("recipient", VirtuePayTestData.userId);
 
         Map<String, Object> app = new HashMap<>();
-        app.put("id", XPayTestData.getAppID());
+        app.put("id", VirtuePayTestData.getAppID());
         params.put("app", app);
 
         Transfer obj = Transfer.create(params);
@@ -244,7 +244,7 @@ public class TransferTest extends XPayTestBase {
         Map<String, Object> params = new HashMap<>();
         params.put("limit", 5);
         Map<String, Object> app = new HashMap<>();
-        app.put("id", XPayTestData.getAppID());
+        app.put("id", VirtuePayTestData.getAppID());
         params.put("app", app);
 
         TransferCollection objs = Transfer.list(params);

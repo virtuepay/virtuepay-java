@@ -3,7 +3,7 @@ package cn.virtuepay.model;
 /**
  * Created by sunkai on 15/5/11.
  */
-public class Summary extends XPayObject {
+public class Summary extends VirtuePayObject {
     private String acctId;
     private String appId;
 

@@ -2,8 +2,8 @@ package cn.virtuepay.balance;
 
 import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.BalanceBonusCollection;
-import cn.virtuepay.XPayTestBase;
-import cn.virtuepay.XPayTestData;
+import cn.virtuepay.VirtuePayTestBase;
+import cn.virtuepay.VirtuePayTestData;
 import cn.virtuepay.model.BalanceBonus;
 import org.junit.Test;
 
@@ -12,14 +12,14 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-public class BalanceBonusTest extends XPayTestBase {
+public class BalanceBonusTest extends VirtuePayTestBase {
     /**
      * 余额赠送 balance-bonus
      */
     @Test
     public void testBalanceBonusCreate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
-        params.put("user", XPayTestData.userId);  // 受赠的用户 ID, 必传
+        params.put("user", VirtuePayTestData.userId);  // 受赠的用户 ID, 必传
         params.put("amount", 10);            // 支付受赠余额，单位：分, 必传
         params.put("order_no", "2017" + System.currentTimeMillis()); // 商户订单号，必须在商户系统内唯一, 必传
         params.put("description", "Balance bonus description."); // 描述, 可选

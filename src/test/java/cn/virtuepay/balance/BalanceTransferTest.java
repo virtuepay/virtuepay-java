@@ -2,7 +2,7 @@ package cn.virtuepay.balance;
 
 import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.BalanceTransferCollection;
-import cn.virtuepay.XPayTestBase;
+import cn.virtuepay.VirtuePayTestBase;
 import cn.virtuepay.model.BalanceTransfer;
 import org.junit.Test;
 
@@ -11,7 +11,7 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-public class BalanceTransferTest extends XPayTestBase {
+public class BalanceTransferTest extends VirtuePayTestBase {
     /**
      * 创建 balance_transfer
      */

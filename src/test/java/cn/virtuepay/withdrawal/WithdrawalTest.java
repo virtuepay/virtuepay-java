@@ -1,7 +1,7 @@
 package cn.virtuepay.withdrawal;
 
-import cn.virtuepay.XPayTestBase;
-import cn.virtuepay.XPayTestData;
+import cn.virtuepay.VirtuePayTestBase;
+import cn.virtuepay.VirtuePayTestData;
 import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.Withdrawal;
 import cn.virtuepay.model.WithdrawalCollection;
@@ -12,14 +12,14 @@ import java.util.Map;
 
 import static org.junit.Assert.*;
 
-public class WithdrawalTest extends XPayTestBase {
+public class WithdrawalTest extends VirtuePayTestBase {
     /**
      * 创建提现申请
      */
     @Test
     public void testCreateWithdrawal() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
-        params.put("user", XPayTestData.userId); // 用户 ID, 必传
+        params.put("user", VirtuePayTestData.userId); // 用户 ID, 必传
         params.put("channel", "wx_wap"); // 提现使用渠道。银联：unionpay，支付宝：alipay，微信：wx_pub，通联：allinpay，京东：jdpay, 可选
         params.put("amount", 1);  // 转账金额, 必传
         params.put("description", "custom description");    // 描述, 可选

@@ -1,15 +1,14 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.net.XPayResponse;
+import cn.virtuepay.net.VirtuePayResponse;
 import cn.virtuepay.serializer.*;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.xpay.serializer.*;
 
 import java.lang.reflect.Field;
 
-public abstract class XPayObject implements XPayObjectInterface {
+public abstract class VirtuePayObject implements VirtuePayObjectInterface {
 
     public static final Gson PRETTY_PRINT_GSON = new GsonBuilder()
             .setPrettyPrinting()
@@ -44,15 +43,15 @@ public abstract class XPayObject implements XPayObjectInterface {
         return getPrettyPrintGson().toJson(this);
     }
 
-    private transient XPayResponse lastResponse;
+    private transient VirtuePayResponse lastResponse;
 
     @Override
-    public XPayResponse getLastResponse() {
+    public VirtuePayResponse getLastResponse() {
         return lastResponse;
     }
 
     @Override
-    public void setLastResponse(XPayResponse response) {
+    public void setLastResponse(VirtuePayResponse response) {
         this.lastResponse = response;
     }
 }

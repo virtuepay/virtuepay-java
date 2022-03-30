@@ -1,7 +1,7 @@
 package cn.virtuepay.balance;
 
 import cn.virtuepay.exception.VirtuePayException;
-import cn.virtuepay.XPayTestBase;
+import cn.virtuepay.VirtuePayTestBase;
 import cn.virtuepay.model.BalanceTransaction;
 import cn.virtuepay.model.BalanceTransactionCollection;
 import org.junit.Test;
@@ -11,7 +11,7 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-public class BalanceTransactionTest extends XPayTestBase {
+public class BalanceTransactionTest extends VirtuePayTestBase {
     /**
      * 查询单个余额明细 (balance_transaction)
      */

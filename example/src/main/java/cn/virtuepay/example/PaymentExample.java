@@ -56,8 +56,8 @@ public class PaymentExample {
         Map<String, Object> paymentMap = new HashMap<String, Object>();
         paymentMap.put("amount", 1);//订单总金额, 人民币单位：分（如订单总金额为 1 元，此处请填 100）
         paymentMap.put("currency", "cny");
-        paymentMap.put("subject", "XPay支付");
-        paymentMap.put("body", "XPay支付");
+        paymentMap.put("subject", "VirtuePay支付");
+        paymentMap.put("body", "VirtuePay支付");
         String orderNo = new Date().getTime() + Main.randomString(7);
         paymentMap.put("order_no", orderNo);// 推荐使用 8-20 位，要求数字或字母，不允许其他字符
         paymentMap.put("channel", channel);// 支付使用的第三方支付渠道取值，请参考：https://virtuepay.cn/api#api-c-new

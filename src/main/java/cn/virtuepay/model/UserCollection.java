@@ -1,4 +1,4 @@
 package cn.virtuepay.model;
 
-public class UserCollection extends XPayCollection<User> {
+public class UserCollection extends VirtuePayCollection<User> {
 }

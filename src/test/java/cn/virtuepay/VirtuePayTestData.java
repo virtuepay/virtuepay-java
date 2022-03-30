@@ -3,8 +3,8 @@ package cn.virtuepay;
 /**
  * Created by Afon on 2016/12/20.
  */
-public class XPayTestData {
-    public static String[] appIds =  {
+public class VirtuePayTestData {
+    public static String[] appIds = {
             "e79d3840cf6c4a1d8654a2819985b154",
             "5c3ea278d5f34a79bfe5819781905551",
             "395d632368104c4388868d9654f0eda4",
@@ -13,7 +13,7 @@ public class XPayTestData {
             "ab1168a905064e3592712b47511fdee1",
     };
 
-    public static String[] apiKeys =  {
+    public static String[] apiKeys = {
             "76352e306e844d8fbe35d9b79b0d770c",
             "6913fa78c9fb484781e6617c5cb958b0",
             "2977bab51b544313b082cb0a5a83341c",
@@ -80,7 +80,7 @@ public class XPayTestData {
             "99s+ocGf/85ybWCDY5hRloiQ" +
             "\n-----END PRIVATE KEY-----";
 
-    public static String[] private_keys =  {
+    public static String[] private_keys = {
             private_key_0,
             private_key_1
     };
@@ -106,7 +106,7 @@ public class XPayTestData {
 
     public static String getPKCS8PrivateKey() {
 
-        String x =  "-----BEGIN PRIVATE KEY-----\n" +
+        String x = "-----BEGIN PRIVATE KEY-----\n" +
                 "MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCkoVGs87lQ3ZF4\n" +
                 "40M3C2yVbn504gRdwyhxdycq9bDI1wkuD1ebSLRgI/PGuGHA2XF5YF3dgHwTb4j+\n" +
                 "Dp81tE+lLKEg1JUwyE6QOJ1FP73japfSUqGs0Ee3wc3hH6fG1xOp1xzwFmlA/Iph\n" +

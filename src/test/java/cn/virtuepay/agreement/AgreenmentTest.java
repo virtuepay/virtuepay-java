@@ -1,7 +1,7 @@
 package cn.virtuepay.agreement;
 
-import cn.virtuepay.XPayTestBase;
-import cn.virtuepay.XPayTestData;
+import cn.virtuepay.VirtuePayTestBase;
+import cn.virtuepay.VirtuePayTestData;
 import cn.virtuepay.exception.InvalidRequestException;
 import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.Agreement;
@@ -14,12 +14,12 @@ import java.util.Map;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class AgreenmentTest extends XPayTestBase {
+public class AgreenmentTest extends VirtuePayTestBase {
 
     @Test
     public void testCreate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
-        params.put("app", XPayTestData.getAppID()); // App ID
+        params.put("app", VirtuePayTestData.getAppID()); // App ID
         params.put("contract_no", "2018051700001"); // 签约协议号
         params.put("channel", "qpay"); // 签约渠道
         Map<String, Object> extra = new HashMap<>();
@@ -51,7 +51,7 @@ public class AgreenmentTest extends XPayTestBase {
     public void testList() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
         params.put("per_page", 3); // 每页数量
-        params.put("app", XPayTestData.getAppID()); // App ID 此参数必填
+        params.put("app", VirtuePayTestData.getAppID()); // App ID 此参数必填
 
         AgreementCollection objs = Agreement.list(params);
 

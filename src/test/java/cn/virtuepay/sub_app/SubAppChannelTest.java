@@ -2,7 +2,7 @@ package cn.virtuepay.sub_app;
 
 import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.DeletedChannel;
-import cn.virtuepay.XPayTestBase;
+import cn.virtuepay.VirtuePayTestBase;
 import cn.virtuepay.model.Channel;
 import org.junit.Test;
 
@@ -11,7 +11,7 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-public class SubAppChannelTest extends XPayTestBase {
+public class SubAppChannelTest extends VirtuePayTestBase {
     /**
      * 配置子商户 app 渠道参数
      */

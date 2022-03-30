@@ -3,7 +3,7 @@ package cn.virtuepay.coupon;
 import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.CouponCollection;
 import cn.virtuepay.model.CouponTemplate;
-import cn.virtuepay.XPayTestBase;
+import cn.virtuepay.VirtuePayTestBase;
 import cn.virtuepay.model.Coupon;
 import cn.virtuepay.model.DeletedCoupon;
 import org.junit.Test;
@@ -15,7 +15,7 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-public class CouponTest extends XPayTestBase {
+public class CouponTest extends VirtuePayTestBase {
     /**
      * 创建单个优惠券 Coupon
      */

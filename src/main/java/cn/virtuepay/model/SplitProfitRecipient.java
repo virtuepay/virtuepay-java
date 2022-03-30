@@ -3,7 +3,7 @@ package cn.virtuepay.model;
 /**
  * 分账的接收方数据
  */
-public class SplitProfitRecipient extends XPayObject {
+public class SplitProfitRecipient extends VirtuePayObject {
     String splitReceiver;
     Integer amount;
     String name;

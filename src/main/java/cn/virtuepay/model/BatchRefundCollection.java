@@ -1,4 +1,4 @@
 package cn.virtuepay.model;
 
-public class BatchRefundCollection extends XPayCollection<BatchRefund> {
+public class BatchRefundCollection extends VirtuePayCollection<BatchRefund> {
 }

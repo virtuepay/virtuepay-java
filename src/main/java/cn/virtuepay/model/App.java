@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created by afon on 14/11/24.
  */
-public class App extends XPayObject {
+public class App extends VirtuePayObject {
     String id;
     String object;
     Long created;

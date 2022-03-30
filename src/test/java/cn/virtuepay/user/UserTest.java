@@ -1,7 +1,7 @@
 package cn.virtuepay.user;
 
-import cn.virtuepay.XPayTestBase;
-import cn.virtuepay.XPayTestData;
+import cn.virtuepay.VirtuePayTestBase;
+import cn.virtuepay.VirtuePayTestData;
 import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.User;
 import cn.virtuepay.model.UserCollection;
@@ -15,14 +15,14 @@ import static org.junit.Assert.assertEquals;
 /*
  * @author Afon, @date 17-03-28
  */
-public class UserTest extends XPayTestBase {
+public class UserTest extends VirtuePayTestBase {
 
     /**
      * 创建用户 (User)
      */
     @Test public void testUserCreate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
-        params.put("id", XPayTestData.userId + "_05"); // 用户 ID，首字母必须是英文数字或者 _-@, 必传
+        params.put("id", VirtuePayTestData.userId + "_05"); // 用户 ID，首字母必须是英文数字或者 _-@, 必传
         params.put("address", "Shanghai, China");       // 用户地址, 可选
         params.put("avatar", "https://example.com/avatar.png"); // 头像, 可选
         params.put("email", params.get("id") + "@gmail.com");   // 邮箱地址, 可选
@@ -38,7 +38,7 @@ public class UserTest extends XPayTestBase {
 
         assertEquals("object should be user", "user", obj.getObject());
         assertEquals("id", params.get("id"), obj.getId());
-        assertEquals("app", XPayTestData.getAppID(), obj.getApp());
+        assertEquals("app", VirtuePayTestData.getAppID(), obj.getApp());
         assertEquals("address", params.get("address"), obj.getAddress());
         assertEquals("avatar", params.get("avatar"), obj.getAvatar());
         assertEquals("email", params.get("email"), obj.getEmail());
@@ -54,14 +54,14 @@ public class UserTest extends XPayTestBase {
      * 查询单个用户 (User)
      */
     @Test public void testUserRetrieve() throws VirtuePayException {
-        String userId = XPayTestData.userId;
+        String userId = VirtuePayTestData.userId;
         userId = "user_test_02royalty_1";
         User obj = User.retrieve(userId); //查询 User 方法
 
         System.out.println(obj);
         assertEquals("object should be user", "user", obj.getObject());
         assertEquals("id", userId, obj.getId());
-        assertEquals("app", XPayTestData.getAppID(), obj.getApp());
+        assertEquals("app", VirtuePayTestData.getAppID(), obj.getApp());
     }
 
     /**
@@ -88,7 +88,7 @@ public class UserTest extends XPayTestBase {
      * 更新用户信息 (User)
      */
     @Test public void testUserUpdate() throws VirtuePayException {
-        String userId = XPayTestData.userId;
+        String userId = VirtuePayTestData.userId;
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("address", "China, China");
         params.put("avatar", "https://example.com/avatar.png");
@@ -103,7 +103,7 @@ public class UserTest extends XPayTestBase {
         System.out.println(obj);
         assertEquals("object should be user", "user", obj.getObject());
         assertEquals("id", userId, obj.getId());
-        assertEquals("app", XPayTestData.getAppID(), obj.getApp());
+        assertEquals("app", VirtuePayTestData.getAppID(), obj.getApp());
         assertEquals("address", params.get("address"), obj.getAddress());
         assertEquals("avatar", params.get("avatar"), obj.getAvatar());
         assertEquals("email", params.get("email"), obj.getEmail());

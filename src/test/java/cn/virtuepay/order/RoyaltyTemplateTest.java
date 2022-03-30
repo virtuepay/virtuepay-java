@@ -2,8 +2,8 @@ package cn.virtuepay.order;
 
 import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.DeleteRoyaltyTemplate;
-import cn.virtuepay.XPayTestBase;
-import cn.virtuepay.XPayTestData;
+import cn.virtuepay.VirtuePayTestBase;
+import cn.virtuepay.VirtuePayTestData;
 import cn.virtuepay.model.RoyaltyTemplate;
 import cn.virtuepay.model.RoyaltyTemplateCollection;
 import org.junit.Test;
@@ -15,14 +15,14 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-public class RoyaltyTemplateTest extends XPayTestBase {
+public class RoyaltyTemplateTest extends VirtuePayTestBase {
     /**
      * 创建 royalty_template
      */
     @Test
     public void testRoyaltyTemplateCreate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
-        params.put("app", XPayTestData.getAppID()); // App ID, 必传
+        params.put("app", VirtuePayTestData.getAppID()); // App ID, 必传
         params.put("name", "royalty_templates name"); // 模板名称，允许中英文等常用字符, 可选
 
         Map<String, Object> rule = new HashMap<>();
@@ -89,7 +89,7 @@ public class RoyaltyTemplateTest extends XPayTestBase {
         Map<String, Object> params = new HashMap<>();
         params.put("per_page", 3);
         params.put("page", 1);
-        params.put("app", XPayTestData.getAppID());
+        params.put("app", VirtuePayTestData.getAppID());
         // fixed
         params.put("rule[royalty_mode]", "rate");
         // proportional full_refund no_refund

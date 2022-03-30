@@ -2,8 +2,8 @@ package cn.virtuepay.split;
 
 import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.SplitReceiverCollection;
-import cn.virtuepay.XPayTestBase;
-import cn.virtuepay.XPayTestData;
+import cn.virtuepay.VirtuePayTestBase;
+import cn.virtuepay.VirtuePayTestData;
 import com.xpay.exception.*;
 import cn.virtuepay.model.DeletedSplitReceiver;
 import cn.virtuepay.model.SplitReceiver;
@@ -14,10 +14,10 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-public class SplitReceiverTest extends XPayTestBase {
+public class SplitReceiverTest extends VirtuePayTestBase {
     @Test public void testCreate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
-        params.put("app", XPayTestData.getAppID());
+        params.put("app", VirtuePayTestData.getAppID());
         params.put("type", "MERCHANT_ID"); // 分账接收方类型
         params.put("name", "示例商户全称"); // 分账接收方全称
         params.put("account", "190001001"); // 分账接收方帐号
@@ -31,7 +31,7 @@ public class SplitReceiverTest extends XPayTestBase {
 
     @Test public void testListAll() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
-        params.put("app", XPayTestData.getAppID());
+        params.put("app", VirtuePayTestData.getAppID());
         params.put("page", 1);
         params.put("per_page", 3);
         SplitReceiverCollection obj = SplitReceiver.list(params);

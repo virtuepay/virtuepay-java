@@ -3,7 +3,7 @@ package cn.virtuepay.model;
 /**
  * Created by Afon on 17/01/12.
  */
-public class BatchRefundPayments extends XPayObject {
+public class BatchRefundPayments extends VirtuePayObject {
     String payment;
     Integer amount;
     String description;

@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-public class XPayError extends XPayObject {
+public class VirtuePayError extends VirtuePayObject {
     String type;
 
     String message;

@@ -5,10 +5,7 @@ import cn.virtuepay.exception.*;
 import cn.virtuepay.model.*;
 import cn.virtuepay.serializer.*;
 import com.google.gson.*;
-import com.xpay.exception.*;
 import cn.virtuepay.exception.InvalidRequestException;
-import com.xpay.model.*;
-import com.xpay.serializer.*;
 
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
@@ -21,7 +18,7 @@ import java.util.*;
 /**
  * extends the abstract class when you need requset anything from xpay
  */
-public abstract class APIResource extends XPayObject {
+public abstract class APIResource extends VirtuePayObject {
     /**
      * URLEncoder charset
      */
@@ -51,7 +48,7 @@ public abstract class APIResource extends XPayObject {
             .registerTypeAdapter(Transfer.class, new TransferDeserializer())
             .registerTypeAdapter(PaymentRefundCollection.class, new PaymentRefundCollectionDeserializer())
             .registerTypeAdapter(EventData.class, new EventDataDeserializer())
-            .registerTypeAdapter(XPayRawJsonObject.class, new XPayRawJsonObjectDeserializer())
+            .registerTypeAdapter(VirtuePayRawJsonObject.class, new VirtuePayRawJsonObjectDeserializer())
             .registerTypeAdapter(SubApp.class, new SubAppDeserializer())
             .create();
 
@@ -136,7 +133,7 @@ public abstract class APIResource extends XPayObject {
         if (!klass.getSimpleName().equalsIgnoreCase("APIResource")) {
             try {
                 Method method = klass.getMethod("className", Class.class);
-                className = (String)method.invoke(klass, clazz);
+                className = (String) method.invoke(klass, clazz);
             } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
                 e.printStackTrace();
             }
@@ -159,10 +156,10 @@ public abstract class APIResource extends XPayObject {
 
     /**
      * @param clazz the object class
-     * @param id the id of the object
+     * @param id    the id of the object
      * @return instanceURL
      */
-    protected static String instanceURL(Class<?> clazz, String id){
+    protected static String instanceURL(Class<?> clazz, String id) {
         return String.format("%s/%s", classURL(clazz), urlEncode(id));
     }
 
@@ -187,13 +184,13 @@ public abstract class APIResource extends XPayObject {
     }
 
     /**
-     * @param method the method of request
-     * @param url the URL of request
-     * @param params the parameters
-     * @param clazz the class
-     * @param <T> type
+     * @param method  the method of request
+     * @param url     the URL of request
+     * @param params  the parameters
+     * @param clazz   the class
+     * @param <T>     type
      * @param options the specific options
-     * @return XPayObject
+     * @return VirtuePayObject
      * @throws VirtuePayException if some error occurs
      */
     protected static <T> T request(
@@ -202,8 +199,8 @@ public abstract class APIResource extends XPayObject {
             Map<String, Object> params,
             Class<T> clazz,
             RequestOptions options) throws VirtuePayException {
-        XPayRequest request = new XPayRequest(method, url, params, options);
-        XPayResponse response = httpClient.requestWithRetries(request);
+        VirtuePayRequest request = new VirtuePayRequest(method, url, params, options);
+        VirtuePayResponse response = httpClient.requestWithRetries(request);
 
         int responseCode = response.getResponseCode();
         String responseBody = response.getResponseBody();
@@ -219,8 +216,8 @@ public abstract class APIResource extends XPayObject {
             raiseMalformedJsonError(responseBody, responseCode);
         }
 
-        if (resource instanceof XPayObject) {
-            XPayObject obj = (XPayObject) resource;
+        if (resource instanceof VirtuePayObject) {
+            VirtuePayObject obj = (VirtuePayObject) resource;
             obj.setLastResponse(response);
         }
 
@@ -233,14 +230,14 @@ public abstract class APIResource extends XPayObject {
      * @param response the response
      * @throws VirtuePayException
      */
-    private static void handleAPIError(XPayResponse response)
+    private static void handleAPIError(VirtuePayResponse response)
             throws VirtuePayException {
-        XPayError error = null;
+        VirtuePayError error = null;
         String rBody = response.getResponseBody();
         int rCode = response.getResponseCode();
         try {
             JsonObject jsonObject = APIResource.GSON.fromJson(rBody, JsonObject.class).getAsJsonObject("error");
-            error = APIResource.GSON.fromJson(jsonObject, XPayError.class);
+            error = APIResource.GSON.fromJson(jsonObject, VirtuePayError.class);
         } catch (JsonSyntaxException e) {
             raiseMalformedJsonError(rBody, rCode);
         }

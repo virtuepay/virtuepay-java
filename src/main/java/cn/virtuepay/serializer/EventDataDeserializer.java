@@ -115,8 +115,8 @@ public class EventDataDeserializer implements JsonDeserializer<EventData> {
                 JsonElement element = entry.getValue();
                 if ("object".equals(key)) {
                     String type = element.getAsJsonObject().get("object").getAsString();
-                    Class<XPayObject> cl = objectMap.get(type);
-                    XPayObject object = APIResource.getGson().fromJson(entry.getValue(), cl != null ? cl : XPayRawJsonObject.class);
+                    Class<VirtuePayObject> cl = objectMap.get(type);
+                    VirtuePayObject object = APIResource.getGson().fromJson(entry.getValue(), cl != null ? cl : VirtuePayRawJsonObject.class);
                     eventData.setObject(object);
                 }
             }

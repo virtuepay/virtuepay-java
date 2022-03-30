@@ -1,6 +1,6 @@
 package cn.virtuepay.user;
 
-import cn.virtuepay.XPayTestBase;
+import cn.virtuepay.VirtuePayTestBase;
 import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.UserPic;
 import org.junit.Test;
@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 /*
  * @author Afon, @date 19-07-12
  */
-public class UserPicTest extends XPayTestBase {
+public class UserPicTest extends VirtuePayTestBase {
 
     /**
      * 证件上传

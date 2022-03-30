@@ -3,7 +3,7 @@ package cn.virtuepay.model;
 /**
  * Created by Afon on 17/03/27.
  */
-public abstract class DeletedObjectBase extends XPayObject implements DeletedXPayObject {
+public abstract class DeletedObjectBase extends VirtuePayObject implements DeletedVirtuePayObject {
     String id;
     Boolean deleted;
 

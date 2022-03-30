@@ -1,4 +1,4 @@
 package cn.virtuepay.model;
 
-public class SubBankCollection extends XPayCollection<SubBank> {
+public class SubBankCollection extends VirtuePayCollection<SubBank> {
 }

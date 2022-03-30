@@ -3,14 +3,14 @@ package cn.virtuepay.model;
 /**
  * Created by Afon on 15/12/30.
  */
-public class EventData extends XPayObject {
-    XPayObject object;
+public class EventData extends VirtuePayObject {
+    VirtuePayObject object;
 
-    public XPayObject getObject() {
+    public VirtuePayObject getObject() {
         return object;
     }
 
-    public void setObject(XPayObject object) {
+    public void setObject(VirtuePayObject object) {
         this.object = object;
     }
 }

@@ -5,7 +5,7 @@ import java.util.Map;
 /**
  * Created by Afon on 17/03/27.
  */
-public class SettleAccountRecipient extends XPayObject {
+public class SettleAccountRecipient extends VirtuePayObject {
     String account;
     String name;
     String type;

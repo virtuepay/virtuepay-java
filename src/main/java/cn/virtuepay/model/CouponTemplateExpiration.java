@@ -3,7 +3,7 @@ package cn.virtuepay.model;
 /**
  * Created by Afon on 16/11/07.
  */
-public class CouponTemplateExpiration extends XPayObject {
+public class CouponTemplateExpiration extends VirtuePayObject {
     Long timeStart;
     Long timeEnd;
     Long duration;

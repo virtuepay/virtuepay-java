@@ -11,7 +11,7 @@ import java.security.spec.PKCS8EncodedKeySpec;
 /**
  * Created by Afon on 2016/12/16.
  */
-public class XPaySignature {
+public class VirtuePaySignature {
     public static String sign(String data, String PEMEncodedPrivateKey, String charset) {
         PrivateKey privateKey = getPrivateKeyFromPEM(PEMEncodedPrivateKey);
         if (privateKey == null) {
@@ -36,7 +36,7 @@ public class XPaySignature {
         PEMEncodedPrivateKey = PEMEncodedPrivateKey
                 .replaceAll("(-+BEGIN (RSA )?PRIVATE KEY-+\\r?\\n|-+END (RSA )?PRIVATE KEY-+\\r?\\n?)", "");
         byte[] privateKeyBytes = Base64.decodeBase64(PEMEncodedPrivateKey);
-        
+
         try {
             return generatePrivateKeyWithPKCS8(privateKeyBytes);
         } catch (InvalidKeySpecException e) {

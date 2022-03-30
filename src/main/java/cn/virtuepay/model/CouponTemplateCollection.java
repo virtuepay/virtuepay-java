@@ -1,4 +1,4 @@
 package cn.virtuepay.model;
 
-public class CouponTemplateCollection extends XPayCollection<CouponTemplate> {
+public class CouponTemplateCollection extends VirtuePayCollection<CouponTemplate> {
 }

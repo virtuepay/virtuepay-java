@@ -1,4 +1,4 @@
 package cn.virtuepay.model;
 
-public class RoyaltyTemplateCollection extends XPayCollection<RoyaltyTemplate> {
+public class RoyaltyTemplateCollection extends VirtuePayCollection<RoyaltyTemplate> {
 }

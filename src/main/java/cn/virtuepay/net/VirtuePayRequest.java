@@ -14,7 +14,7 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
-public class XPayRequest {
+public class VirtuePayRequest {
     /**
      * The HTTP method for the request (GET, POST, DELETE or PUT).
      * */
@@ -46,7 +46,7 @@ public class XPayRequest {
     RequestOptions options;
 
     /**
-     * Initializes a new instance of the {@link XPayRequest} class.
+     * Initializes a new instance of the {@link VirtuePayRequest} class.
      *
      * @param method the HTTP method
      * @param url the URL
@@ -54,7 +54,7 @@ public class XPayRequest {
      * @param options the options
      * @throws VirtuePayException if the request cannot be initialized for any reason
      */
-    public XPayRequest(
+    public VirtuePayRequest(
             APIResource.RequestMethod method,
             String url,
             Map<String, Object> params,

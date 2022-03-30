@@ -2,8 +2,8 @@ package cn.virtuepay.recharge;
 
 import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.*;
-import cn.virtuepay.XPayTestBase;
-import cn.virtuepay.XPayTestData;
+import cn.virtuepay.VirtuePayTestBase;
+import cn.virtuepay.VirtuePayTestData;
 import com.xpay.model.*;
 import org.junit.Test;
 
@@ -12,14 +12,14 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-public class RechargeTest extends XPayTestBase {
+public class RechargeTest extends VirtuePayTestBase {
     /**
      * 创建 recharge
      */
     @Test
     public void testRechargeCreate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
-        params.put("user", XPayTestData.userId); // 充值目标用户 ID, 必传
+        params.put("user", VirtuePayTestData.userId); // 充值目标用户 ID, 必传
 //        params.put("user_fee", 1);     // 用户充值收取的手续费，单位分，不得大于 amount，不可和 balance_bonus[amount] 同时传，默认 0。可选
         params.put("description", "魔范优选"); // 描述, 可选
         Map<String, Object> payment = new HashMap<String, Object>();
@@ -58,8 +58,8 @@ public class RechargeTest extends XPayTestBase {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("page", 1);
         params.put("per_page", 3);
-        params.put("user", XPayTestData.userId); // 充值目标用户 ID, 必传
-        params.put("from_user", XPayTestData.userId); //
+        params.put("user", VirtuePayTestData.userId); // 充值目标用户 ID, 必传
+        params.put("from_user", VirtuePayTestData.userId); //
 //        params.put("succeeded", true); // 是否已充值成功
 //        params.put("refunded", true); // 是否存在退款 (跟是否退款成功没有关系)
         params.put("payment[channel]", "wx_wap"); // 充值使用的支付渠道。

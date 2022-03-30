@@ -24,11 +24,11 @@ public class HttpURLConnectionClient extends HttpClient {
      * @throws APIConnectionException if an error occurs when sending or receiving
      */
     @Override
-    public XPayResponse request(XPayRequest request) throws APIConnectionException {
+    public VirtuePayResponse request(VirtuePayRequest request) throws APIConnectionException {
         HttpURLConnection conn = null;
 
         try {
-            conn = createXPayConnection(request);
+            conn = createVirtuePayConnection(request);
 
             // trigger the request
             int responseCode = conn.getResponseCode();
@@ -41,7 +41,7 @@ public class HttpURLConnectionClient extends HttpClient {
                 responseBody = StreamUtils.readToEnd(conn.getErrorStream(), APIResource.CHARSET);
             }
 
-            return new XPayResponse(responseCode, responseBody, headers);
+            return new VirtuePayResponse(responseCode, responseBody, headers);
         } catch (IOException e) {
             throw new APIConnectionException(
                     String.format(
@@ -56,17 +56,17 @@ public class HttpURLConnectionClient extends HttpClient {
         }
     }
 
-    static HttpHeaders getHeaders(XPayRequest request) {
+    static HttpHeaders getHeaders(VirtuePayRequest request) {
         Map<String, List<String>> userAgentHeadersMap = new HashMap<>();
 
         userAgentHeadersMap.put("User-Agent", Collections.singletonList(buildUserAgentString()));
         userAgentHeadersMap.put(
-                "X-Client-User-Agent", Collections.singletonList(buildXPayClientUserAgentString()));
+                "X-Client-User-Agent", Collections.singletonList(buildVirtuePayClientUserAgentString()));
 
         return request.getHeaders().withAdditionalHeaders(userAgentHeadersMap);
     }
 
-    private static HttpURLConnection createXPayConnection(XPayRequest request)
+    private static HttpURLConnection createVirtuePayConnection(VirtuePayRequest request)
             throws IOException {
         HttpURLConnection conn = (HttpURLConnection) request.url.openConnection();
 
@@ -81,7 +81,7 @@ public class HttpURLConnectionClient extends HttpClient {
 
         String requestTime = currentTimeString();
         conn.setRequestProperty("X-Request-Timestamp", requestTime);
-        String signature = buildXPaySignature(request, requestTime);
+        String signature = buildVirtuePaySignature(request, requestTime);
         if (signature != null) {
             conn.setRequestProperty("X-Signature", signature);
         }

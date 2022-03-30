@@ -2,8 +2,8 @@ package cn.virtuepay.balance;
 
 import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.BalanceSettlementCollection;
-import cn.virtuepay.XPayTestBase;
-import cn.virtuepay.XPayTestData;
+import cn.virtuepay.VirtuePayTestBase;
+import cn.virtuepay.VirtuePayTestData;
 import cn.virtuepay.model.BalanceSettlement;
 import org.junit.Test;
 
@@ -12,7 +12,7 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-public class BalanceSettlementTest extends XPayTestBase {
+public class BalanceSettlementTest extends VirtuePayTestBase {
     /**
      * 查询单个结算到余额
      */
@@ -34,7 +34,7 @@ public class BalanceSettlementTest extends XPayTestBase {
         Map<String, Object> params = new HashMap<>();
         params.put("page", 1);
         params.put("per_page", 3);
-        params.put("user", XPayTestData.userId);
+        params.put("user", VirtuePayTestData.userId);
         // 查询 balance_settlement 列表方法
         // 参数: params
         BalanceSettlementCollection objs = BalanceSettlement.list(params);
