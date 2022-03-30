@@ -6,7 +6,7 @@
 - RedEnvelope
 - Webhooks
 - Identification
-- 账户系统相关接口请查看 [VirtuePay API 文档](https://virtuepay.cn/api) 或参考[测试示例](/src/test/java/com/xpay)
+- 账户系统相关接口请查看 [VirtuePay API 文档](https://virtuepay.cn/api) 或参考[测试示例](/src/test/java/com/virtuepay)
 
 #### Payment
 ##### 创建 Payment

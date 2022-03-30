@@ -16,7 +16,7 @@ VirtuePay.apiKey = "YOUR-KEY";
 在创建 Payment 前，请设置 apiKey。
 
 #### 设置请求签名密钥
-密钥需要你自己生成，公钥请填写到 [VirtuePay Dashboard](https://dashboard.xpay.com)。  
+密钥需要你自己生成，公钥请填写到 [VirtuePay Dashboard](https://dashboard.virtuepay.cn)。  
 建议使用 PKCS\#8 编码的私钥文件。openssl 命令如下：
 ```shell
 openssl pkcs8 -topk8 -inform PEM -in pkcs1.pem -outform PEM -nocrypt -out pkcs8.pem
