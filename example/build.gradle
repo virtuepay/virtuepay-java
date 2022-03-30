@@ -1,12 +1,11 @@
 apply plugin: 'java'
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
     compile 'com.google.code.gson:gson:2.8.5'
     compile 'commons-codec:commons-codec:1.10'
-
     compile project(':')
 }

@@ -571,11 +571,8 @@ public class Order extends APIResource {
      *
      * @param orderId
      * @param paymentId
-<<<<<<< HEAD
-     * @param options  the specific options
-=======
-     * @param options the specific options
->>>>>>> 9c6801405ecca334607545f80e042135336029f8
+     * @param options   the specific options
+     * @param options   the specific options
      * @return Payment
      * @throws VirtuePayException
      */

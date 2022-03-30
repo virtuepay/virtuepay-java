@@ -17,7 +17,6 @@ project.properties
 *.properties
 *.pem
 
-
 build/
 .idea/
 bin/
@@ -40,6 +39,7 @@ target/
 .idea/uiDesigner.xml
 
 # Gradle:
+.gradle
 .idea/gradle.xml
 .idea/libraries
 
@@ -57,13 +57,5 @@ target/
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 
-.gradle
-
-org.eclipse.buildship.core.prefs
-org.eclipse.jdt.core.prefs
-.project
-example/out
-example/build
-.vscode
-.classpath
+*.gpg
 .DS_Store

@@ -1,42 +1,30 @@
-buildscript {
-    repositories {
-        jcenter()
-    }
-
-    dependencies {
-        classpath "org.jetbrains.dokka:dokka-gradle-plugin:0.9.18"
-    }
-}
-
-plugins {
-    id "com.jfrog.bintray" version "1.8.0"
-}
-
 allprojects {
     repositories {
-        jcenter()
+        mavenCentral()
     }
-    apply plugin: 'maven'
-    apply plugin: 'maven-publish'
     apply plugin: 'java'
+    apply plugin: 'maven'
+    apply plugin: 'signing'
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+project.group = 'cn.virtuepay'
+project.archivesBaseName = 'virtuepay-java'
+project.version = '1.0.0'
+project.sourceCompatibility = 1.8
+project.targetCompatibility = 1.8
 
 dependencies {
     compile 'com.google.code.gson:gson:2.8.5'
     compile 'commons-codec:commons-codec:1.10'
-
     testCompile 'junit:junit:4.12'
 }
 
-task sourcesJar(type: Jar, dependsOn: classes) {
+task sourcesJar(type: Jar) {
     classifier = 'sources'
     from sourceSets.main.allSource
 }
 
-task javadocJar(type: Jar, dependsOn: javadoc) {
+task javadocJar(type: Jar) {
     classifier = 'javadoc'
     from javadoc.destinationDir
 }
@@ -45,48 +33,50 @@ artifacts {
     archives sourcesJar, javadocJar
 }
 
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-            artifact sourcesJar
-            artifact javadocJar
-            groupId 'com.xpay'
-            artifactId 'xpay-java'
-            version "1.0.2"
+signing {
+    sign configurations.archives
+}
 
-            pom.withXml {
-                def root = asNode()
-                root.appendNode('name', 'xpay-java')
-                root.appendNode('url', 'https://github.com/xxxpay/xpay-java')
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+            repository(url: "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            snapshotRepository(url: "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            pom.project {
+                name 'virtuepay-java'
+                packaging 'jar'
+                description 'VirtuePay Java SDK'
+                url 'https://virtuepay.cn'
+
+                scm {
+                    connection 'scm:git:https://github.com/virtuepay/virtuepay-java.git'
+                    developerConnection 'scm:git:https://github.com/virtuepay/virtuepay-java.git'
+                    url 'https://github.com/virtuepay/virtuepay-java'
+                }
+
+                licenses {
+                    license {
+                        name 'The Apache License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'developer'
+                        name 'virtuepay developer team'
+                        email 'develop@virtuepay.cn'
+                    }
+                }
             }
         }
     }
 }
-
-bintray {
-    user = "xxxx"
-    key = "1cb84f9f8a49a1c6b9cbc6fa34c073cc3015b1e3"
-    publications = ['mavenJava']
-    dryRun = false
-    publish = true
-    pkg {
-        repo = 'xpay'
-        name = 'xpay-java'
-        licenses = ['MIT']
-        labels = ['VirtuePay', 'xpay', 'payment']
-        vcsUrl = 'https://github.com/xxxpay/xpay-java.git'
-        version {
-            name = "1.0.2"
-        }
-    }
-}
-
-model {
-    tasks.generatePomFileForMavenJavaPublication {
-        destination = file("pom.xml")
-    }
-}
-
-
-apply from: rootProject.file('gradle/gradle-mvn-push.gradle')

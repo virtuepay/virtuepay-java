@@ -1,2 +1,2 @@
-rootProject.name = 'xpay-java'
+rootProject.name = 'virtuepay-java'
 include 'example'
