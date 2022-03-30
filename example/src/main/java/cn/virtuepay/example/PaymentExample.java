@@ -418,10 +418,10 @@ public class PaymentExample {
         // 可选，设置是否通过手机端发起支付，值为  true 时调用手机 h5 支付页面，值为  false 时调用 PC 端支付页面，该参数默认值为  true 。
         extra.put("is_mobile", true);
 
-        // 可选，用户账号类型，取值只能为：BIZ。传参存在问题请参考 帮助中心：https://help.xpay.com/article/1012535/。
+        // 可选，用户账号类型，取值只能为：BIZ。传参存在问题请参考 帮助中心：https://help.virtuepay.cn/article/1012535/。
         // extra.put("user_type", "BIZ");
 
-        // 可选，商户的用户账号。传参存在问题请参考 帮助中心：https://help.xpay.com/article/1012535/。
+        // 可选，商户的用户账号。传参存在问题请参考 帮助中心：https://help.virtuepay.cn/article/1012535/。
         // extra.put("user_id", "YOUR_USER_ID");
 
         return extra;

@@ -32,7 +32,7 @@ import org.apache.commons.codec.binary.Base64;
  */
 public class WebhooksVerifyExample {
 
-    private static String pubKeyPath = "res/xpay_public_key.pem";
+    private static String pubKeyPath = "res/virtuepay_public_key.pem";
     private static String eventPath = "res/webhooks_raw_post_data.json";
     private static String signPath = "res/signature.txt";
 

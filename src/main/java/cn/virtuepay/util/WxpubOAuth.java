@@ -78,7 +78,7 @@ public class WxpubOAuth {
         sb.append("&redirect_uri=").append(URLEncoder.encode(redirectUrl, CHARSET));
         sb.append("&response_type=code");
         sb.append("&scope=").append(moreInfo ? "snsapi_userinfo" : "snsapi_base");
-        sb.append("&state=xpay");
+        sb.append("&state=virtuepay");
         sb.append("#wechat_redirect");
 
         return sb.toString();

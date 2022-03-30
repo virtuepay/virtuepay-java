@@ -3,7 +3,6 @@ package cn.virtuepay.serializer;
 import cn.virtuepay.model.SubApp;
 import cn.virtuepay.model.User;
 import com.google.gson.*;
-import com.xpay.model.*;
 
 import java.lang.reflect.Type;
 

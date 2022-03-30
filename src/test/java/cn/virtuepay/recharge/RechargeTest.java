@@ -4,7 +4,6 @@ import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.*;
 import cn.virtuepay.VirtuePayTestBase;
 import cn.virtuepay.VirtuePayTestData;
-import com.xpay.model.*;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -30,7 +29,7 @@ public class RechargeTest extends VirtuePayTestBase {
         payment.put("subject", "发卡"); // 充值标题，该参数最长为 32 个 Unicode 字符, 必传
         payment.put("body", "莫兰迪色简约侧边发夹鸭嘴夹韩国网红刘海夹碎发卡后脑勺一字顶夹"); // 充值描述信息，该参数最长为 128 个 Unicode 字符, 必传
         Map<String, Object> extra = new HashMap<String, Object>(); // extra: 根据不同渠道传入相应的参数
-        extra.put("success_url", "https://api-test.lucfish.com/xpay");
+        extra.put("success_url", "https://api.fat.lucfish.com/xpay");
         payment.put("extra", extra);
         params.put("payment", payment);
         Recharge obj = Recharge.create(params); // 创建 recharge 方法
@@ -43,7 +42,8 @@ public class RechargeTest extends VirtuePayTestBase {
     /**
      * 查询单个 recharge
      */
-    @Test public void testRechargeRetrieve() throws VirtuePayException {
+    @Test
+    public void testRechargeRetrieve() throws VirtuePayException {
         // 查询单个 recharge 方法
         // 参数: rechargeId
         Recharge obj = Recharge.retrieve("53562876661760");
@@ -54,7 +54,8 @@ public class RechargeTest extends VirtuePayTestBase {
     /**
      * 查询 recharge 列表
      */
-    @Test public void testRechargeList() throws VirtuePayException {
+    @Test
+    public void testRechargeList() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("page", 1);
         params.put("per_page", 3);
@@ -79,7 +80,8 @@ public class RechargeTest extends VirtuePayTestBase {
     /**
      * 创建 recharge_refund
      */
-    @Test public void testRechargeRefundCreate() throws VirtuePayException {
+    @Test
+    public void testRechargeRefundCreate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("description", "Recharge Refund Description"); // 必传
         // 创建 recharge_refund 方法
@@ -93,7 +95,8 @@ public class RechargeTest extends VirtuePayTestBase {
     /**
      * 查询单个 recharge_refund
      */
-    @Test public void testRechargeRefundRetrieve() throws VirtuePayException {
+    @Test
+    public void testRechargeRefundRetrieve() throws VirtuePayException {
         // 查询单个 recharge_refund 方法
         // 参数一: rechargeId
         // 参数二: refundId
@@ -105,7 +108,8 @@ public class RechargeTest extends VirtuePayTestBase {
     /**
      * 查询 recharge_refund 列表
      */
-    @Test public void testRechargeRefundList() throws VirtuePayException {
+    @Test
+    public void testRechargeRefundList() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("page", 1);
         params.put("per_page", 3);

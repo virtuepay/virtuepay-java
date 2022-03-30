@@ -16,7 +16,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 /**
- * extends the abstract class when you need requset anything from xpay
+ * extends the abstract class when you need requset anything from virtuepay
  */
 public abstract class APIResource extends VirtuePayObject {
     /**

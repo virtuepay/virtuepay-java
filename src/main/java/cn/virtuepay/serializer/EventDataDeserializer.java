@@ -2,7 +2,6 @@ package cn.virtuepay.serializer;
 
 import cn.virtuepay.model.*;
 import com.google.gson.*;
-import com.xpay.model.*;
 import cn.virtuepay.net.APIResource;
 
 import java.lang.reflect.Type;
@@ -17,6 +16,7 @@ public class EventDataDeserializer implements JsonDeserializer<EventData> {
 
     @SuppressWarnings("rawtypes")
     static final Map<String, Class> objectMap = new HashMap<String, Class>();
+
     static {
         objectMap.put("payment", Payment.class);
         objectMap.put("transfer", Transfer.class);
@@ -97,7 +97,7 @@ public class EventDataDeserializer implements JsonDeserializer<EventData> {
     }
 
     private void populateMapFromJSONObject(Map<String, Object> objMap, JsonObject jsonObject) {
-        for(Map.Entry<String, JsonElement> entry: jsonObject.entrySet()) {
+        for (Map.Entry<String, JsonElement> entry : jsonObject.entrySet()) {
             String key = entry.getKey();
             JsonElement element = entry.getValue();
             objMap.put(key, deserializeJsonElement(element));
@@ -110,7 +110,7 @@ public class EventDataDeserializer implements JsonDeserializer<EventData> {
         EventData eventData = new EventData();
         if (json.isJsonObject()) {
             JsonObject jsonObject = json.getAsJsonObject();
-            for(Map.Entry<String, JsonElement> entry: jsonObject.entrySet()) {
+            for (Map.Entry<String, JsonElement> entry : jsonObject.entrySet()) {
                 String key = entry.getKey();
                 JsonElement element = entry.getValue();
                 if ("object".equals(key)) {

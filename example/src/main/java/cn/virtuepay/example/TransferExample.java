@@ -82,7 +82,7 @@ public class TransferExample {
         }
 
         transferMap.put("order_no", orderNo);
-        transferMap.put("amount", 200); // 付款金额，相关渠道的限额，请查看 https://help.xpay.com/article/133366/ 。单位为对应币种的最小货币单位，例如：人民币为分。
+        transferMap.put("amount", 200); // 付款金额，相关渠道的限额，请查看 https://help.virtuepay.cn/article/133366/ 。单位为对应币种的最小货币单位，例如：人民币为分。
         transferMap.put("type", "b2c"); // 付款类型，转账到个人用户为 b2c，转账到企业用户为 b2b（微信公众号 wx_pub 的企业付款，仅支持 b2c）。
         transferMap.put("currency", "cny");
         transferMap.put("recipient", channelRecipient(channel)); // 接收者

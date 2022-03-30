@@ -90,18 +90,15 @@ public class VirtuePayTestData {
 
 
     public static String getApiBase() {
-        return "https://api-test.lucfish.com/xpay";
-//        return "http://127.0.0.1:10216";
+        return "https://api.fat.lucfish.com/xpay";
     }
 
     public static String getApiKey() {
         return apiKeys[index];
-//        return "76352e306e844d8fbe35d9b79b0d770c";
     }
 
     public static String getAppID() {
         return appIds[index];
-//        return "e79d3840cf6c4a1d8654a2819985b154";
     }
 
     public static String getPKCS8PrivateKey() {
