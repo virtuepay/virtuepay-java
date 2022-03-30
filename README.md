@@ -1,11 +1,11 @@
-# XPay Java SDK
+# VirtuePay Java SDK
 
 ## 简介
 
-1. [docs](/docs) 目录下为 XPay Java SDK 的使用文档。
+1. [docs](/docs) 目录下为 VirtuePay Java SDK 的使用文档。
 2. example 目录下面为一个 Eclipse IDE 的示例工程。
-3. libs 为 XPay Java SDK 的 jar 包和 XPay Java SDK 所依赖的Gson 包。
-4. src 为 XPay Java SDK 的源代码，可以关联到 xpay-java-x.x.x.jar 文件。或者直接把源代码引入到工程之中。
+3. libs 为 VirtuePay Java SDK 的 jar 包和 VirtuePay Java SDK 所依赖的Gson 包。
+4. src 为 VirtuePay Java SDK 的源代码，可以关联到 xpay-java-x.x.x.jar 文件。或者直接把源代码引入到工程之中。
 
 ## 版本要求
 
@@ -15,7 +15,7 @@ Java 要求 JDK 8 及以上。
 
 ### 手动安装
 
-JAR 下载地址: [xpay-java](https://jcenter.bintray.com/XPay/xpay-java/)
+JAR 下载地址: [xpay-java](https://jcenter.bintray.com/VirtuePay/xpay-java/)
 
 请根据版本号下载相应的 JAR 文件并导入至工程。
 
@@ -39,11 +39,11 @@ maven 远程仓库
 </repository>
 ```
 
-安装 XPay SDK
+安装 VirtuePay SDK
 
 ``` xml
 <dependency>
-    <groupId>XPay</groupId>
+    <groupId>VirtuePay</groupId>
     <artifactId>xpay-java</artifactId>
     <version>2.4.0</version>
     <type>jar</type>
@@ -62,16 +62,16 @@ repositories {
 }
 ```
 
-安装 XPay SDK
+安装 VirtuePay SDK
 
 ```
-compile 'XPay:xpay-java:2.4.0'
+compile 'VirtuePay:xpay-java:2.4.0'
 ```
 
 ## 初始化
 
 ```
-XPay.apiKey = "YOUR_API_KEY";
+VirtuePay.apiKey = "YOUR_API_KEY";
 ```
 
 ## 使用示例

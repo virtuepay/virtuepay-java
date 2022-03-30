@@ -1,9 +1,9 @@
-# XPay Java SDK 使用文档
+# VirtuePay Java SDK 使用文档
 
 #### apiKey 和 appId
-SDK 需要 XPay 提供的 apiKey 和 AppID 作为凭证获取移动端支付所需的 Payment 对象。  
-其中，apiKey 可以在 XPay 管理平台的【企业设置】->【开发设置】中得到。  
-AppID 可以在 XPay 管理平台应用卡片下方得到。
+SDK 需要 VirtuePay 提供的 apiKey 和 AppID 作为凭证获取移动端支付所需的 Payment 对象。  
+其中，apiKey 可以在 VirtuePay 管理平台的【企业设置】->【开发设置】中得到。  
+AppID 可以在 VirtuePay 管理平台应用卡片下方得到。
 
 #### 依赖
 - gons-2.6.2
@@ -11,12 +11,12 @@ AppID 可以在 XPay 管理平台应用卡片下方得到。
 
 #### 设置 apiKey
 ``` java
-XPay.apiKey = "YOUR-KEY";
+VirtuePay.apiKey = "YOUR-KEY";
 ```
 在创建 Payment 前，请设置 apiKey。
 
 #### 设置请求签名密钥
-密钥需要你自己生成，公钥请填写到 [XPay Dashboard](https://dashboard.xpay.com)。  
+密钥需要你自己生成，公钥请填写到 [VirtuePay Dashboard](https://dashboard.xpay.com)。  
 建议使用 PKCS\#8 编码的私钥文件。openssl 命令如下：
 ```shell
 openssl pkcs8 -topk8 -inform PEM -in pkcs1.pem -outform PEM -nocrypt -out pkcs8.pem
@@ -24,13 +24,13 @@ openssl pkcs8 -topk8 -inform PEM -in pkcs1.pem -outform PEM -nocrypt -out pkcs8.
 
 设置你的私钥
 ```java    
-XPay.privateKey = "<PRIVATE-KEY-CONTENT>";
+VirtuePay.privateKey = "<PRIVATE-KEY-CONTENT>";
 ```
 
 #### 设置 App ID
 当你使用账户系统的接口时，需要设置 App ID。比如，充值（recharge）、提现（withdrawal）等。
 ```java
-XPay.appId = "<APP_ID>";
+VirtuePay.appId = "<APP_ID>";
 ```
 
 #### 创建 Payment

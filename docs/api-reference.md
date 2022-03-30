@@ -1,12 +1,12 @@
-## XPay Java SDK 文档
+## VirtuePay Java SDK 文档
 #### 概述
-本文档简要概述 XPay Java SDK 部分常用类的使用方法，详细使用方法开发者可阅读源码以及示例程序
+本文档简要概述 VirtuePay Java SDK 部分常用类的使用方法，详细使用方法开发者可阅读源码以及示例程序
 - Payment
 - Refund
 - RedEnvelope
 - Webhooks
 - Identification
-- 账户系统相关接口请查看 [XPay API 文档](https://virtuepay.cn/api) 或参考[测试示例](/src/test/java/com/xpay)
+- 账户系统相关接口请查看 [VirtuePay API 文档](https://virtuepay.cn/api) 或参考[测试示例](/src/test/java/com/xpay)
 
 #### Payment
 ##### 创建 Payment
