@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 
@@ -173,10 +173,10 @@ public class Refund extends APIResource {
      * @param paymentId
      * @param params
      * @return Refund
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Refund create(String paymentId, Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return create(paymentId, params, null);
     }
 
@@ -187,10 +187,10 @@ public class Refund extends APIResource {
      * @param params
      * @param options the specific options
      * @return Refund
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Refund create(String paymentId, Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, String.format("%s/refunds", instanceURL(Payment.class, paymentId)),
                 params, Refund.class, options);
     }
@@ -201,10 +201,10 @@ public class Refund extends APIResource {
      * @param paymentId
      * @param id
      * @return Refund
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Refund retrieve(String paymentId, String id)
-            throws XPayException {
+            throws VirtuePayException {
         return retrieve(paymentId, id, null);
     }
 
@@ -215,10 +215,10 @@ public class Refund extends APIResource {
      * @param id
      * @param options the specific options
      * @return Refund
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Refund retrieve(String paymentId, String id, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, String.format("%s/refunds/%s", instanceURL(Payment.class, paymentId), id),null, Refund.class, options);
     }
 
@@ -228,10 +228,10 @@ public class Refund extends APIResource {
      * @param paymentId
      * @param params
      * @return PaymentRefundCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static PaymentRefundCollection list(String paymentId, Map<String, Object>params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(paymentId, params, null);
     }
 
@@ -242,10 +242,10 @@ public class Refund extends APIResource {
      * @param params
      * @param options the specific options
      * @return PaymentRefundCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static PaymentRefundCollection list(String paymentId, Map<String, Object>params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return request(RequestMethod.GET, String.format("%s/refunds", instanceURL(Payment.class, paymentId)),
                 params, PaymentRefundCollection.class, options);
     }

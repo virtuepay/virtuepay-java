@@ -1,6 +1,6 @@
 package cn.virtuepay;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.SubBank;
 import cn.virtuepay.model.SubBankCollection;
 import org.junit.Test;
@@ -14,7 +14,7 @@ public class SubBankTest extends XPayTestBase {
     /**
      * 银行支行列表查询
      */
-    @Test public void testSubBankQuery() throws XPayException {
+    @Test public void testSubBankQuery() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
         params.put("app", XPayTestData.getAppID());
         params.put("open_bank_code", "0308"); // 银行开户行编号

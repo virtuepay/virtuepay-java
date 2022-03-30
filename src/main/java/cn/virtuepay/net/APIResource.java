@@ -194,14 +194,14 @@ public abstract class APIResource extends XPayObject {
      * @param <T> type
      * @param options the specific options
      * @return XPayObject
-     * @throws XPayException if some error occurs
+     * @throws VirtuePayException if some error occurs
      */
     protected static <T> T request(
             APIResource.RequestMethod method,
             String url,
             Map<String, Object> params,
             Class<T> clazz,
-            RequestOptions options) throws XPayException {
+            RequestOptions options) throws VirtuePayException {
         XPayRequest request = new XPayRequest(method, url, params, options);
         XPayResponse response = httpClient.requestWithRetries(request);
 
@@ -231,10 +231,10 @@ public abstract class APIResource extends XPayObject {
      * 错误处理
      *
      * @param response the response
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     private static void handleAPIError(XPayResponse response)
-            throws XPayException {
+            throws VirtuePayException {
         XPayError error = null;
         String rBody = response.getResponseBody();
         int rCode = response.getResponseCode();

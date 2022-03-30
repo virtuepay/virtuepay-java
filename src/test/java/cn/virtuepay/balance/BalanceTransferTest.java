@@ -1,6 +1,6 @@
 package cn.virtuepay.balance;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.BalanceTransferCollection;
 import cn.virtuepay.XPayTestBase;
 import cn.virtuepay.model.BalanceTransfer;
@@ -16,7 +16,7 @@ public class BalanceTransferTest extends XPayTestBase {
      * 创建 balance_transfer
      */
     @Test
-    public void testBalanceTransfer() throws XPayException {
+    public void testBalanceTransfer() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("user", "test_user_001");
         params.put("recipient", "test_user_003");
@@ -34,7 +34,7 @@ public class BalanceTransferTest extends XPayTestBase {
     /**
      * 查询单个 balance_transfer
      */
-    @Test public void testBalanceTransferRetrieve() throws XPayException {
+    @Test public void testBalanceTransferRetrieve() throws VirtuePayException {
 
         // 查询单个 balance_transfer 方法
         // 参数: balance_transfer id
@@ -46,7 +46,7 @@ public class BalanceTransferTest extends XPayTestBase {
     /**
      * 查询 balance_transfer 列表
      */
-    @Test public void testBalanceTransferList() throws XPayException {
+    @Test public void testBalanceTransferList() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
         params.put("page", 1);
         params.put("per_page", 10);

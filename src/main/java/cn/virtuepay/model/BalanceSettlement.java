@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.AppBasedResource;
 import cn.virtuepay.net.RequestOptions;
@@ -167,10 +167,10 @@ public class BalanceSettlement extends AppBasedResource {
      *
      * @param id balance_settlement ID
      * @return BalanceSettlement
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BalanceSettlement retrieve(String id)
-            throws XPayException {
+            throws VirtuePayException {
         return retrieve(id, null);
     }
 
@@ -180,10 +180,10 @@ public class BalanceSettlement extends AppBasedResource {
      * @param id balance_settlement ID
      * @param options the specific options
      * @return BalanceSettlement
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BalanceSettlement retrieve(String id, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(BalanceSettlement.class, id), null, BalanceSettlement.class, options);
     }
 
@@ -192,10 +192,10 @@ public class BalanceSettlement extends AppBasedResource {
      *
      * @param params 过滤参数
      * @return BalanceSettlementCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BalanceSettlementCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -205,10 +205,10 @@ public class BalanceSettlement extends AppBasedResource {
      * @param params 过滤参数
      * @param options the specific options
      * @return BalanceSettlementCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BalanceSettlementCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, classURL(BalanceSettlement.class), params, BalanceSettlementCollection.class, options);
     }
 }

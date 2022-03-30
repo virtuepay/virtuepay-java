@@ -7,7 +7,7 @@
 */
 package cn.virtuepay.example;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.BatchTransfer;
 import cn.virtuepay.model.BatchTransferCollection;
 
@@ -78,7 +78,7 @@ public class BatchTransferExample {
         try {
             obj = BatchTransfer.create(params);
             System.out.println(obj);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
         return obj;
@@ -95,7 +95,7 @@ public class BatchTransferExample {
         try {
             BatchTransfer obj = BatchTransfer.retrieve(id);
             System.out.println(obj);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
     }
@@ -113,7 +113,7 @@ public class BatchTransferExample {
         try {
             BatchTransferCollection objs = BatchTransfer.list(param);
             System.out.println(objs);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
     }

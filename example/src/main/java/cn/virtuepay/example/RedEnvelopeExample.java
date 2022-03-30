@@ -7,7 +7,7 @@
 */
 package cn.virtuepay.example;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.RedEnvelope;
 import cn.virtuepay.model.RedEnvelopeCollection;
 
@@ -80,7 +80,7 @@ public class RedEnvelopeExample {
         try {
             red = RedEnvelope.create(redenvelope);
             System.out.println(red);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
         return red;
@@ -98,7 +98,7 @@ public class RedEnvelopeExample {
         try {
             RedEnvelope redEnvelope = RedEnvelope.retrieve(id);
             System.out.println(redEnvelope);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
     }
@@ -115,7 +115,7 @@ public class RedEnvelopeExample {
         try {
             redEnvelopeCollection = RedEnvelope.list(paymentParams);
             System.out.println(redEnvelopeCollection);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
 

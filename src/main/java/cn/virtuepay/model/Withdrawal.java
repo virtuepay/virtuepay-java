@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.AppBasedResource;
 import cn.virtuepay.net.RequestOptions;
@@ -222,10 +222,10 @@ public class Withdrawal extends AppBasedResource {
      *
      * @param params
      * @return Withdrawal
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Withdrawal create(Map<String, Object>params)
-            throws XPayException {
+            throws VirtuePayException {
         return create(params, null);
     }
 
@@ -235,10 +235,10 @@ public class Withdrawal extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return Withdrawal
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Withdrawal create(Map<String, Object>params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, classURL(Withdrawal.class), params, Withdrawal.class, options);
     }
 
@@ -247,10 +247,10 @@ public class Withdrawal extends AppBasedResource {
      *
      * @param id
      * @return Withdrawal
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Withdrawal retrieve(String id)
-            throws XPayException {
+            throws VirtuePayException {
         return retrieve(id, null);
     }
 
@@ -260,10 +260,10 @@ public class Withdrawal extends AppBasedResource {
      * @param id
      * @param options the specific options
      * @return Withdrawal
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Withdrawal retrieve(String id, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(Withdrawal.class, id), null, Withdrawal.class, options);
     }
 
@@ -272,10 +272,10 @@ public class Withdrawal extends AppBasedResource {
      *
      * @param params
      * @return WithdrawalCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static WithdrawalCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -285,10 +285,10 @@ public class Withdrawal extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return WithdrawalCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static WithdrawalCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, classURL(Withdrawal.class), params, WithdrawalCollection.class, options);
     }
 
@@ -298,10 +298,10 @@ public class Withdrawal extends AppBasedResource {
      * @param id
      * @param params
      * @return Withdrawal
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Withdrawal update(String id, Map<String, Object>params)
-            throws XPayException {
+            throws VirtuePayException {
         return update(id, params, null);
     }
 
@@ -312,10 +312,10 @@ public class Withdrawal extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return Withdrawal
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Withdrawal update(String id, Map<String, Object>params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.PUT, instanceURL(Withdrawal.class, id), params, Withdrawal.class, options);
     }
 
@@ -324,10 +324,10 @@ public class Withdrawal extends AppBasedResource {
      *
      * @param id
      * @return Withdrawal
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Withdrawal cancel(String id)
-            throws XPayException {
+            throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("status", "canceled");
         return update(id, params, null);
@@ -339,10 +339,10 @@ public class Withdrawal extends AppBasedResource {
      * @param id
      * @param options the specific options
      * @return Withdrawal
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Withdrawal cancel(String id, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("status", "canceled");
         return update(id, params, options);
@@ -353,10 +353,10 @@ public class Withdrawal extends AppBasedResource {
      *
      * @param id
      * @return Withdrawal
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Withdrawal confirm(String id)
-            throws XPayException {
+            throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("status", "pending");
         return update(id, params, null);
@@ -368,10 +368,10 @@ public class Withdrawal extends AppBasedResource {
      * @param id
      * @param options the specific options
      * @return Withdrawal
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Withdrawal confirm(String id, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("status", "pending");
         return update(id, params, options);

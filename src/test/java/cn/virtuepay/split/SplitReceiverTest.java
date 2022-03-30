@@ -1,6 +1,6 @@
 package cn.virtuepay.split;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.SplitReceiverCollection;
 import cn.virtuepay.XPayTestBase;
 import cn.virtuepay.XPayTestData;
@@ -15,7 +15,7 @@ import java.util.Map;
 import static org.junit.Assert.assertEquals;
 
 public class SplitReceiverTest extends XPayTestBase {
-    @Test public void testCreate() throws XPayException {
+    @Test public void testCreate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
         params.put("app", XPayTestData.getAppID());
         params.put("type", "MERCHANT_ID"); // 分账接收方类型
@@ -29,7 +29,7 @@ public class SplitReceiverTest extends XPayTestBase {
         assertEquals("split_receiver", obj.getObject());
     }
 
-    @Test public void testListAll() throws XPayException {
+    @Test public void testListAll() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
         params.put("app", XPayTestData.getAppID());
         params.put("page", 1);
@@ -42,7 +42,7 @@ public class SplitReceiverTest extends XPayTestBase {
         assertEquals("split_receiver", obj.getData().get(0).getObject());
     }
 
-    @Test public void testRetrieve() throws XPayException {
+    @Test public void testRetrieve() throws VirtuePayException {
         SplitReceiver obj  = SplitReceiver.retrieve("recv_1fRc57XpIehmFI");
 
         System.out.println(obj);
@@ -50,7 +50,7 @@ public class SplitReceiverTest extends XPayTestBase {
         assertEquals("split_receiver", obj.getObject());
     }
 
-    @Test public void testDelete() throws XPayException {
+    @Test public void testDelete() throws VirtuePayException {
         DeletedSplitReceiver obj  = SplitReceiver.delete("recv_1fRc57XpIehmFI");
 
         System.out.println(obj);

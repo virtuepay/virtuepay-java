@@ -2,7 +2,7 @@ package cn.virtuepay.withdrawal;
 
 import cn.virtuepay.XPayTestBase;
 import cn.virtuepay.XPayTestData;
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.BatchWithdrawal;
 import cn.virtuepay.model.BatchWithdrawalCollection;
 import org.junit.Test;
@@ -18,7 +18,7 @@ public class BatchWithdrawalTest extends XPayTestBase {
      * 批量提现确认
      */
     @Test
-    public void testBatchWithdrawalCreate() throws XPayException {
+    public void testBatchWithdrawalCreate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         ArrayList<String> withdrawals = new ArrayList<>(); // withdrawal id 列表
         withdrawals.add("1701708221834035593");
@@ -41,7 +41,7 @@ public class BatchWithdrawalTest extends XPayTestBase {
     /**
      * 查询批量提现对象
      */
-    @Test public void testBatchWithdrawalRetrieve() throws XPayException {
+    @Test public void testBatchWithdrawalRetrieve() throws VirtuePayException {
 
         // 查询 BatchWithdrawal 对象方法
         // 参数: batch_withdrawal id
@@ -53,7 +53,7 @@ public class BatchWithdrawalTest extends XPayTestBase {
     /**
      * 查询批量提现列表
      */
-    @Test public void testBatchWithdrawalList() throws XPayException {
+    @Test public void testBatchWithdrawalList() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("per_page", 3);
 

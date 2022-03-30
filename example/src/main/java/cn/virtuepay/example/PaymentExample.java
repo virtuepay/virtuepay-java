@@ -7,7 +7,7 @@
  */
 package cn.virtuepay.example;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.Payment;
 import cn.virtuepay.model.PaymentCollection;
 
@@ -75,7 +75,7 @@ public class PaymentExample {
             // 传到客户端请先转成字符串 .toString(), 调该方法，会自动转成正确的 JSON 字符串
             String paymentString = payment.toString();
             System.out.println(paymentString);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
 
@@ -97,7 +97,7 @@ public class PaymentExample {
             Map<String, Object> params = new HashMap<String, Object>();
             payment = Payment.retrieve(id, params);
             System.out.println(payment);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
 
@@ -114,7 +114,7 @@ public class PaymentExample {
         try {
             payment = Payment.reverse(id);
             System.out.println(payment);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
 
@@ -141,7 +141,7 @@ public class PaymentExample {
         try {
             paymentCollection = Payment.list(params);
             System.out.println(paymentCollection);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
 

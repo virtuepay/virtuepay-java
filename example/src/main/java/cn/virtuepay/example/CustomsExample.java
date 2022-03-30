@@ -7,7 +7,7 @@
  */
 package cn.virtuepay.example;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.Customs;
 
 import java.util.Date;
@@ -72,7 +72,7 @@ public class CustomsExample {
             //发起交易请求
             obj = Customs.create(params);
             System.out.println(obj);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
 
@@ -91,7 +91,7 @@ public class CustomsExample {
         try {
             obj = Customs.retrieve(id);
             System.out.println(obj);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
 

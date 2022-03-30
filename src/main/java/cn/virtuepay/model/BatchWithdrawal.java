@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.AppBasedResource;
 import cn.virtuepay.net.RequestOptions;
@@ -203,10 +203,10 @@ public class BatchWithdrawal extends AppBasedResource {
      *
      * @param params
      * @return BatchWithdrawal
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BatchWithdrawal create(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return create(params, null);
     }
 
@@ -216,10 +216,10 @@ public class BatchWithdrawal extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return BatchWithdrawal
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BatchWithdrawal create(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, classURL(BatchWithdrawal.class), params, BatchWithdrawal.class, options);
     }
 
@@ -228,10 +228,10 @@ public class BatchWithdrawal extends AppBasedResource {
      *
      * @param id
      * @return BatchWithdrawal
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BatchWithdrawal retrieve(String id)
-            throws XPayException {
+            throws VirtuePayException {
         return retrieve(id, null);
     }
 
@@ -241,10 +241,10 @@ public class BatchWithdrawal extends AppBasedResource {
      * @param id
      * @param options the specific options
      * @return BatchWithdrawal
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BatchWithdrawal retrieve(String id, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(BatchWithdrawal.class, id), null, BatchWithdrawal.class, options);
     }
 
@@ -253,10 +253,10 @@ public class BatchWithdrawal extends AppBasedResource {
      *
      * @param params
      * @return BatchWithdrawalCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BatchWithdrawalCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -266,10 +266,10 @@ public class BatchWithdrawal extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return BatchWithdrawalCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BatchWithdrawalCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, classURL(BatchWithdrawal.class), params, BatchWithdrawalCollection.class, options);
     }
 }

@@ -1,7 +1,7 @@
 package cn.virtuepay.user;
 
 import cn.virtuepay.XPayTestBase;
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.UserPic;
 import org.junit.Test;
 
@@ -18,7 +18,7 @@ public class UserPicTest extends XPayTestBase {
     /**
      * 证件上传
      */
-    @Test public void testUploadPic() throws XPayException {
+    @Test public void testUploadPic() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("user", "test_user_001"); // 用户 ID，首字母必须是英文数字或者 _-@, 必传
         params.put("type", "customer");    // 用户类型，customer: 对私，business: 对公

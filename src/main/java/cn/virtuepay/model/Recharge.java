@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.AppBasedResource;
 import cn.virtuepay.net.RequestOptions;
@@ -167,10 +167,10 @@ public class Recharge extends AppBasedResource {
      *
      * @param params
      * @return Recharge
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Recharge create(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return create(params, null);
     }
 
@@ -180,10 +180,10 @@ public class Recharge extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return Recharge
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Recharge create(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, classURL(Recharge.class), params, Recharge.class, options);
     }
 
@@ -192,10 +192,10 @@ public class Recharge extends AppBasedResource {
      *
      * @param id
      * @return Recharge
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Recharge retrieve(String id)
-            throws XPayException {
+            throws VirtuePayException {
         return retrieve(id, null);
     }
 
@@ -205,10 +205,10 @@ public class Recharge extends AppBasedResource {
      * @param id
      * @param options the specific options
      * @return Recharge
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Recharge retrieve(String id, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(Recharge.class, id), null, Recharge.class, options);
     }
 
@@ -217,10 +217,10 @@ public class Recharge extends AppBasedResource {
      *
      * @param params
      * @return RechargeCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RechargeCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -230,10 +230,10 @@ public class Recharge extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return RechargeCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RechargeCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, classURL(Recharge.class), params, RechargeCollection.class, options);
     }
 }

@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 
@@ -85,9 +85,9 @@ public class RoyaltyTemplate extends APIResource {
      *
      * @param params
      * @return RoyaltyTemplate
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static RoyaltyTemplate create(Map<String, Object> params) throws XPayException {
+    public static RoyaltyTemplate create(Map<String, Object> params) throws VirtuePayException {
         return create(params, null);
     }
 
@@ -97,9 +97,9 @@ public class RoyaltyTemplate extends APIResource {
      * @param params
      * @param options the specific options
      * @return RoyaltyTemplate
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static RoyaltyTemplate create(Map<String, Object> params, RequestOptions options) throws XPayException {
+    public static RoyaltyTemplate create(Map<String, Object> params, RequestOptions options) throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, classURL(RoyaltyTemplate.class), params, RoyaltyTemplate.class, options);
     }
 
@@ -108,9 +108,9 @@ public class RoyaltyTemplate extends APIResource {
      *
      * @param id
      * @return RoyaltyTemplate
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static RoyaltyTemplate retrieve(String id) throws XPayException {
+    public static RoyaltyTemplate retrieve(String id) throws VirtuePayException {
         return retrieve(id, null);
     }
 
@@ -120,9 +120,9 @@ public class RoyaltyTemplate extends APIResource {
      * @param id
      * @param options the specific options
      * @return RoyaltyTemplate
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static RoyaltyTemplate retrieve(String id, RequestOptions options) throws XPayException {
+    public static RoyaltyTemplate retrieve(String id, RequestOptions options) throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(RoyaltyTemplate.class, id), null, RoyaltyTemplate.class, options);
     }
 
@@ -131,10 +131,10 @@ public class RoyaltyTemplate extends APIResource {
      *
      * @param params
      * @return RoyaltyTemplateCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RoyaltyTemplateCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -144,10 +144,10 @@ public class RoyaltyTemplate extends APIResource {
      * @param params
      * @param options the specific options
      * @return RoyaltyTemplateCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RoyaltyTemplateCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, classURL(RoyaltyTemplate.class), params, RoyaltyTemplateCollection.class, options);
     }
 
@@ -156,10 +156,10 @@ public class RoyaltyTemplate extends APIResource {
      *
      * @param id
      * @return DeleteRoyaltyTemplate
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static DeleteRoyaltyTemplate delete(String id)
-            throws XPayException {
+            throws VirtuePayException {
         return delete(id, null);
     }
 
@@ -169,10 +169,10 @@ public class RoyaltyTemplate extends APIResource {
      * @param id
      * @param options the specific options
      * @return DeleteRoyaltyTemplate
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static DeleteRoyaltyTemplate delete(String id, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.DELETE, instanceURL(RoyaltyTemplate.class, id), null, DeleteRoyaltyTemplate.class, options);
     }
 
@@ -181,10 +181,10 @@ public class RoyaltyTemplate extends APIResource {
      *
      * @param id
      * @return RoyaltyTemplate
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RoyaltyTemplate update(String id, Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return update(id, params, null);
     }
 
@@ -194,10 +194,10 @@ public class RoyaltyTemplate extends APIResource {
      * @param id
      * @param options the specific options
      * @return RoyaltyTemplate
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RoyaltyTemplate update(String id, Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.PUT, instanceURL(RoyaltyTemplate.class, id), params, RoyaltyTemplate.class, options);
     }
 }

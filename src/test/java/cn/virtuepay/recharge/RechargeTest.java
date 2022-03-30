@@ -1,6 +1,6 @@
 package cn.virtuepay.recharge;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.*;
 import cn.virtuepay.XPayTestBase;
 import cn.virtuepay.XPayTestData;
@@ -17,7 +17,7 @@ public class RechargeTest extends XPayTestBase {
      * 创建 recharge
      */
     @Test
-    public void testRechargeCreate() throws XPayException {
+    public void testRechargeCreate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("user", XPayTestData.userId); // 充值目标用户 ID, 必传
 //        params.put("user_fee", 1);     // 用户充值收取的手续费，单位分，不得大于 amount，不可和 balance_bonus[amount] 同时传，默认 0。可选
@@ -43,7 +43,7 @@ public class RechargeTest extends XPayTestBase {
     /**
      * 查询单个 recharge
      */
-    @Test public void testRechargeRetrieve() throws XPayException {
+    @Test public void testRechargeRetrieve() throws VirtuePayException {
         // 查询单个 recharge 方法
         // 参数: rechargeId
         Recharge obj = Recharge.retrieve("53562876661760");
@@ -54,7 +54,7 @@ public class RechargeTest extends XPayTestBase {
     /**
      * 查询 recharge 列表
      */
-    @Test public void testRechargeList() throws XPayException {
+    @Test public void testRechargeList() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("page", 1);
         params.put("per_page", 3);
@@ -79,7 +79,7 @@ public class RechargeTest extends XPayTestBase {
     /**
      * 创建 recharge_refund
      */
-    @Test public void testRechargeRefundCreate() throws XPayException {
+    @Test public void testRechargeRefundCreate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("description", "Recharge Refund Description"); // 必传
         // 创建 recharge_refund 方法
@@ -93,7 +93,7 @@ public class RechargeTest extends XPayTestBase {
     /**
      * 查询单个 recharge_refund
      */
-    @Test public void testRechargeRefundRetrieve() throws XPayException {
+    @Test public void testRechargeRefundRetrieve() throws VirtuePayException {
         // 查询单个 recharge_refund 方法
         // 参数一: rechargeId
         // 参数二: refundId
@@ -105,7 +105,7 @@ public class RechargeTest extends XPayTestBase {
     /**
      * 查询 recharge_refund 列表
      */
-    @Test public void testRechargeRefundList() throws XPayException {
+    @Test public void testRechargeRefundList() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("page", 1);
         params.put("per_page", 3);

@@ -1,7 +1,7 @@
 package cn.virtuepay.model;
 
 import cn.virtuepay.exception.InvalidRequestException;
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 
@@ -264,10 +264,10 @@ public class Payment extends APIResource {
      *
      * @param params
      * @return Payment
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Payment create(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return create(params, null);
     }
 
@@ -277,10 +277,10 @@ public class Payment extends APIResource {
      * @param params
      * @param options the specific options
      * @return Payment
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Payment create(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, classURL(Payment.class), params, Payment.class, options);
     }
 
@@ -289,9 +289,9 @@ public class Payment extends APIResource {
      *
      * @param id
      * @return Payment
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Payment retrieve(String id) throws XPayException {
+    public static Payment retrieve(String id) throws VirtuePayException {
         return retrieve(id, null, null);
     }
 
@@ -301,9 +301,9 @@ public class Payment extends APIResource {
      * @param id
      * @param params
      * @return Payment
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Payment retrieve(String id, Map<String, Object> params) throws XPayException {
+    public static Payment retrieve(String id, Map<String, Object> params) throws VirtuePayException {
         return retrieve(id, params, null);
     }
 
@@ -313,9 +313,9 @@ public class Payment extends APIResource {
      * @param id
      * @param options the specific options
      * @return Payment
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Payment retrieve(String id, RequestOptions options) throws XPayException {
+    public static Payment retrieve(String id, RequestOptions options) throws VirtuePayException {
         return retrieve(id, null, options);
     }
 
@@ -326,9 +326,9 @@ public class Payment extends APIResource {
      * @param params
      * @param options the specific options
      * @return Payment
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Payment retrieve(String id, Map<String, Object> params, RequestOptions options) throws XPayException {
+    public static Payment retrieve(String id, Map<String, Object> params, RequestOptions options) throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(Payment.class, id), params, Payment.class, options);
     }
 
@@ -337,10 +337,10 @@ public class Payment extends APIResource {
      *
      * @param params
      * @return PaymentCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static PaymentCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -350,10 +350,10 @@ public class Payment extends APIResource {
      * @param params
      * @param options the specific options
      * @return PaymentCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static PaymentCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         if (params != null
                 && ((params.containsKey("app") && (params.get("app") instanceof Map) && ((Map) params.get("app")).containsKey("id"))
                 || (params.containsKey("app[id]") && (params.get("app[id]") instanceof String)))) {
@@ -375,9 +375,9 @@ public class Payment extends APIResource {
      * @param params
      * @param options the specific options
      * @return Payment
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Payment reverse(String id, Map<String, Object> params, RequestOptions options) throws XPayException {
+    public static Payment reverse(String id, Map<String, Object> params, RequestOptions options) throws VirtuePayException {
         String reverseUrl = String.format("%s/reverse", instanceURL(Payment.class, id));
         if (params == null) {
             params = new HashMap<String, Object>();
@@ -391,9 +391,9 @@ public class Payment extends APIResource {
      * @param id
      * @param params
      * @return Payment
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Payment reverse(String id, Map<String, Object> params) throws XPayException {
+    public static Payment reverse(String id, Map<String, Object> params) throws VirtuePayException {
         return reverse(id, params, null);
     }
 
@@ -402,9 +402,9 @@ public class Payment extends APIResource {
      *
      * @param id
      * @return Payment
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Payment reverse(String id) throws XPayException {
+    public static Payment reverse(String id) throws VirtuePayException {
         return reverse(id, null, null);
     }
 
@@ -414,9 +414,9 @@ public class Payment extends APIResource {
      * @param id
      * @param options the specific options
      * @return Payment
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Payment reverse(String id, RequestOptions options) throws XPayException {
+    public static Payment reverse(String id, RequestOptions options) throws VirtuePayException {
         return reverse(id, null, options);
     }
 }

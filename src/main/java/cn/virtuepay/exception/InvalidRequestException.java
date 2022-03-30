@@ -1,6 +1,6 @@
 package cn.virtuepay.exception;
 
-public class InvalidRequestException extends XPayException {
+public class InvalidRequestException extends VirtuePayException {
 
     private static final long serialVersionUID = 2L;
 

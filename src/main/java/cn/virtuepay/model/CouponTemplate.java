@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.AppBasedResource;
 import cn.virtuepay.net.RequestOptions;
@@ -167,10 +167,10 @@ public class CouponTemplate extends AppBasedResource {
      *
      * @param params
      * @return CouponTemplate
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static CouponTemplate create(Map<String, Object>params)
-            throws XPayException {
+            throws VirtuePayException {
         return create(params, null);
     }
 
@@ -180,10 +180,10 @@ public class CouponTemplate extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return CouponTemplate
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static CouponTemplate create(Map<String, Object>params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, classURL(CouponTemplate.class), params, CouponTemplate.class, options);
     }
 
@@ -192,10 +192,10 @@ public class CouponTemplate extends AppBasedResource {
      *
      * @param id
      * @return CouponTemplate
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static CouponTemplate retrieve(String id)
-            throws XPayException {
+            throws VirtuePayException {
         return retrieve(id, null);
     }
 
@@ -205,10 +205,10 @@ public class CouponTemplate extends AppBasedResource {
      * @param id
      * @param options the specific options
      * @return CouponTemplate
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static CouponTemplate retrieve(String id, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(CouponTemplate.class, id), null, CouponTemplate.class, options);
     }
 
@@ -217,10 +217,10 @@ public class CouponTemplate extends AppBasedResource {
      *
      * @param params
      * @return CouponTemplateCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static CouponTemplateCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -230,10 +230,10 @@ public class CouponTemplate extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return CouponTemplateCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static CouponTemplateCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, classURL(CouponTemplate.class), params, CouponTemplateCollection.class, options);
     }
 
@@ -243,10 +243,10 @@ public class CouponTemplate extends AppBasedResource {
      * @param id
      * @param params
      * @return CouponTemplate
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static CouponTemplate update(String id, Map<String, Object>params)
-            throws XPayException {
+            throws VirtuePayException {
         return update(id, params, null);
     }
 
@@ -257,10 +257,10 @@ public class CouponTemplate extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return CouponTemplate
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static CouponTemplate update(String id, Map<String, Object>params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.PUT, instanceURL(CouponTemplate.class, id), params, CouponTemplate.class, options);
     }
 
@@ -269,10 +269,10 @@ public class CouponTemplate extends AppBasedResource {
      *
      * @param id
      * @return DeletedCouponTemplate
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static DeletedCouponTemplate delete(String id)
-            throws XPayException {
+            throws VirtuePayException {
         return delete(id, null);
     }
 
@@ -282,10 +282,10 @@ public class CouponTemplate extends AppBasedResource {
      * @param id
      * @param options the specific options
      * @return DeletedCouponTemplate
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static DeletedCouponTemplate delete(String id, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.DELETE, instanceURL(CouponTemplate.class, id), null, DeletedCouponTemplate.class, options);
     }
 
@@ -299,10 +299,10 @@ public class CouponTemplate extends AppBasedResource {
      * @param id
      * @param params
      * @return CouponCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static CouponCollection createCoupons(String id, Map<String, Object>params)
-            throws XPayException {
+            throws VirtuePayException {
         return createCoupons(id, params, null);
     }
 
@@ -313,10 +313,10 @@ public class CouponTemplate extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return CouponCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static CouponCollection createCoupons(String id, Map<String, Object>params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, couponsURL(id), params, CouponCollection.class, options);
     }
 
@@ -326,10 +326,10 @@ public class CouponTemplate extends AppBasedResource {
      * @param id
      * @param params
      * @return CouponCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static CouponCollection listCoupons(String id, Map<String, Object>params)
-            throws XPayException {
+            throws VirtuePayException {
         return listCoupons(id, params, null);
     }
 
@@ -340,10 +340,10 @@ public class CouponTemplate extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return CouponCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static CouponCollection listCoupons(String id, Map<String, Object>params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, couponsURL(id), params, CouponCollection.class, options);
     }
 }

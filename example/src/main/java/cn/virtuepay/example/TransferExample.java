@@ -7,7 +7,7 @@
 */
 package cn.virtuepay.example;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.Transfer;
 import cn.virtuepay.model.TransferCollection;
 
@@ -104,7 +104,7 @@ public class TransferExample {
         try {
             transfer = Transfer.create(transferMap);
             System.out.println(transfer);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
         return transfer;
@@ -122,7 +122,7 @@ public class TransferExample {
         try {
             Transfer transfer = Transfer.retrieve(id, param);
             System.out.println(transfer);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
 
@@ -141,7 +141,7 @@ public class TransferExample {
         try {
             TransferCollection transferCollection = Transfer.list(param);
             System.out.println(transferCollection);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
     }

@@ -2,7 +2,7 @@ package cn.virtuepay.order;
 
 import cn.virtuepay.XPayTestBase;
 import cn.virtuepay.XPayTestData;
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.Royalty;
 import cn.virtuepay.model.RoyaltyCollection;
 import cn.virtuepay.model.RoyaltyDataResult;
@@ -21,7 +21,7 @@ public class RoyaltyTest extends XPayTestBase {
      * 批量更新 royalty
      */
     @Test
-    public void testRoyaltyBatchUpdate() throws XPayException {
+    public void testRoyaltyBatchUpdate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
         List<String> ids = new ArrayList<>(); // 分润 ID 列表, 必传
         ids.add("53647748403200");
@@ -38,7 +38,7 @@ public class RoyaltyTest extends XPayTestBase {
     /**
      * 查询 royalty
      */
-    @Test public void testRoyaltyRetrieve() throws XPayException {
+    @Test public void testRoyaltyRetrieve() throws VirtuePayException {
         // 查询 royalty 方法
         // 参数: royalty id
         Royalty obj = Royalty.retrieve("53647748403200");
@@ -50,7 +50,7 @@ public class RoyaltyTest extends XPayTestBase {
     /**
      * 查询 royalty list
      */
-    @Test public void testRoyaltyList() throws XPayException {
+    @Test public void testRoyaltyList() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("per_page", 30);  // 可选
         params.put("page", 1);      // 可选
@@ -85,7 +85,7 @@ public class RoyaltyTest extends XPayTestBase {
     /**
      * 创建分润
      */
-    @Test public void testRoyaltyDataCreate() throws XPayException {
+    @Test public void testRoyaltyDataCreate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("app", XPayTestData.getAppID()); // 必传
 //        params.put("payment", ""); // 条件可选，对于已经成功的 order 必传该字段

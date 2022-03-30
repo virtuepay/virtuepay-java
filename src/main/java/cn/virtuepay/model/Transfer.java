@@ -4,7 +4,7 @@ package cn.virtuepay.model;
  * Created by sunkai on 15/5/11.
  */
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 
@@ -191,10 +191,10 @@ public class Transfer extends APIResource {
      * 创建 Transfer
      * @param params
      * @return Transfer
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Transfer create(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return create(params, null);
     }
 
@@ -204,10 +204,10 @@ public class Transfer extends APIResource {
      * @param params
      * @param options the specific options
      * @return Transfer
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Transfer create(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, classURL(Transfer.class), params, Transfer.class, options);
     }
 
@@ -215,9 +215,9 @@ public class Transfer extends APIResource {
      * 查询 Transfer
      * @param id
      * @return Transfer
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Transfer retrieve(String id) throws XPayException {
+    public static Transfer retrieve(String id) throws VirtuePayException {
         return retrieve(id, null, null);
     }
 
@@ -227,9 +227,9 @@ public class Transfer extends APIResource {
      * @param id
      * @param options the specific options
      * @return Transfer
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Transfer retrieve(String id, RequestOptions options) throws XPayException {
+    public static Transfer retrieve(String id, RequestOptions options) throws VirtuePayException {
         return retrieve(id, null, options);
     }
 
@@ -238,9 +238,9 @@ public class Transfer extends APIResource {
      * @param id
      * @param params
      * @return Transfer
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Transfer retrieve(String id, Map<String, Object> params) throws XPayException {
+    public static Transfer retrieve(String id, Map<String, Object> params) throws VirtuePayException {
         return retrieve(id, params, null);
     }
 
@@ -251,9 +251,9 @@ public class Transfer extends APIResource {
      * @param params
      * @param options the specific options
      * @return Transfer
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Transfer retrieve(String id, Map<String, Object> params, RequestOptions options) throws XPayException {
+    public static Transfer retrieve(String id, Map<String, Object> params, RequestOptions options) throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(Transfer.class, id), params, Transfer.class, options);
     }
 
@@ -261,10 +261,10 @@ public class Transfer extends APIResource {
      * 查询 Transfer
      * @param params 分页参数等
      * @return TransferCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static TransferCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -274,10 +274,10 @@ public class Transfer extends APIResource {
      * @param params 分页参数等
      * @param options the specific options
      * @return TransferCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static TransferCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, classURL(Transfer.class), params, TransferCollection.class, options);
     }
 }

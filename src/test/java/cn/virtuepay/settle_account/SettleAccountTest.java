@@ -2,7 +2,7 @@ package cn.virtuepay.settle_account;
 
 import cn.virtuepay.XPayTestBase;
 import cn.virtuepay.XPayTestData;
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.SettleAccountCollection;
 import cn.virtuepay.model.DeletedSettleAccount;
 import cn.virtuepay.model.SettleAccount;
@@ -19,7 +19,7 @@ public class SettleAccountTest extends XPayTestBase {
      * 创建结算账户 SettleAccount
      */
     @Test
-    public void testSettleAccountCreate() throws XPayException {
+    public void testSettleAccountCreate() throws VirtuePayException {
         String userId = XPayTestData.userId;
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("channel", "bank_account"); // [wx_pub, wx, alipay, bank_account] 其中一种
@@ -51,7 +51,7 @@ public class SettleAccountTest extends XPayTestBase {
      * 查询结算账户
      */
     @Test
-    public void testSettleAccountRetrieve() throws XPayException {
+    public void testSettleAccountRetrieve() throws VirtuePayException {
         SettleAccount obj = SettleAccount.retrieve(XPayTestData.userId, "53583777402880"); // 查询结算账户方法
         System.out.println(obj);
     }
@@ -60,7 +60,7 @@ public class SettleAccountTest extends XPayTestBase {
      * 查询结算账户列表
      */
     @Test
-    public void testSettleAccountList() throws XPayException {
+    public void testSettleAccountList() throws VirtuePayException {
         String userId = XPayTestData.userId;
         Map<String, Object> params = new HashMap<>();
         params.put("page", 1);
@@ -82,7 +82,7 @@ public class SettleAccountTest extends XPayTestBase {
      * 删除结算账户
      */
     @Test
-    public void testSettleAccountDelete() throws XPayException {
+    public void testSettleAccountDelete() throws VirtuePayException {
         String userId = XPayTestData.userId;
         Map<String, Object> params = new HashMap<>();
         params.put("page", 1);
@@ -104,7 +104,7 @@ public class SettleAccountTest extends XPayTestBase {
      * 结算账户更新（存管相关）
      */
     @Test
-    public void testSettleAccountUpdate() throws XPayException {
+    public void testSettleAccountUpdate() throws VirtuePayException {
         String userId = XPayTestData.userId;
         String id = "53583777402880";
         Map<String, Object> params = new HashMap<>();
@@ -132,7 +132,7 @@ public class SettleAccountTest extends XPayTestBase {
      * 结算账户更新手机号（存管相关）
      */
     @Test
-    public void testSettleAccountUpdateMobile() throws XPayException {
+    public void testSettleAccountUpdateMobile() throws VirtuePayException {
         String userId = XPayTestData.userId;
         String id = "53583777402880";
         Map<String, Object> params = new HashMap<>();
@@ -147,7 +147,7 @@ public class SettleAccountTest extends XPayTestBase {
      * 结算账号打款验证接口（存管相关）
      */
     @Test
-    public void testSettleAccountVerify() throws XPayException {
+    public void testSettleAccountVerify() throws VirtuePayException {
         String userId = XPayTestData.userId;
         String id = "53583777402880";
         Map<String, Object> params = new HashMap<>();

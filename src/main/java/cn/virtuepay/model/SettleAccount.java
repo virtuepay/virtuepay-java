@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 import cn.virtuepay.net.UserBasedResource;
@@ -69,10 +69,10 @@ public class SettleAccount extends UserBasedResource {
      * @param userId
      * @param params
      * @return SettleAccount
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SettleAccount create(String userId, Map<String, Object>params)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(userId);
         return create(userId, params, null);
     }
@@ -84,10 +84,10 @@ public class SettleAccount extends UserBasedResource {
      * @param params
      * @param options the specific options
      * @return SettleAccount
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SettleAccount create(String userId, Map<String, Object>params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(userId);
         return APIResource.request(APIResource.RequestMethod.POST, classURL(SettleAccount.class, userId), params, SettleAccount.class, options);
     }
@@ -98,10 +98,10 @@ public class SettleAccount extends UserBasedResource {
      * @param userId
      * @param id
      * @return SettleAccount
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SettleAccount retrieve(String userId, String id)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(userId);
         return retrieve(userId, id, null);
     }
@@ -113,10 +113,10 @@ public class SettleAccount extends UserBasedResource {
      * @param id
      * @param options the specific options
      * @return SettleAccount
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SettleAccount retrieve(String userId, String id, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(userId);
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(SettleAccount.class, userId, id), null, SettleAccount.class, options);
     }
@@ -127,10 +127,10 @@ public class SettleAccount extends UserBasedResource {
      * @param userId
      * @param params
      * @return SettleAccountCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SettleAccountCollection list(String userId, Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(userId);
         return list(userId, params, null);
     }
@@ -142,10 +142,10 @@ public class SettleAccount extends UserBasedResource {
      * @param params
      * @param options the specific options
      * @return SettleAccountCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SettleAccountCollection list(String userId, Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(userId);
         return APIResource.request(APIResource.RequestMethod.GET, classURL(SettleAccount.class, userId), params, SettleAccountCollection.class, options);
     }
@@ -156,10 +156,10 @@ public class SettleAccount extends UserBasedResource {
      * @param userId
      * @param id
      * @return DeletedSettleAccount
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static DeletedSettleAccount delete(String userId, String id)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(userId);
         return delete(userId, id, null);
     }
@@ -171,10 +171,10 @@ public class SettleAccount extends UserBasedResource {
      * @param id
      * @param options the specific options
      * @return DeletedSettleAccount
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static DeletedSettleAccount delete(String userId, String id, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(userId);
         return APIResource.request(APIResource.RequestMethod.DELETE, instanceURL(SettleAccount.class, userId, id), null, DeletedSettleAccount.class, options);
     }
@@ -186,10 +186,10 @@ public class SettleAccount extends UserBasedResource {
      * @param id 结算账户 ID
      * @param params 更新数据
      * @return SettleAccount
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SettleAccount update(String userId, String id, Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(userId);
         return update(userId, id, params, null);
     }
@@ -202,10 +202,10 @@ public class SettleAccount extends UserBasedResource {
      * @param params 更新数据
      * @param options the specific options
      * @return SettleAccount
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SettleAccount update(String userId, String id, Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(userId);
         return APIResource.request(APIResource.RequestMethod.PUT, instanceURL(SettleAccount.class, userId, id), params, SettleAccount.class, options);
     }
@@ -217,9 +217,9 @@ public class SettleAccount extends UserBasedResource {
      * @param id 结算账号 ID
      * @param params 更新参数
      * @return SettleAccount
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static SettleAccount updateMobile(String userId, String id, Map<String, Object> params) throws XPayException {
+    public static SettleAccount updateMobile(String userId, String id, Map<String, Object> params) throws VirtuePayException {
         return updateMobile(userId, id, params, null);
     }
 
@@ -231,9 +231,9 @@ public class SettleAccount extends UserBasedResource {
      * @param params 更新参数
      * @param options the specific options
      * @return SettleAccount
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static SettleAccount updateMobile(String userId, String id, Map<String, Object> params, RequestOptions options) throws XPayException {
+    public static SettleAccount updateMobile(String userId, String id, Map<String, Object> params, RequestOptions options) throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.PUT, String.format("%s/mobile", instanceURL(SettleAccount.class, userId, id)),
                 params, SettleAccount.class, options);
     }
@@ -245,9 +245,9 @@ public class SettleAccount extends UserBasedResource {
      * @param id 结算账号 ID
      * @param params 参数
      * @return SettleAccount
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static SettleAccount verify(String userId, String id, Map<String, Object> params) throws XPayException {
+    public static SettleAccount verify(String userId, String id, Map<String, Object> params) throws VirtuePayException {
         return verify(userId, id, params, null);
     }
 
@@ -259,9 +259,9 @@ public class SettleAccount extends UserBasedResource {
      * @param params 参数
      * @param options the specific options
      * @return SettleAccount
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static SettleAccount verify(String userId, String id, Map<String, Object> params, RequestOptions options) throws XPayException {
+    public static SettleAccount verify(String userId, String id, Map<String, Object> params, RequestOptions options) throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, String.format("%s/verify", instanceURL(SettleAccount.class, userId, id)),
                 params, SettleAccount.class, options);
     }

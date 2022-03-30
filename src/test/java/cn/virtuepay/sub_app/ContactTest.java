@@ -1,6 +1,6 @@
 package cn.virtuepay.sub_app;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.Contact;
 import cn.virtuepay.XPayTestBase;
 import org.junit.Test;
@@ -18,7 +18,7 @@ public class ContactTest extends XPayTestBase {
     /**
      * 证件上传
      */
-    @Test public void testAddContact() throws XPayException {
+    @Test public void testAddContact() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
         params.put("user", "test_user_001"); // 用户 ID
         params.put("acc_no", "2019057929311601000631"); // 壹账通用户编号。此编号可在证件上传接口的返回获得

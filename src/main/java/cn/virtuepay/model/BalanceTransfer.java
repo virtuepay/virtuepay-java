@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.AppBasedResource;
 import cn.virtuepay.net.RequestOptions;
@@ -149,10 +149,10 @@ public class BalanceTransfer extends AppBasedResource {
      *
      * @param params
      * @return BalanceTransfer
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BalanceTransfer create(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return create(params, null);
     }
 
@@ -162,10 +162,10 @@ public class BalanceTransfer extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return BalanceTransfer
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BalanceTransfer create(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, classURL(BalanceTransfer.class), params, BalanceTransfer.class, options);
     }
 
@@ -174,10 +174,10 @@ public class BalanceTransfer extends AppBasedResource {
      *
      * @param id
      * @return BalanceTransfer
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BalanceTransfer retrieve(String id)
-            throws XPayException {
+            throws VirtuePayException {
         return retrieve(id, null);
     }
 
@@ -187,10 +187,10 @@ public class BalanceTransfer extends AppBasedResource {
      * @param id
      * @param options the specific options
      * @return BalanceTransfer
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BalanceTransfer retrieve(String id, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(BalanceTransfer.class, id), null, BalanceTransfer.class, options);
     }
 
@@ -199,10 +199,10 @@ public class BalanceTransfer extends AppBasedResource {
      *
      * @param params
      * @return BalanceTransferCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BalanceTransferCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -212,10 +212,10 @@ public class BalanceTransfer extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return BalanceTransferCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BalanceTransferCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, classURL(BalanceTransfer.class), params, BalanceTransferCollection.class, options);
     }
 }

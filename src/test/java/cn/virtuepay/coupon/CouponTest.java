@@ -1,6 +1,6 @@
 package cn.virtuepay.coupon;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.CouponCollection;
 import cn.virtuepay.model.CouponTemplate;
 import cn.virtuepay.XPayTestBase;
@@ -20,7 +20,7 @@ public class CouponTest extends XPayTestBase {
      * 创建单个优惠券 Coupon
      */
     @Test
-    public void testCouponCreate() throws XPayException {
+    public void testCouponCreate() throws VirtuePayException {
         String userId = "test_user_001"; // 用户 ID, 必传
         Map<String, Object> params = new HashMap<>();
         params.put("coupon_template", "300117082315262900016402"); // 优惠券模板 id, 必传
@@ -35,7 +35,7 @@ public class CouponTest extends XPayTestBase {
     /**
      * 批量创建优惠券
      */
-    @Test public void testCouponBatchCreate() throws XPayException {
+    @Test public void testCouponBatchCreate() throws VirtuePayException {
         String couponId = "300117082315262900016402"; // 优惠券模板 id
         Map<String, Object> params = new HashMap<>();
         List<String> users = new ArrayList<>(); // 用户 ID 列表
@@ -49,7 +49,7 @@ public class CouponTest extends XPayTestBase {
     /**
      * 查询单个优惠券 Coupon
      */
-    @Test public void testCouponRetrieve() throws XPayException {
+    @Test public void testCouponRetrieve() throws VirtuePayException {
         String userId = "test_user_001";
         String couponId = "300317082315265100025202";
         // 查询单个优惠券 Coupon
@@ -63,7 +63,7 @@ public class CouponTest extends XPayTestBase {
     /**
      * 查询用户优惠券 Coupon 列表
      */
-    @Test public void testUserCouponList() throws XPayException {
+    @Test public void testUserCouponList() throws VirtuePayException {
         String userId = "test_user_001";
         Map<String, Object> params = new HashMap<>();
         params.put("page", 1);
@@ -79,7 +79,7 @@ public class CouponTest extends XPayTestBase {
     /**
      * 查询优惠券模板下的优惠券列表
      */
-    @Test public void testCouponList() throws XPayException {
+    @Test public void testCouponList() throws VirtuePayException {
         String couponId = "300117082315262900016402";
         Map<String, Object> params = new HashMap<>();
         params.put("page", 1);
@@ -95,7 +95,7 @@ public class CouponTest extends XPayTestBase {
     /**
      * 更新优惠券 Coupon
      */
-    @Test public void testCouponUpdate() throws XPayException {
+    @Test public void testCouponUpdate() throws VirtuePayException {
         String userId = "test_user_001";
         String couponId = "300317082315265100025202";
         Map<String, Object> params = new HashMap<>();
@@ -115,7 +115,7 @@ public class CouponTest extends XPayTestBase {
     /**
      * 删除优惠券 Coupon
      */
-    @Test public void testCouponDelete() throws XPayException {
+    @Test public void testCouponDelete() throws VirtuePayException {
         String userId = "test_user_001";
         String couponId = "300317022810293600038701";
         // 删除优惠券 Coupon

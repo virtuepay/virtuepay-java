@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 
@@ -184,9 +184,9 @@ public class Royalty extends APIResource {
      *
      * @param id
      * @return Royalty
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Royalty retrieve(String id) throws XPayException {
+    public static Royalty retrieve(String id) throws VirtuePayException {
         return retrieve(id, null);
     }
 
@@ -196,9 +196,9 @@ public class Royalty extends APIResource {
      * @param id
      * @param options the specific options
      * @return Royalty
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Royalty retrieve(String id, RequestOptions options) throws XPayException {
+    public static Royalty retrieve(String id, RequestOptions options) throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(Royalty.class, id), null, Royalty.class, options);
     }
 
@@ -207,10 +207,10 @@ public class Royalty extends APIResource {
      *
      * @param params
      * @return RoyaltyCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RoyaltyCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -220,10 +220,10 @@ public class Royalty extends APIResource {
      * @param params
      * @param options the specific options
      * @return RoyaltyCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RoyaltyCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, classURL(Royalty.class), params, RoyaltyCollection.class, options);
     }
 
@@ -232,10 +232,10 @@ public class Royalty extends APIResource {
      *
      * @param params
      * @return RoyaltyCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RoyaltyCollection batchUpdate(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return batchUpdate(params, null);
     }
 
@@ -245,10 +245,10 @@ public class Royalty extends APIResource {
      * @param params
      * @param options the specific options
      * @return RoyaltyCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RoyaltyCollection batchUpdate(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.PUT, classURL(Royalty.class), params, RoyaltyCollection.class, options);
     }
 
@@ -258,10 +258,10 @@ public class Royalty extends APIResource {
      * @param orderId 订单 ID
      * @param params 分润信息参数
      * @return RoyaltyDataResult
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RoyaltyDataResult createData(String orderId, Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return createData(orderId, params, null);
     }
 
@@ -272,10 +272,10 @@ public class Royalty extends APIResource {
      * @param params 分润信息参数
      * @param options the specific options
      * @return RoyaltyDataResult
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RoyaltyDataResult createData(String orderId, Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST,
                 String.format("%s/royalty_datas", instanceURL(Order.class, orderId)),
                 params,

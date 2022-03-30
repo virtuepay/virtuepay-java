@@ -1,7 +1,7 @@
 package cn.virtuepay.model;
 
 import cn.virtuepay.exception.InvalidRequestException;
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.AppBasedResource;
 import cn.virtuepay.net.RequestOptions;
@@ -232,10 +232,10 @@ public class User extends AppBasedResource {
      *
      * @param params
      * @return User
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static User create(Map<String, Object>params)
-            throws XPayException {
+            throws VirtuePayException {
         return create(params, null);
     }
 
@@ -245,10 +245,10 @@ public class User extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return User
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static User create(Map<String, Object>params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, classURL(User.class), params, User.class, options);
     }
 
@@ -257,10 +257,10 @@ public class User extends AppBasedResource {
      *
      * @param id
      * @return User
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static User retrieve(String id)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(id);
         return retrieve(id, null);
     }
@@ -271,10 +271,10 @@ public class User extends AppBasedResource {
      * @param id
      * @param options the specific options
      * @return User
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static User retrieve(String id, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(id);
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(User.class, id), null, User.class, options);
     }
@@ -284,10 +284,10 @@ public class User extends AppBasedResource {
      *
      * @param params
      * @return UserCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static UserCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -297,10 +297,10 @@ public class User extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return UserCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static UserCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, classURL(User.class), params, UserCollection.class, options);
     }
 
@@ -310,10 +310,10 @@ public class User extends AppBasedResource {
      * @param id
      * @param params
      * @return User
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static User update(String id, Map<String, Object>params)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(id);
         return update(id, params, null);
     }
@@ -325,10 +325,10 @@ public class User extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return User
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static User update(String id, Map<String, Object>params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(id);
         return APIResource.request(APIResource.RequestMethod.PUT, instanceURL(User.class, id), params, User.class, options);
     }

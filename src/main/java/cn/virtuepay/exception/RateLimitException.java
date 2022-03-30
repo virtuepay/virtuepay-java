@@ -1,6 +1,6 @@
 package cn.virtuepay.exception;
 
-public class RateLimitException extends XPayException {
+public class RateLimitException extends VirtuePayException {
 
     private static final long serialVersionUID = 2L;
 

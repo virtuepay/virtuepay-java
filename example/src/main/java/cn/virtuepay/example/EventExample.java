@@ -1,6 +1,6 @@
 package cn.virtuepay.example;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.Event;
 
 
@@ -46,7 +46,7 @@ public class EventExample {
 //            } else if (obj instanceof Summary) {
 //                System.out.println("webhooks 发送了 Summary");
 //            }
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
 

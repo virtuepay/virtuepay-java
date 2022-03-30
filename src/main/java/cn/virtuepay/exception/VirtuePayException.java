@@ -1,21 +1,21 @@
 package cn.virtuepay.exception;
 
-public abstract class XPayException extends Exception {
+public abstract class VirtuePayException extends Exception {
     private String type;
 
     private String code;
 
     private int statusCode;
 
-    public XPayException(String message) {
+    public VirtuePayException(String message) {
         super(message, null);
     }
 
-    public XPayException(String message, Throwable e) {
+    public VirtuePayException(String message, Throwable e) {
         super(message, e);
     }
 
-    public XPayException(String message, String type, String code, int statusCode, Throwable e) {
+    public VirtuePayException(String message, String type, String code, int statusCode, Throwable e) {
         super(message, e);
         this.type = type;
         this.code = code;

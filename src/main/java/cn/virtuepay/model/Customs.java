@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 
@@ -175,10 +175,10 @@ public class Customs extends APIResource {
      *
      * @param params
      * @return Customs
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Customs create(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return create(params, null);
     }
 
@@ -188,10 +188,10 @@ public class Customs extends APIResource {
      * @param params
      * @param options the specific options
      * @return Customs
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Customs create(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, classURL(Customs.class), params, Customs.class, options);
     }
 
@@ -200,9 +200,9 @@ public class Customs extends APIResource {
      *
      * @param id
      * @return Customs
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Customs retrieve(String id) throws XPayException {
+    public static Customs retrieve(String id) throws VirtuePayException {
         return retrieve(id, null);
     }
 
@@ -212,9 +212,9 @@ public class Customs extends APIResource {
      * @param id
      * @param options the specific options
      * @return Customs
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Customs retrieve(String id, RequestOptions options) throws XPayException {
+    public static Customs retrieve(String id, RequestOptions options) throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(Customs.class, id), null, Customs.class, options);
     }
 
@@ -223,10 +223,10 @@ public class Customs extends APIResource {
      *
      * @param params
      * @return CustomsCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static CustomsCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -236,10 +236,10 @@ public class Customs extends APIResource {
      * @param params
      * @param options the specific options
      * @return CustomsCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static CustomsCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, classURL(Customs.class), params, CustomsCollection.class, options);
     }
 }

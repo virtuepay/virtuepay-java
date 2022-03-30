@@ -1,6 +1,6 @@
 package cn.virtuepay;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.User;
 import cn.virtuepay.net.RequestOptions;
 import cn.virtuepay.net.RequestOptions.RequestOptionsBuilder;
@@ -68,7 +68,7 @@ public class RequestOptionsTest {
     }
 
     @Test
-    public void testRequestOptionsRequest() throws XPayException {
+    public void testRequestOptionsRequest() throws VirtuePayException {
         RequestOptions options = new RequestOptionsBuilder()
                 .setApiKey(XPayTestData.getApiKey())
                 .setAppId(XPayTestData.getAppID())

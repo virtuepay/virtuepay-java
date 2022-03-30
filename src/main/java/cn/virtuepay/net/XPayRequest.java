@@ -3,7 +3,7 @@ package cn.virtuepay.net;
 import cn.virtuepay.exception.APIConnectionException;
 import cn.virtuepay.exception.AuthenticationException;
 import cn.virtuepay.exception.InvalidRequestException;
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.VirtuePay;
 import cn.virtuepay.util.StringUtils;
 
@@ -52,14 +52,14 @@ public class XPayRequest {
      * @param url the URL
      * @param params the parameters
      * @param options the options
-     * @throws XPayException if the request cannot be initialized for any reason
+     * @throws VirtuePayException if the request cannot be initialized for any reason
      */
     public XPayRequest(
             APIResource.RequestMethod method,
             String url,
             Map<String, Object> params,
             RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         try {
             this.params = (params != null) ? Collections.unmodifiableMap(params) : null;
             this.options = (options != null) ? options : RequestOptions.getDefault();

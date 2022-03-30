@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.AppBasedResource;
 import cn.virtuepay.net.RequestOptions;
@@ -14,10 +14,10 @@ public class RechargeRefund extends AppBasedResource {
      * @param rechargeId
      * @param params
      * @return Refund
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Refund create(String rechargeId, Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return create(rechargeId, params, null);
     }
 
@@ -28,10 +28,10 @@ public class RechargeRefund extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return Refund
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Refund create(String rechargeId, Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, String.format("%s/refunds", instanceURL(Recharge.class, rechargeId)),
                 params, Refund.class, options);
     }
@@ -42,10 +42,10 @@ public class RechargeRefund extends AppBasedResource {
      * @param rechargeId
      * @param refundId
      * @return Refund
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Refund retrieve(String rechargeId, String refundId)
-            throws XPayException {
+            throws VirtuePayException {
         return retrieve(rechargeId, refundId, null);
     }
 
@@ -56,10 +56,10 @@ public class RechargeRefund extends AppBasedResource {
      * @param refundId
      * @param options the specific options
      * @return Refund
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Refund retrieve(String rechargeId, String refundId, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, String.format("%s/refunds/%s", instanceURL(Recharge.class, rechargeId), refundId),
                 null, Refund.class, options);
     }
@@ -69,10 +69,10 @@ public class RechargeRefund extends AppBasedResource {
      *
      * @param rechargeId
      * @return RechargeRefundCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RechargeRefundCollection list(String rechargeId)
-            throws XPayException {
+            throws VirtuePayException {
         return list(rechargeId, null, null);
     }
 
@@ -82,10 +82,10 @@ public class RechargeRefund extends AppBasedResource {
      * @param rechargeId
      * @param options the specific options
      * @return RechargeRefundCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RechargeRefundCollection list(String rechargeId, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return list(rechargeId, null, options);
 
     }
@@ -96,10 +96,10 @@ public class RechargeRefund extends AppBasedResource {
      * @param rechargeId
      * @param params
      * @return RechargeRefundCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RechargeRefundCollection list(String rechargeId, Map<String, Object>params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(rechargeId, params, null);
     }
 
@@ -110,10 +110,10 @@ public class RechargeRefund extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return RechargeRefundCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RechargeRefundCollection list(String rechargeId, Map<String, Object>params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, String.format("%s/refunds", instanceURL(Recharge.class, rechargeId)),
                 params, RechargeRefundCollection.class, options);
     }

@@ -2,7 +2,7 @@ package cn.virtuepay.user;
 
 import cn.virtuepay.XPayTestBase;
 import cn.virtuepay.XPayTestData;
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.User;
 import cn.virtuepay.model.UserCollection;
 import org.junit.Test;
@@ -20,7 +20,7 @@ public class UserTest extends XPayTestBase {
     /**
      * 创建用户 (User)
      */
-    @Test public void testUserCreate() throws XPayException {
+    @Test public void testUserCreate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("id", XPayTestData.userId + "_05"); // 用户 ID，首字母必须是英文数字或者 _-@, 必传
         params.put("address", "Shanghai, China");       // 用户地址, 可选
@@ -53,7 +53,7 @@ public class UserTest extends XPayTestBase {
     /**
      * 查询单个用户 (User)
      */
-    @Test public void testUserRetrieve() throws XPayException {
+    @Test public void testUserRetrieve() throws VirtuePayException {
         String userId = XPayTestData.userId;
         userId = "user_test_02royalty_1";
         User obj = User.retrieve(userId); //查询 User 方法
@@ -67,7 +67,7 @@ public class UserTest extends XPayTestBase {
     /**
      * 查询用户列表 (User)
      */
-    @Test public void testUserList() throws XPayException {
+    @Test public void testUserList() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
         params.put("page", 1);
         params.put("per_page", 3);
@@ -87,7 +87,7 @@ public class UserTest extends XPayTestBase {
     /**
      * 更新用户信息 (User)
      */
-    @Test public void testUserUpdate() throws XPayException {
+    @Test public void testUserUpdate() throws VirtuePayException {
         String userId = XPayTestData.userId;
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("address", "China, China");

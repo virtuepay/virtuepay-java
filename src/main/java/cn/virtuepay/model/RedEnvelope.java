@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 
@@ -203,10 +203,10 @@ public class RedEnvelope extends APIResource {
      *
      * @param params
      * @return RedEnvelope
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RedEnvelope create(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return create(params, null);
     }
 
@@ -216,10 +216,10 @@ public class RedEnvelope extends APIResource {
      * @param params
      * @param options the specific options
      * @return RedEnvelope
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RedEnvelope create(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, classURL(RedEnvelope.class), params, RedEnvelope.class, options);
     }
 
@@ -228,9 +228,9 @@ public class RedEnvelope extends APIResource {
      *
      * @param id
      * @return RedEnvelope
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static RedEnvelope retrieve(String id) throws XPayException {
+    public static RedEnvelope retrieve(String id) throws VirtuePayException {
         return retrieve(id, null, null);
     }
 
@@ -240,9 +240,9 @@ public class RedEnvelope extends APIResource {
      * @param id
      * @param options the specific options
      * @return RedEnvelope
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static RedEnvelope retrieve(String id, RequestOptions options) throws XPayException {
+    public static RedEnvelope retrieve(String id, RequestOptions options) throws VirtuePayException {
         return retrieve(id, null, options);
     }
 
@@ -252,9 +252,9 @@ public class RedEnvelope extends APIResource {
      * @param id
      * @param params
      * @return RedEnvelope
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static RedEnvelope retrieve(String id, Map<String, Object> params) throws XPayException {
+    public static RedEnvelope retrieve(String id, Map<String, Object> params) throws VirtuePayException {
         return retrieve(id, params, null);
     }
 
@@ -265,9 +265,9 @@ public class RedEnvelope extends APIResource {
      * @param params
      * @param options the specific options
      * @return RedEnvelope
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static RedEnvelope retrieve(String id, Map<String, Object> params, RequestOptions options) throws XPayException {
+    public static RedEnvelope retrieve(String id, Map<String, Object> params, RequestOptions options) throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(RedEnvelope.class, id), params, RedEnvelope.class, options);
     }
 
@@ -276,10 +276,10 @@ public class RedEnvelope extends APIResource {
      *
      * @param params
      * @return RedEnvelopeCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RedEnvelopeCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -289,10 +289,10 @@ public class RedEnvelope extends APIResource {
      * @param params
      * @param options the specific options
      * @return RedEnvelopeCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RedEnvelopeCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, classURL(RedEnvelope.class), params, RedEnvelopeCollection.class, options);
     }
 

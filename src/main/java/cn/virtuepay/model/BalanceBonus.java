@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.AppBasedResource;
 import cn.virtuepay.net.RequestOptions;
@@ -149,10 +149,10 @@ public class BalanceBonus extends AppBasedResource {
      *
      * @param params 请求参数
      * @return BalanceBonus
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BalanceBonus create(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return create(params, null);
     }
 
@@ -162,10 +162,10 @@ public class BalanceBonus extends AppBasedResource {
      * @param params 请求参数
      * @param options the specific options
      * @return BalanceBonus
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BalanceBonus create(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, classURL(BalanceBonus.class), params, BalanceBonus.class, options);
     }
 
@@ -174,10 +174,10 @@ public class BalanceBonus extends AppBasedResource {
      *
      * @param id
      * @return BalanceBonus
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BalanceBonus retrieve(String id)
-            throws XPayException {
+            throws VirtuePayException {
         return retrieve(id, null);
     }
 
@@ -187,10 +187,10 @@ public class BalanceBonus extends AppBasedResource {
      * @param id
      * @param options the specific options
      * @return BalanceBonus
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BalanceBonus retrieve(String id, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(BalanceBonus.class, id), null, BalanceBonus.class, options);
     }
 
@@ -199,10 +199,10 @@ public class BalanceBonus extends AppBasedResource {
      *
      * @param params
      * @return BalanceBonusCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BalanceBonusCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -212,10 +212,10 @@ public class BalanceBonus extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return BalanceBonusCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BalanceBonusCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, classURL(BalanceBonus.class), params, BalanceBonusCollection.class, options);
     }
 }

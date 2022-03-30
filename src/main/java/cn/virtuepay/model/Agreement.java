@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 import java.util.HashMap;
@@ -160,9 +160,9 @@ public class Agreement extends APIResource {
      *
      * @param params  签约参数
      * @return Agreement
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Agreement create(Map<String, Object> params) throws XPayException {
+    public static Agreement create(Map<String, Object> params) throws VirtuePayException {
         return create(params, null);
     }
 
@@ -172,10 +172,10 @@ public class Agreement extends APIResource {
      * @param params  签约参数
      * @param options the specific options
      * @return Agreement
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Agreement create(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(RequestMethod.POST, classURL(Agreement.class), params, Agreement.class, options);
     }
 
@@ -184,9 +184,9 @@ public class Agreement extends APIResource {
      *
      * @param id  id
      * @return Agreement
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Agreement retrieve(String id) throws XPayException {
+    public static Agreement retrieve(String id) throws VirtuePayException {
         return retrieve(id, null);
     }
 
@@ -196,9 +196,9 @@ public class Agreement extends APIResource {
      * @param id  id
      * @param options the specific options
      * @return Agreement
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Agreement retrieve(String id, RequestOptions options) throws XPayException {
+    public static Agreement retrieve(String id, RequestOptions options) throws VirtuePayException {
         return APIResource.request(RequestMethod.GET, instanceURL(Agreement.class, id), null, Agreement.class, options);
     }
 
@@ -207,10 +207,10 @@ public class Agreement extends APIResource {
      *
      * @param params  分页参数等
      * @return AgreementCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static AgreementCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -220,10 +220,10 @@ public class Agreement extends APIResource {
      * @param params 分页参数等
      * @param options the specific options
      * @return AgreementCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static AgreementCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(RequestMethod.GET, classURL(Agreement.class), params, AgreementCollection.class, options);
     }
 
@@ -232,9 +232,9 @@ public class Agreement extends APIResource {
      *
      * @param id  id
      * @return Agreement
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Agreement cancel(String id) throws XPayException {
+    public static Agreement cancel(String id) throws VirtuePayException {
         return cancel(id, null);
     }
 
@@ -244,9 +244,9 @@ public class Agreement extends APIResource {
      * @param id  id
      * @param options the specific options
      * @return Agreement
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Agreement cancel(String id, RequestOptions options) throws XPayException {
+    public static Agreement cancel(String id, RequestOptions options) throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("status", "canceled");
         return APIResource.request(RequestMethod.PUT, instanceURL(Agreement.class, id), params, Agreement.class, options);

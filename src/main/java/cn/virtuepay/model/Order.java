@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 
@@ -303,10 +303,10 @@ public class Order extends APIResource {
      *
      * @param params
      * @return Order
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Order create(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return create(params, null);
     }
 
@@ -316,10 +316,10 @@ public class Order extends APIResource {
      * @param params
      * @param options the specific options
      * @return Order
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Order create(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, classURL(Order.class), params, Order.class, options);
     }
 
@@ -328,9 +328,9 @@ public class Order extends APIResource {
      *
      * @param id
      * @return Order
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Order retrieve(String id) throws XPayException {
+    public static Order retrieve(String id) throws VirtuePayException {
         return retrieve(id, null, null);
     }
 
@@ -340,9 +340,9 @@ public class Order extends APIResource {
      * @param id
      * @param params
      * @return Order
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Order retrieve(String id, Map<String, Object> params) throws XPayException {
+    public static Order retrieve(String id, Map<String, Object> params) throws VirtuePayException {
         return retrieve(id, params, null);
     }
 
@@ -352,9 +352,9 @@ public class Order extends APIResource {
      * @param id
      * @param options the specific options
      * @return Order
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Order retrieve(String id, RequestOptions options) throws XPayException {
+    public static Order retrieve(String id, RequestOptions options) throws VirtuePayException {
         return retrieve(id, null, options);
     }
 
@@ -365,9 +365,9 @@ public class Order extends APIResource {
      * @param params
      * @param options the specific options
      * @return Order
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Order retrieve(String id, Map<String, Object> params, RequestOptions options) throws XPayException {
+    public static Order retrieve(String id, Map<String, Object> params, RequestOptions options) throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(Order.class, id), params, Order.class, options);
     }
 
@@ -376,10 +376,10 @@ public class Order extends APIResource {
      *
      * @param params
      * @return OrderCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static OrderCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -389,10 +389,10 @@ public class Order extends APIResource {
      * @param params
      * @param options the specific options
      * @return OrderCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static OrderCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, classURL(Order.class), params, OrderCollection.class, options);
     }
 
@@ -402,10 +402,10 @@ public class Order extends APIResource {
      * @param id
      * @param params
      * @return Order
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Order update(String id, Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return update(id, params, null);
     }
 
@@ -416,10 +416,10 @@ public class Order extends APIResource {
      * @param params
      * @param options the specific options
      * @return Order
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Order update(String id, Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.PUT, instanceURL(Order.class, id), params, Order.class, options);
     }
 
@@ -427,10 +427,10 @@ public class Order extends APIResource {
      * 取消 order
      *
      * @return Order
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public Order cancel()
-            throws XPayException {
+            throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("status", "canceled");
         return Order.update(this.getId(), params, null);
@@ -441,10 +441,10 @@ public class Order extends APIResource {
      *
      * @param options the specific options
      * @return Order
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public Order cancel(RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("status", "canceled");
         return Order.update(this.getId(), params, options);
@@ -455,10 +455,10 @@ public class Order extends APIResource {
      *
      * @param id
      * @return Order
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Order cancel(String id)
-            throws XPayException {
+            throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("status", "canceled");
         return update(id, params);
@@ -470,10 +470,10 @@ public class Order extends APIResource {
      * @param id
      * @param options the specific options
      * @return Order
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Order cancel(String id, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("status", "canceled");
         return update(id, params, options);
@@ -484,9 +484,9 @@ public class Order extends APIResource {
      *
      * @param params
      * @return Order
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public Order pay(Map<String, Object> params) throws XPayException {
+    public Order pay(Map<String, Object> params) throws VirtuePayException {
         return Order.pay(this.getId(), params, null);
     }
 
@@ -496,9 +496,9 @@ public class Order extends APIResource {
      * @param params
      * @param options the specific options
      * @return Order
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public Order pay(Map<String, Object> params, RequestOptions options) throws XPayException {
+    public Order pay(Map<String, Object> params, RequestOptions options) throws VirtuePayException {
         return Order.pay(this.getId(), params, options);
     }
 
@@ -508,9 +508,9 @@ public class Order extends APIResource {
      * @param id
      * @param params
      * @return Order
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Order pay(String id, Map<String, Object> params) throws XPayException {
+    public static Order pay(String id, Map<String, Object> params) throws VirtuePayException {
         return pay(id, params, null);
     }
 
@@ -521,9 +521,9 @@ public class Order extends APIResource {
      * @param params
      * @param options the specific options
      * @return Order
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Order pay(String id, Map<String, Object> params, RequestOptions options) throws XPayException {
+    public static Order pay(String id, Map<String, Object> params, RequestOptions options) throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, String.format("%s/pay",
                 instanceURL(Order.class, id)), params, Order.class, options);
     }
@@ -534,9 +534,9 @@ public class Order extends APIResource {
      * @param id
      * @param params
      * @return PaymentCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static PaymentCollection paymentList(String id, Map<String, Object> params) throws XPayException {
+    public static PaymentCollection paymentList(String id, Map<String, Object> params) throws VirtuePayException {
         return paymentList(id, params, null);
     }
 
@@ -547,9 +547,9 @@ public class Order extends APIResource {
      * @param params
      * @param options the specific options
      * @return PaymentCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static PaymentCollection paymentList(String id, Map<String, Object> params, RequestOptions options) throws XPayException {
+    public static PaymentCollection paymentList(String id, Map<String, Object> params, RequestOptions options) throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, String.format("%s/payments", instanceURL(Order.class, id)),
                 params, PaymentCollection.class, options);
     }
@@ -560,9 +560,9 @@ public class Order extends APIResource {
      * @param orderId
      * @param paymentId
      * @return Payment
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Payment retrievePayment(String orderId, String paymentId) throws XPayException {
+    public static Payment retrievePayment(String orderId, String paymentId) throws VirtuePayException {
         return retrievePayment(orderId, paymentId, null);
     }
 
@@ -577,9 +577,9 @@ public class Order extends APIResource {
      * @param options the specific options
 >>>>>>> 9c6801405ecca334607545f80e042135336029f8
      * @return Payment
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Payment retrievePayment(String orderId, String paymentId, RequestOptions options) throws XPayException {
+    public static Payment retrievePayment(String orderId, String paymentId, RequestOptions options) throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, String.format("%s/payments/%s", instanceURL(Order.class, orderId), paymentId),
                 null, Payment.class, options);
     }

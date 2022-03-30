@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 
@@ -139,10 +139,10 @@ public class BatchRefund extends APIResource {
      *
      * @param params
      * @return BatchRefund
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BatchRefund create(Map<String, Object>params)
-            throws XPayException {
+            throws VirtuePayException {
         return create(params, null);
     }
 
@@ -152,10 +152,10 @@ public class BatchRefund extends APIResource {
      * @param params
      * @param options the specific options
      * @return BatchRefund
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BatchRefund create(Map<String, Object>params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, classURL(BatchRefund.class), params, BatchRefund.class, options);
     }
 
@@ -164,10 +164,10 @@ public class BatchRefund extends APIResource {
      *
      * @param id
      * @return BatchRefund
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BatchRefund retrieve(String id)
-            throws XPayException {
+            throws VirtuePayException {
         return retrieve(id, null);
     }
 
@@ -177,10 +177,10 @@ public class BatchRefund extends APIResource {
      * @param id
      * @param options the specific options
      * @return BatchRefund
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BatchRefund retrieve(String id, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(BatchRefund.class, id), null, BatchRefund.class, options);
     }
 
@@ -189,10 +189,10 @@ public class BatchRefund extends APIResource {
      *
      * @param params
      * @return BatchRefundCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BatchRefundCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -202,10 +202,10 @@ public class BatchRefund extends APIResource {
      * @param params
      * @param options the specific options
      * @return BatchRefundCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BatchRefundCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, classURL(BatchRefund.class), params, BatchRefundCollection.class, options);
     }
 }

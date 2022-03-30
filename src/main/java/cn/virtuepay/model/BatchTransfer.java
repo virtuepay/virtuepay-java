@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 
@@ -184,10 +184,10 @@ public class BatchTransfer extends APIResource {
      *
      * @param params
      * @return BatchTransfer
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BatchTransfer create(Map<String, Object>params)
-            throws XPayException {
+            throws VirtuePayException {
         return create(params, null);
     }
 
@@ -197,10 +197,10 @@ public class BatchTransfer extends APIResource {
      * @param params
      * @param options the specific options
      * @return BatchTransfer
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BatchTransfer create(Map<String, Object>params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, classURL(BatchTransfer.class), params, BatchTransfer.class, options);
     }
 
@@ -209,10 +209,10 @@ public class BatchTransfer extends APIResource {
      *
      * @param id
      * @return BatchTransfer
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BatchTransfer retrieve(String id)
-            throws XPayException {
+            throws VirtuePayException {
         return retrieve(id, null);
     }
 
@@ -222,10 +222,10 @@ public class BatchTransfer extends APIResource {
      * @param id
      * @param options the specific options
      * @return BatchTransfer
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BatchTransfer retrieve(String id, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(BatchTransfer.class, id), null, BatchTransfer.class, options);
     }
 
@@ -234,10 +234,10 @@ public class BatchTransfer extends APIResource {
      *
      * @param params
      * @return BatchTransferCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BatchTransferCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -247,10 +247,10 @@ public class BatchTransfer extends APIResource {
      * @param params
      * @param options the specific options
      * @return BatchTransferCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BatchTransferCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, classURL(BatchTransfer.class), params, BatchTransferCollection.class, options);
     }
 
@@ -259,10 +259,10 @@ public class BatchTransfer extends APIResource {
      * @param id batch_transfer ID
      * @param params 更新参数
      * @return BatchTransfer
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BatchTransfer update(String id, Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return update(id, params, null);
     }
 
@@ -273,10 +273,10 @@ public class BatchTransfer extends APIResource {
      * @param params
      * @param options the specific options
      * @return BatchTransfer
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static BatchTransfer update(String id, Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.PUT, instanceURL(BatchTransfer.class, id), params, BatchTransfer.class, options);
     }
 }

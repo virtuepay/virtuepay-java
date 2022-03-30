@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 
@@ -152,10 +152,10 @@ public class SplitProfit extends APIResource {
      *
      * @param params  参数
      * @return SplitProfit
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SplitProfit create(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return create(params, null);
     }
 
@@ -165,10 +165,10 @@ public class SplitProfit extends APIResource {
      * @param params  参数
      * @param options the specific options
      * @return SplitProfit
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SplitProfit create(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, classURL(SplitProfit.class), params, SplitProfit.class, options);
     }
 
@@ -177,9 +177,9 @@ public class SplitProfit extends APIResource {
      *
      * @param id  id
      * @return SplitProfit
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static SplitProfit retrieve(String id) throws XPayException {
+    public static SplitProfit retrieve(String id) throws VirtuePayException {
         return retrieve(id, null);
     }
 
@@ -189,9 +189,9 @@ public class SplitProfit extends APIResource {
      * @param id  id
      * @param options the specific options
      * @return SplitProfit
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static SplitProfit retrieve(String id, RequestOptions options) throws XPayException {
+    public static SplitProfit retrieve(String id, RequestOptions options) throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(SplitProfit.class, id), null, SplitProfit.class, options);
     }
 
@@ -200,10 +200,10 @@ public class SplitProfit extends APIResource {
      *
      * @param params  分页参数等
      * @return SplitProfitCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SplitProfitCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -213,10 +213,10 @@ public class SplitProfit extends APIResource {
      * @param params 分页参数等
      * @param options the specific options
      * @return SplitProfitCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SplitProfitCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, classURL(SplitProfit.class), params, SplitProfitCollection.class, options);
     }
 }

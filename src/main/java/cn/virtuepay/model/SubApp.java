@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.AppBasedResource;
 import cn.virtuepay.net.RequestOptions;
@@ -123,10 +123,10 @@ public class SubApp extends AppBasedResource {
      *
      * @param params
      * @return SubApp
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SubApp create(Map<String, Object>params)
-            throws XPayException {
+            throws VirtuePayException {
         return create(params, null);
     }
 
@@ -136,10 +136,10 @@ public class SubApp extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return SubApp
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SubApp create(Map<String, Object>params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, classURL(SubApp.class), params, SubApp.class, options);
     }
 
@@ -148,10 +148,10 @@ public class SubApp extends AppBasedResource {
      *
      * @param id
      * @return SubApp
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SubApp retrieve(String id)
-            throws XPayException {
+            throws VirtuePayException {
         return retrieve(id, null, null);
     }
 
@@ -161,10 +161,10 @@ public class SubApp extends AppBasedResource {
      * @param id SubApp ID
      * @param params 参数
      * @return SubApp
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SubApp retrieve(String id, Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return retrieve(id, params, null);
     }
 
@@ -174,10 +174,10 @@ public class SubApp extends AppBasedResource {
      * @param id
      * @param options the specific options
      * @return SubApp
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SubApp retrieve(String id, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return retrieve(id, null, options);
     }
 
@@ -188,10 +188,10 @@ public class SubApp extends AppBasedResource {
      * @param params 参数
      * @param options the specific options
      * @return SubApp
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SubApp retrieve(String id, Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(SubApp.class, id), params, SubApp.class, options);
     }
 
@@ -200,10 +200,10 @@ public class SubApp extends AppBasedResource {
      *
      * @param params
      * @return SubApp
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SubAppCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -213,10 +213,10 @@ public class SubApp extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return SubApp
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SubAppCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, classURL(SubApp.class), params, SubAppCollection.class, options);
     }
 
@@ -226,10 +226,10 @@ public class SubApp extends AppBasedResource {
      * @param id
      * @param params
      * @return SubApp
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SubApp update(String id, Map<String, Object>params)
-            throws XPayException {
+            throws VirtuePayException {
         return update(id, params, null);
     }
 
@@ -240,10 +240,10 @@ public class SubApp extends AppBasedResource {
      * @param params
      * @param options the specific options
      * @return SubApp
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SubApp update(String id, Map<String, Object>params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.PUT, instanceURL(SubApp.class, id), params, SubApp.class, options);
     }
 
@@ -252,10 +252,10 @@ public class SubApp extends AppBasedResource {
      *
      * @param id
      * @return DeletedSubApp
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static DeletedSubApp delete(String id)
-            throws XPayException {
+            throws VirtuePayException {
         return delete(id, null);
     }
 
@@ -265,10 +265,10 @@ public class SubApp extends AppBasedResource {
      * @param id
      * @param options the specific options
      * @return DeletedSubApp
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static DeletedSubApp delete(String id, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.DELETE, instanceURL(SubApp.class, id), null, DeletedSubApp.class, options);
     }
 }

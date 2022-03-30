@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 
@@ -193,9 +193,9 @@ public class RoyaltySettlement extends APIResource {
      *
      * @param params
      * @return RoyaltySettlement
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static RoyaltySettlement create(Map<String, Object> params) throws XPayException {
+    public static RoyaltySettlement create(Map<String, Object> params) throws VirtuePayException {
         return create(params, null);
     }
 
@@ -205,9 +205,9 @@ public class RoyaltySettlement extends APIResource {
      * @param params
      * @param options the specific options
      * @return RoyaltySettlement
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static RoyaltySettlement create(Map<String, Object> params, RequestOptions options) throws XPayException {
+    public static RoyaltySettlement create(Map<String, Object> params, RequestOptions options) throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, classURL(RoyaltySettlement.class), params, RoyaltySettlement.class, options);
     }
 
@@ -216,9 +216,9 @@ public class RoyaltySettlement extends APIResource {
      *
      * @param id
      * @return RoyaltySettlement
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static RoyaltySettlement retrieve(String id) throws XPayException {
+    public static RoyaltySettlement retrieve(String id) throws VirtuePayException {
         return retrieve(id, null);
     }
 
@@ -228,9 +228,9 @@ public class RoyaltySettlement extends APIResource {
      * @param id
      * @param options the specific options
      * @return RoyaltySettlement
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static RoyaltySettlement retrieve(String id, RequestOptions options) throws XPayException {
+    public static RoyaltySettlement retrieve(String id, RequestOptions options) throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(RoyaltySettlement.class, id), null, RoyaltySettlement.class, options);
     }
 
@@ -239,10 +239,10 @@ public class RoyaltySettlement extends APIResource {
      *
      * @param params
      * @return RoyaltySettlement
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RoyaltySettlementCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -252,10 +252,10 @@ public class RoyaltySettlement extends APIResource {
      * @param params
      * @param options the specific options
      * @return RoyaltySettlement
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RoyaltySettlementCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, classURL(RoyaltySettlement.class), params, RoyaltySettlementCollection.class, options);
     }
 
@@ -265,10 +265,10 @@ public class RoyaltySettlement extends APIResource {
      * @param id
      * @param params
      * @return RoyaltySettlement
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RoyaltySettlement update(String id, Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return update(id, params, null);
     }
 
@@ -279,10 +279,10 @@ public class RoyaltySettlement extends APIResource {
      * @param params
      * @param options the specific options
      * @return RoyaltySettlement
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RoyaltySettlement update(String id, Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.PUT, instanceURL(RoyaltySettlement.class, id), params, RoyaltySettlement.class, options);
     }
 }

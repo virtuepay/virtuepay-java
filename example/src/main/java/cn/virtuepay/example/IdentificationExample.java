@@ -1,6 +1,6 @@
 package cn.virtuepay.example;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.Identification;
 
 import java.util.HashMap;
@@ -52,7 +52,7 @@ public class IdentificationExample {
                 System.out.println(result.getMessage());
             }
             System.out.println(result);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
     }
@@ -80,7 +80,7 @@ public class IdentificationExample {
                 System.out.println(result.getMessage());
             }
             System.out.println(result);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
     }

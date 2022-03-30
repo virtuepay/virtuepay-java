@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 
@@ -67,10 +67,10 @@ public class Identification extends APIResource {
      *
      * @param params
      * @return Identification
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Identification identify(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return identify(params, null);
     }
 
@@ -80,10 +80,10 @@ public class Identification extends APIResource {
      * @param params
      * @param options the specific options
      * @return Identification
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Identification identify(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, singleClassURL(Identification.class), params, Identification.class, options);
     }
 }

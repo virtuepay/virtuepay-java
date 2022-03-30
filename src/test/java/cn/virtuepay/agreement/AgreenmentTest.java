@@ -3,7 +3,7 @@ package cn.virtuepay.agreement;
 import cn.virtuepay.XPayTestBase;
 import cn.virtuepay.XPayTestData;
 import cn.virtuepay.exception.InvalidRequestException;
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.Agreement;
 import cn.virtuepay.model.AgreementCollection;
 import org.junit.Test;
@@ -17,7 +17,7 @@ import static org.junit.Assert.assertTrue;
 public class AgreenmentTest extends XPayTestBase {
 
     @Test
-    public void testCreate() throws XPayException {
+    public void testCreate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
         params.put("app", XPayTestData.getAppID()); // App ID
         params.put("contract_no", "2018051700001"); // 签约协议号
@@ -39,7 +39,7 @@ public class AgreenmentTest extends XPayTestBase {
     }
 
     @Test
-    public void testRetrieve() throws XPayException {
+    public void testRetrieve() throws VirtuePayException {
         String id = "agr_19EEE7QdgGMCoY";
         Agreement agreement = Agreement.retrieve(id);
 
@@ -48,7 +48,7 @@ public class AgreenmentTest extends XPayTestBase {
     }
 
     @Test
-    public void testList() throws XPayException {
+    public void testList() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
         params.put("per_page", 3); // 每页数量
         params.put("app", XPayTestData.getAppID()); // App ID 此参数必填
@@ -59,7 +59,7 @@ public class AgreenmentTest extends XPayTestBase {
     }
 
     @Test
-    public void testCancel() throws XPayException {
+    public void testCancel() throws VirtuePayException {
         String id = "agr_19EEE7QdgGMCoY";
 
         Agreement agreement;

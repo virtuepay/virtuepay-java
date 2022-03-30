@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.AppBasedResource;
 import cn.virtuepay.net.RequestOptions;
@@ -86,10 +86,10 @@ public class UserPic extends AppBasedResource {
      *
      * @param params 请求参数
      * @return UserPic
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static UserPic upload(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return upload(params, null);
     }
 
@@ -99,10 +99,10 @@ public class UserPic extends AppBasedResource {
      * @param params 请求参数
      * @param options the specific options
      * @return UserPic
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static UserPic upload(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, singleClassURL(UserPic.class), params, UserPic.class, options);
     }
 }

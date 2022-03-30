@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.AppBasedResource;
 import cn.virtuepay.net.RequestOptions;
@@ -50,10 +50,10 @@ public class Contact extends AppBasedResource {
      *
      * @param params 请求参数
      * @return Contact
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Contact create(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return create(params, null);
     }
 
@@ -63,10 +63,10 @@ public class Contact extends AppBasedResource {
      * @param params 请求参数
      * @param options the specific options
      * @return Contact
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Contact create(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, singleClassURL(Contact.class), params, Contact.class, options);
     }
 }

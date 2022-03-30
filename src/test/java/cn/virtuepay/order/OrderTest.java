@@ -2,7 +2,7 @@ package cn.virtuepay.order;
 
 import cn.virtuepay.XPayTestBase;
 import cn.virtuepay.XPayTestData;
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.*;
 import com.xpay.model.*;
 import org.junit.Test;
@@ -21,7 +21,7 @@ public class OrderTest extends XPayTestBase {
      * 创建 order
      */
     @Test
-    public void testCreateOrder() throws XPayException {
+    public void testCreateOrder() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
 //        params.put("uid", "test_user_001"); // 用户在当前 app 下的 User ID, 可选
         params.put("app", XPayTestData.getAppID()); // App ID, 必传
@@ -86,7 +86,7 @@ public class OrderTest extends XPayTestBase {
             assertEquals("paid", false, order.getPaid());
             assertEquals("refunded", false, order.getRefunded());
             assertEquals("object should be order", "order", order.getObject());
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             System.out.println(e.toString());
         }
     }
@@ -95,7 +95,7 @@ public class OrderTest extends XPayTestBase {
      * 取消 order
      */
     @Test
-    public void testCancelOrder() throws XPayException {
+    public void testCancelOrder() throws VirtuePayException {
         Order order = Order.cancel("53653681508352"); // 取消 Order 对象方法
         System.out.println(order);
         assertEquals("status", "canceled", order.getStatus());
@@ -108,7 +108,7 @@ public class OrderTest extends XPayTestBase {
      * 查询单个 order
      */
     @Test
-    public void testOrderRetrieve() throws XPayException {
+    public void testOrderRetrieve() throws VirtuePayException {
         Order obj = Order.retrieve("53652865716224"); // 查询单个 order 方法  参数: orderId
 
         System.out.println(obj);
@@ -120,7 +120,7 @@ public class OrderTest extends XPayTestBase {
      * 获取 order 列表
      */
     @Test
-    public void testGetOrderList() throws XPayException {
+    public void testGetOrderList() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("page", 1);
         params.put("per_page", 3);
@@ -139,7 +139,7 @@ public class OrderTest extends XPayTestBase {
      * 查询订单中 Payment 对象
      */
     @Test
-    public void testOrderPaymentRetrieve() throws XPayException {
+    public void testOrderPaymentRetrieve() throws VirtuePayException {
         // 查询订单中 Payment 对象
         // 参数一: order id
         // 参数二: payment id
@@ -152,7 +152,7 @@ public class OrderTest extends XPayTestBase {
      * 查询订单中 Payment 列表
      */
     @Test
-    public void testOrderPaymentList() throws XPayException {
+    public void testOrderPaymentList() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("page", 1);
         params.put("per_page", 10);
@@ -169,7 +169,7 @@ public class OrderTest extends XPayTestBase {
      * 创建 order 退款
      */
     @Test
-    public void testOrderRefundCreate() throws XPayException {
+    public void testOrderRefundCreate() throws VirtuePayException {
 
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("description", "Order refund test."); // 必传
@@ -190,7 +190,7 @@ public class OrderTest extends XPayTestBase {
      * 查询 order 退款
      */
     @Test
-    public void testOrderRefundRetrieve() throws XPayException {
+    public void testOrderRefundRetrieve() throws VirtuePayException {
         // 查询 order 退款方法
         // 参数一: orderId
         // 参数二: refundId
@@ -203,7 +203,7 @@ public class OrderTest extends XPayTestBase {
      * 查询 order 退款列表
      */
     @Test
-    public void testOrderRefundList() throws XPayException {
+    public void testOrderRefundList() throws VirtuePayException {
 
         // 查询 order 退款列表
         // 参数: orderId

@@ -1,7 +1,7 @@
 package cn.virtuepay.net;
 
 import cn.virtuepay.exception.APIConnectionException;
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.VirtuePay;
 import cn.virtuepay.util.XPaySignature;
 import cn.virtuepay.util.StreamUtils;
@@ -32,9 +32,9 @@ public abstract class HttpClient {
      *
      * @param request the request
      * @return the response
-     * @throws XPayException If the request fails for any reason
+     * @throws VirtuePayException If the request fails for any reason
      */
-    public abstract XPayResponse request(XPayRequest request) throws XPayException;
+    public abstract XPayResponse request(XPayRequest request) throws VirtuePayException;
 
     /**
      * Sends the given request to VirtuePay's API, retrying the request in cases of intermittent
@@ -42,9 +42,9 @@ public abstract class HttpClient {
      *
      * @param request the request
      * @return the response
-     * @throws XPayException If the request fails for any reason
+     * @throws VirtuePayException If the request fails for any reason
      */
-    public XPayResponse requestWithRetries(XPayRequest request) throws XPayException {
+    public XPayResponse requestWithRetries(XPayRequest request) throws VirtuePayException {
         APIConnectionException requestException = null;
         XPayResponse response = null;
         int retry = 0;
@@ -131,7 +131,7 @@ public abstract class HttpClient {
     }
 
     private boolean shouldRetry(
-            int numRetries, XPayException exception, XPayRequest request, XPayResponse response) {
+            int numRetries, VirtuePayException exception, XPayRequest request, XPayResponse response) {
         // Do not retry if we are out of retries.
         if (numRetries >= request.options.getMaxNetworkRetries()) {
             return false;

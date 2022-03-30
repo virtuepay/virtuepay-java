@@ -1,6 +1,6 @@
 package cn.virtuepay.order;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.DeleteRoyaltyTemplate;
 import cn.virtuepay.XPayTestBase;
 import cn.virtuepay.XPayTestData;
@@ -20,7 +20,7 @@ public class RoyaltyTemplateTest extends XPayTestBase {
      * 创建 royalty_template
      */
     @Test
-    public void testRoyaltyTemplateCreate() throws XPayException {
+    public void testRoyaltyTemplateCreate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
         params.put("app", XPayTestData.getAppID()); // App ID, 必传
         params.put("name", "royalty_templates name"); // 模板名称，允许中英文等常用字符, 可选
@@ -72,7 +72,7 @@ public class RoyaltyTemplateTest extends XPayTestBase {
     /**
      * 查询单个 royalty_template
      */
-    @Test public void testRoyaltyTemplateRetrieve() throws XPayException {
+    @Test public void testRoyaltyTemplateRetrieve() throws VirtuePayException {
         String id = "53652865716224";
         // 查询单个 royalty_template 方法
         // 参数: royalty_template id
@@ -85,7 +85,7 @@ public class RoyaltyTemplateTest extends XPayTestBase {
     /**
      * 查询 royalty_template 列表
      */
-    @Test public void testRoyaltyTemplateList() throws XPayException {
+    @Test public void testRoyaltyTemplateList() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
         params.put("per_page", 3);
         params.put("page", 1);
@@ -110,7 +110,7 @@ public class RoyaltyTemplateTest extends XPayTestBase {
     /**
      * 删除 royalty_template
      */
-    @Test public void testRoyaltyTemplateDelete() throws XPayException {
+    @Test public void testRoyaltyTemplateDelete() throws VirtuePayException {
         String id = "53652865716224";
         // 删除 royalty_template 方法
         // 参数: royalty_template id
@@ -122,7 +122,7 @@ public class RoyaltyTemplateTest extends XPayTestBase {
     /**
      *  更新 royalty_template
      */
-    @Test public void testRoyaltyTemplateUpdate() throws XPayException {
+    @Test public void testRoyaltyTemplateUpdate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
         params.put("name", "royalty_templates name new");
 

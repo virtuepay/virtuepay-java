@@ -1,6 +1,6 @@
 package cn.virtuepay.balance;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.BalanceSettlementCollection;
 import cn.virtuepay.XPayTestBase;
 import cn.virtuepay.XPayTestData;
@@ -17,7 +17,7 @@ public class BalanceSettlementTest extends XPayTestBase {
      * 查询单个结算到余额
      */
     @Test
-    public void testRetrieve() throws XPayException {
+    public void testRetrieve() throws VirtuePayException {
 
         // 查询单个 balance_settlement 方法
         // 参数: balance_settlement id
@@ -30,7 +30,7 @@ public class BalanceSettlementTest extends XPayTestBase {
      * 查询结算到余额列表
      */
     @Test
-    public void testList() throws XPayException {
+    public void testList() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
         params.put("page", 1);
         params.put("per_page", 3);

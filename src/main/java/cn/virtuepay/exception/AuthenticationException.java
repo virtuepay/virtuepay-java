@@ -1,6 +1,6 @@
 package cn.virtuepay.exception;
 
-public class AuthenticationException extends XPayException {
+public class AuthenticationException extends VirtuePayException {
 
 
     public AuthenticationException(String message) {

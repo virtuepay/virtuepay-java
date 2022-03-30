@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 
@@ -68,10 +68,10 @@ public class CardInfo extends APIResource {
      *
      * @param params 卡号等信息
      * @return CardInfo
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static CardInfo query(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return query(params, null);
     }
 
@@ -81,10 +81,10 @@ public class CardInfo extends APIResource {
      * @param params 卡号等信息
      * @param options the specific options
      * @return CardInfo
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static CardInfo query(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, singleClassURL(CardInfo.class), params, CardInfo.class, options);
     }
 }

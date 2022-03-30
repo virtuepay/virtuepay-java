@@ -1,6 +1,6 @@
 package cn.virtuepay.split;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.XPayTestBase;
 import cn.virtuepay.XPayTestData;
 import cn.virtuepay.model.SplitProfit;
@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
 
 public class SplitProfitTest extends XPayTestBase {
     @Test
-    public void testCreate() throws XPayException {
+    public void testCreate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
         params.put("app", XPayTestData.getAppID());
         params.put("payment", "ch_KiT4ePn9SyXDfvfPyDevn1G0"); // 交易成功的 VirtuePay Payment ID
@@ -38,7 +38,7 @@ public class SplitProfitTest extends XPayTestBase {
     }
 
     @Test
-    public void testListAll() throws XPayException {
+    public void testListAll() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
         params.put("app", XPayTestData.getAppID());
         params.put("page", 1);
@@ -52,7 +52,7 @@ public class SplitProfitTest extends XPayTestBase {
     }
 
     @Test
-    public void testRetrieve() throws XPayException {
+    public void testRetrieve() throws VirtuePayException {
         SplitProfit obj = SplitProfit.retrieve("sp_1iXmM0w3VaE77Y");
 
         System.out.println(obj);

@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 
@@ -142,9 +142,9 @@ public class ProfitTransaction extends APIResource {
      *
      * @param id  id
      * @return ProfitTransaction
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static ProfitTransaction retrieve(String id) throws XPayException {
+    public static ProfitTransaction retrieve(String id) throws VirtuePayException {
         return retrieve(id, null);
     }
 
@@ -154,9 +154,9 @@ public class ProfitTransaction extends APIResource {
      * @param id  id
      * @param options the specific options
      * @return ProfitTransaction
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static ProfitTransaction retrieve(String id, RequestOptions options) throws XPayException {
+    public static ProfitTransaction retrieve(String id, RequestOptions options) throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(ProfitTransaction.class, id), null, ProfitTransaction.class, options);
     }
 
@@ -165,10 +165,10 @@ public class ProfitTransaction extends APIResource {
      *
      * @param params  分页参数等
      * @return ProfitTransactionCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static ProfitTransactionCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -178,10 +178,10 @@ public class ProfitTransaction extends APIResource {
      * @param params 分页参数等
      * @param options the specific options
      * @return ProfitTransactionCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static ProfitTransactionCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, classURL(ProfitTransaction.class), params, ProfitTransactionCollection.class, options);
     }
 }

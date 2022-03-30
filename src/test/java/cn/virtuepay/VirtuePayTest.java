@@ -1,6 +1,6 @@
 package cn.virtuepay;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -65,7 +65,7 @@ public class VirtuePayTest {
             // 传到客户端请先转成字符串 .toString(), 调该方法，会自动转成正确的 JSON 字符串
             String pamentString = payment.toString();
             System.out.println(pamentString);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
 
@@ -89,7 +89,7 @@ public class VirtuePayTest {
 
             assertEquals("payment object should be payment", "payment", payment.getObject());
             assertNotNull("payment reversed not null", payment.getReversed());
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
     }
@@ -103,7 +103,7 @@ public class VirtuePayTest {
         try {
             payment = Payment.retrieve(paymentId);
             System.out.println(payment);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
 
@@ -140,7 +140,7 @@ public class VirtuePayTest {
 
             assertEquals("object should be list", "list", chs.getObject());
             assertEquals("data count should be same with limit", limit.intValue(), chs.getData().size());
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
     }
@@ -159,7 +159,7 @@ public class VirtuePayTest {
         try {
             refund = Refund.create(pamentId, params);
             System.out.println(refund);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
 
@@ -177,7 +177,7 @@ public class VirtuePayTest {
         try {
             refund = Refund.retrieve(pamentId, refundId);
             System.out.println(refund);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
 
@@ -201,7 +201,7 @@ public class VirtuePayTest {
             System.out.println(ids);
             assertEquals("object should be list", "list", objs.getObject());
             assertEquals("data count should be same with per_page", limit.intValue(), objs.getData().size());
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
     }
@@ -232,7 +232,7 @@ public class VirtuePayTest {
             assertEquals("order_no should be same", params.get("order_no"), obj.getOrderNo());
             assertEquals("description should be same", params.get("description"), obj.getDescription());
             assertEquals("channel should be same", params.get("channel"), obj.getChannel());
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
     }
@@ -247,7 +247,7 @@ public class VirtuePayTest {
         try {
             transfer = Transfer.retrieve(paymentId, param);
             System.out.println(transfer);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
 
@@ -264,14 +264,14 @@ public class VirtuePayTest {
         try {
             TransferCollection transferCollection = Transfer.list(param);
             System.out.println(transferCollection);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
     }
 
     // 批量创建 转账
     @Test
-    public void testCreateBatchTransfer() throws XPayException {
+    public void testCreateBatchTransfer() throws VirtuePayException {
 
         String batchNo = "2017" + new Date().getTime();
         Map<String, Object> params = new HashMap<String, Object>();

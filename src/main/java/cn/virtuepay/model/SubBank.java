@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 
@@ -58,10 +58,10 @@ public class SubBank extends APIResource {
      *
      * @param params 银行编号和省市信息
      * @return SubBankCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SubBankCollection query(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return query(params, null);
     }
 
@@ -71,10 +71,10 @@ public class SubBank extends APIResource {
      * @param params 银行编号和省市信息
      * @param options the specific options
      * @return SubBankCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SubBankCollection query(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, classURL(SubBank.class), params, SubBankCollection.class, options);
     }
 }

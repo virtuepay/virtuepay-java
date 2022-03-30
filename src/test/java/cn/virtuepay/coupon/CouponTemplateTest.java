@@ -1,6 +1,6 @@
 package cn.virtuepay.coupon;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.CouponTemplate;
 import cn.virtuepay.XPayTestBase;
 import cn.virtuepay.model.CouponTemplateCollection;
@@ -17,7 +17,7 @@ public class CouponTemplateTest extends XPayTestBase {
      * 创建优惠券模板
      */
     @Test
-    public void testCouponTemplateCreate() throws XPayException {
+    public void testCouponTemplateCreate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("name", "25%OFF"); // 优惠券模板名称, 可选
         params.put("type", 2);        // 优惠券模板的类型 1：现金券；2：折扣券, 必传
@@ -48,7 +48,7 @@ public class CouponTemplateTest extends XPayTestBase {
     /**
      * 查询优惠券模板
      */
-    @Test public void testCouponTemplateRetrieve() throws XPayException {
+    @Test public void testCouponTemplateRetrieve() throws VirtuePayException {
         String couponTemplateId = "300117082315262900016402";
         // 查询优惠券模板方法
         // 参数: couponTemplateId (优惠券模板 id)
@@ -60,7 +60,7 @@ public class CouponTemplateTest extends XPayTestBase {
     /**
      * 查询优惠券模板列表
      */
-    @Test public void testCouponTemplateList() throws XPayException {
+    @Test public void testCouponTemplateList() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
         params.put("page", 1);
         params.put("per_page", 3);
@@ -74,7 +74,7 @@ public class CouponTemplateTest extends XPayTestBase {
     /**
      * 更新优惠券模板
      */
-    @Test public void testCouponTemplateUpdate() throws XPayException {
+    @Test public void testCouponTemplateUpdate() throws VirtuePayException {
         String couponTemplateId = "300117082315262900016402";
         Map<String, Object> params = new HashMap<>();
         Map<String, Object> metadata = new HashMap<>();
@@ -90,7 +90,7 @@ public class CouponTemplateTest extends XPayTestBase {
     /**
      * 删除优惠券模板
      */
-    @Test public void testCouponTemplateDelete() throws XPayException {
+    @Test public void testCouponTemplateDelete() throws VirtuePayException {
         String couponTemplateId = "300117082315262900016402";
         // 删除优惠券模板方法
         // 参数: couponTemplateId (优惠券模板 id)

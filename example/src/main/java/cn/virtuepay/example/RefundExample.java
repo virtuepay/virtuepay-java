@@ -7,7 +7,7 @@
  */
 package cn.virtuepay.example;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.PaymentRefundCollection;
 import cn.virtuepay.model.Refund;
 
@@ -69,7 +69,7 @@ public class RefundExample {
         try {
             refund = Refund.create(this.payment, params);
             System.out.println(refund);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
         return refund;
@@ -90,7 +90,7 @@ public class RefundExample {
         try {
             Refund refund = Refund.retrieve(this.payment, id);
             System.out.println(refund);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
     }
@@ -111,7 +111,7 @@ public class RefundExample {
         try {
             PaymentRefundCollection refunds = Refund.list(this.payment, refundParams);
             System.out.println(refunds);
-        } catch (XPayException e) {
+        } catch (VirtuePayException e) {
             e.printStackTrace();
         }
     }

@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 
@@ -115,10 +115,10 @@ public class SplitReceiver extends APIResource {
      *
      * @param params  参数
      * @return SplitReceiver
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SplitReceiver create(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return create(params, null);
     }
 
@@ -128,10 +128,10 @@ public class SplitReceiver extends APIResource {
      * @param params  参数
      * @param options the specific options
      * @return SplitReceiver
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SplitReceiver create(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return request(RequestMethod.POST, classURL(SplitReceiver.class), params, SplitReceiver.class, options);
     }
 
@@ -140,9 +140,9 @@ public class SplitReceiver extends APIResource {
      *
      * @param id  id
      * @return SplitReceiver
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static SplitReceiver retrieve(String id) throws XPayException {
+    public static SplitReceiver retrieve(String id) throws VirtuePayException {
         return retrieve(id, null);
     }
 
@@ -152,9 +152,9 @@ public class SplitReceiver extends APIResource {
      * @param id  id
      * @param options the specific options
      * @return SplitReceiver
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static SplitReceiver retrieve(String id, RequestOptions options) throws XPayException {
+    public static SplitReceiver retrieve(String id, RequestOptions options) throws VirtuePayException {
         return request(RequestMethod.GET, instanceURL(SplitReceiver.class, id), null, SplitReceiver.class, options);
     }
 
@@ -163,10 +163,10 @@ public class SplitReceiver extends APIResource {
      *
      * @param params  分页参数等
      * @return SplitReceiverCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SplitReceiverCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -176,10 +176,10 @@ public class SplitReceiver extends APIResource {
      * @param params 分页参数等
      * @param options the specific options
      * @return SplitReceiverCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static SplitReceiverCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return request(RequestMethod.GET, classURL(SplitReceiver.class), params, SplitReceiverCollection.class, options);
     }
 
@@ -188,9 +188,9 @@ public class SplitReceiver extends APIResource {
      *
      * @param id  id
      * @return DeletedSplitReceiver
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static DeletedSplitReceiver delete(String id) throws XPayException {
+    public static DeletedSplitReceiver delete(String id) throws VirtuePayException {
         return delete(id, null);
     }
 
@@ -200,9 +200,9 @@ public class SplitReceiver extends APIResource {
      * @param id  id
      * @param options the specific options
      * @return DeletedSplitReceiver
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static DeletedSplitReceiver delete(String id, RequestOptions options) throws XPayException {
+    public static DeletedSplitReceiver delete(String id, RequestOptions options) throws VirtuePayException {
         return request(RequestMethod.DELETE, instanceURL(SplitReceiver.class, id), null, DeletedSplitReceiver.class, options);
     }
 }

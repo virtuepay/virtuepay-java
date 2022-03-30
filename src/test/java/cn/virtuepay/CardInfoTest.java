@@ -1,6 +1,6 @@
 package cn.virtuepay;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.CardInfo;
 import org.junit.Test;
 
@@ -13,7 +13,7 @@ public class CardInfoTest extends XPayTestBase {
     /**
      * 通过卡号查询卡信息。
      */
-    @Test public void testCardInfoQuery() throws XPayException {
+    @Test public void testCardInfoQuery() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("app", XPayTestData.getAppID());
         params.put("bank_account", "6222280012469823");

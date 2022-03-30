@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 
@@ -89,9 +89,9 @@ public class Event extends APIResource {
      *
      * @param id
      * @return Event
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Event retrieve(String id) throws XPayException {
+    public static Event retrieve(String id) throws VirtuePayException {
         return retrieve(id, null, null);
     }
 
@@ -101,9 +101,9 @@ public class Event extends APIResource {
      * @param id
      * @param options  VirtuePay ApiKey
      * @return Event
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Event retrieve(String id, RequestOptions options) throws XPayException {
+    public static Event retrieve(String id, RequestOptions options) throws VirtuePayException {
         return retrieve(id, null, options);
     }
 
@@ -113,9 +113,9 @@ public class Event extends APIResource {
      * @param id
      * @param params
      * @return Event
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Event retrieve(String id, Map<String, Object> params) throws XPayException {
+    public static Event retrieve(String id, Map<String, Object> params) throws VirtuePayException {
         return retrieve(id, params, null);
     }
 
@@ -126,9 +126,9 @@ public class Event extends APIResource {
      * @param params
      * @param options the specific options
      * @return Event
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static Event retrieve(String id, Map<String, Object> params, RequestOptions options) throws XPayException {
+    public static Event retrieve(String id, Map<String, Object> params, RequestOptions options) throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(Event.class, id), params, Event.class, options);
     }
 }

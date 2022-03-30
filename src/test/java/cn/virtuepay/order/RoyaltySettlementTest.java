@@ -1,6 +1,6 @@
 package cn.virtuepay.order;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.RoyaltySettlement;
 import cn.virtuepay.model.RoyaltySettlementCollection;
 import cn.virtuepay.XPayTestBase;
@@ -17,7 +17,7 @@ public class RoyaltySettlementTest extends XPayTestBase {
      * 创建 royalty_settlement
      */
     @Test
-    public void testRoyaltySettlementCreate() throws XPayException {
+    public void testRoyaltySettlementCreate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
         params.put("payer_app", XPayTestData.getAppID());  // 分润发起方所在应用的 id, 必传
         params.put("method", "wx_wap");     // 分润的方式，余额 balance 或渠道名称，例如 alipay, 必传
@@ -35,7 +35,7 @@ public class RoyaltySettlementTest extends XPayTestBase {
      * 查询单个 royalty_settlement
      */
     @Test
-    public void testRoyaltySettlementRetrieve() throws XPayException {
+    public void testRoyaltySettlementRetrieve() throws VirtuePayException {
         // 查询单个 royalty_settlement 方法
         // 参数: royalty_settlement id
         RoyaltySettlement obj = RoyaltySettlement.retrieve("b555bf10149b4d5aa66294c418da2f37");
@@ -47,7 +47,7 @@ public class RoyaltySettlementTest extends XPayTestBase {
      * 查询 royalty_settlement list
      */
     @Test
-    public void testRoyaltySettlementList() throws XPayException {
+    public void testRoyaltySettlementList() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("payer_app", XPayTestData.getAppID());
         params.put("per_page", 3);
@@ -63,7 +63,7 @@ public class RoyaltySettlementTest extends XPayTestBase {
      * 更新 royalty_settlement
      */
     @Test
-    public void testRoyaltySettlementUpdate() throws XPayException {
+    public void testRoyaltySettlementUpdate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
         params.put("status", "pending"); // 需要更新的状态  [pending, canceled]
         // 更新 royalty_settlement 方法

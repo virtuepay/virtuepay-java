@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 
@@ -112,9 +112,9 @@ public class RoyaltyTransaction extends APIResource {
      *
      * @param id
      * @return RoyaltyTransaction
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static RoyaltyTransaction retrieve(String id) throws XPayException {
+    public static RoyaltyTransaction retrieve(String id) throws VirtuePayException {
         return retrieve(id, null);
     }
 
@@ -124,9 +124,9 @@ public class RoyaltyTransaction extends APIResource {
      * @param id
      * @param options the specific options
      * @return RoyaltyTransaction
-     * @throws XPayException
+     * @throws VirtuePayException
      */
-    public static RoyaltyTransaction retrieve(String id, RequestOptions options) throws XPayException {
+    public static RoyaltyTransaction retrieve(String id, RequestOptions options) throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(RoyaltyTransaction.class, id), null, RoyaltyTransaction.class, options);
     }
 
@@ -135,10 +135,10 @@ public class RoyaltyTransaction extends APIResource {
      *
      * @param params
      * @return RoyaltyTransactionCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RoyaltyTransactionCollection list(Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(params, null);
     }
 
@@ -148,10 +148,10 @@ public class RoyaltyTransaction extends APIResource {
      * @param params
      * @param options the specific options
      * @return RoyaltyTransactionCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static RoyaltyTransactionCollection list(Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, classURL(RoyaltyTransaction.class), params, RoyaltyTransactionCollection.class, options);
     }
 }

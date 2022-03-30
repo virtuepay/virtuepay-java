@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 
@@ -14,10 +14,10 @@ public class OrderRefund extends APIResource {
      * @param orderId
      * @param params
      * @return OrderRefundCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static OrderRefundCollection create(String orderId, Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         return create(orderId, params, null);
     }
 
@@ -28,10 +28,10 @@ public class OrderRefund extends APIResource {
      * @param params
      * @param options the specific options
      * @return OrderRefundCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static OrderRefundCollection create(String orderId, Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.POST, String.format("%s/order_refunds", instanceURL(Order.class, orderId)),
                 params, OrderRefundCollection.class, options);
     }
@@ -42,10 +42,10 @@ public class OrderRefund extends APIResource {
      * @param orderId
      * @param refundId
      * @return Refund
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Refund retrieve(String orderId, String refundId)
-            throws XPayException {
+            throws VirtuePayException {
         return retrieve(orderId, refundId, null);
     }
 
@@ -56,10 +56,10 @@ public class OrderRefund extends APIResource {
      * @param refundId
      * @param options the specific options
      * @return Refund
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Refund retrieve(String orderId, String refundId, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, String.format("%s/order_refunds/%s", instanceURL(Order.class, orderId), refundId),
                 null, Refund.class, options);
     }
@@ -70,10 +70,10 @@ public class OrderRefund extends APIResource {
      * @param orderId
      * @param params
      * @return OrderRefundCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static OrderRefundCollection list(String orderId, Map<String, Object>params)
-            throws XPayException {
+            throws VirtuePayException {
         return list(orderId, params, null);
     }
 
@@ -82,10 +82,10 @@ public class OrderRefund extends APIResource {
      *
      * @param orderId
      * @return OrderRefundCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static OrderRefundCollection list(String orderId)
-            throws XPayException {
+            throws VirtuePayException {
         return list(orderId, null, null);
     }
 
@@ -95,10 +95,10 @@ public class OrderRefund extends APIResource {
      * @param orderId
      * @param options the specific options
      * @return OrderRefundCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static OrderRefundCollection list(String orderId, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return list(orderId, null, options);
     }
 
@@ -109,10 +109,10 @@ public class OrderRefund extends APIResource {
      * @param params
      * @param options the specific options
      * @return OrderRefundCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static OrderRefundCollection list(String orderId, Map<String, Object>params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         return APIResource.request(APIResource.RequestMethod.GET, String.format("%s/order_refunds", instanceURL(Order.class, orderId)),
                 params, OrderRefundCollection.class, options);
     }

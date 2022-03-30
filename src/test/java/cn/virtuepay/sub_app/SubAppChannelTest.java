@@ -1,6 +1,6 @@
 package cn.virtuepay.sub_app;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.DeletedChannel;
 import cn.virtuepay.XPayTestBase;
 import cn.virtuepay.model.Channel;
@@ -16,7 +16,7 @@ public class SubAppChannelTest extends XPayTestBase {
      * 配置子商户 app 渠道参数
      */
     @Test
-    public void testSubAppChannelCreate() throws XPayException {
+    public void testSubAppChannelCreate() throws VirtuePayException {
         String subAppId = "2f5a4b9412fc4c71a1280a15ed88f8a4";
 
         Map<String, Object> params = new HashMap<>();
@@ -40,7 +40,7 @@ public class SubAppChannelTest extends XPayTestBase {
     /**
      * 查询子商户 app 渠道参数
      */
-    @Test public void testSubAppChannelRetrieve() throws XPayException {
+    @Test public void testSubAppChannelRetrieve() throws VirtuePayException {
         String subAppId = "2f5a4b9412fc4c71a1280a15ed88f8a4";
         String channel = "wx_lite";
 
@@ -55,7 +55,7 @@ public class SubAppChannelTest extends XPayTestBase {
     /**
      * 更新子商户 app 渠道参数
      */
-    @Test public void testSubAppChannelUpdate() throws XPayException {
+    @Test public void testSubAppChannelUpdate() throws VirtuePayException {
         String subAppId = "2f5a4b9412fc4c71a1280a15ed88f8a4";
         String channel = "bfb";
 
@@ -79,7 +79,7 @@ public class SubAppChannelTest extends XPayTestBase {
     /**
      * 删除子商户 app 渠道参数
      */
-    @Test public void testSubAppChannelDelete() throws XPayException {
+    @Test public void testSubAppChannelDelete() throws VirtuePayException {
         String subAppId = "2f5a4b9412fc4c71a1280a15ed88f8a4";
         String channel = "bfb";
 

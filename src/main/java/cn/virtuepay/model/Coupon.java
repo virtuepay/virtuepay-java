@@ -1,6 +1,6 @@
 package cn.virtuepay.model;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.net.APIResource;
 import cn.virtuepay.net.RequestOptions;
 import cn.virtuepay.net.UserBasedResource;
@@ -150,10 +150,10 @@ public class Coupon extends UserBasedResource {
      * @param userId
      * @param params
      * @return Coupon
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Coupon create(String userId, Map<String, Object>params)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(userId);
         return create(userId, params, null);
     }
@@ -165,10 +165,10 @@ public class Coupon extends UserBasedResource {
      * @param params
      * @param options the specific options
      * @return Coupon
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Coupon create(String userId, Map<String, Object>params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(userId);
         return APIResource.request(APIResource.RequestMethod.POST, classURL(Coupon.class, userId), params, Coupon.class, options);
     }
@@ -179,10 +179,10 @@ public class Coupon extends UserBasedResource {
      * @param userId
      * @param id
      * @return Coupon
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Coupon retrieve(String userId, String id)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(userId);
         return retrieve(userId, id, null);
     }
@@ -194,10 +194,10 @@ public class Coupon extends UserBasedResource {
      * @param id
      * @param options the specific options
      * @return Coupon
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Coupon retrieve(String userId, String id, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(userId);
         return APIResource.request(APIResource.RequestMethod.GET, instanceURL(Coupon.class, userId, id), null, Coupon.class, options);
     }
@@ -208,10 +208,10 @@ public class Coupon extends UserBasedResource {
      * @param userId
      * @param params
      * @return CouponCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static CouponCollection list(String userId, Map<String, Object> params)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(userId);
         return list(userId, params, null);
     }
@@ -223,10 +223,10 @@ public class Coupon extends UserBasedResource {
      * @param params
      * @param options the specific options
      * @return CouponCollection
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static CouponCollection list(String userId, Map<String, Object> params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(userId);
         return APIResource.request(APIResource.RequestMethod.GET, classURL(Coupon.class, userId), params, CouponCollection.class, options);
     }
@@ -238,10 +238,10 @@ public class Coupon extends UserBasedResource {
      * @param id
      * @param params
      * @return Coupon
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Coupon update(String userId, String id, Map<String, Object>params)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(userId);
         return update(userId, id, params, null);
     }
@@ -254,10 +254,10 @@ public class Coupon extends UserBasedResource {
      * @param params
      * @param options the specific options
      * @return Coupon
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static Coupon update(String userId, String id, Map<String, Object>params, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(userId);
         return APIResource.request(APIResource.RequestMethod.PUT, instanceURL(Coupon.class, userId, id), params, Coupon.class, options);
     }
@@ -268,10 +268,10 @@ public class Coupon extends UserBasedResource {
      * @param userId
      * @param id
      * @return DeletedCoupon
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static DeletedCoupon delete(String userId, String id)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(userId);
         return delete(userId, id, null);
     }
@@ -283,10 +283,10 @@ public class Coupon extends UserBasedResource {
      * @param id
      * @param options the specific options
      * @return DeletedCoupon
-     * @throws XPayException
+     * @throws VirtuePayException
      */
     public static DeletedCoupon delete(String userId, String id, RequestOptions options)
-            throws XPayException {
+            throws VirtuePayException {
         User.checkUserId(userId);
         return APIResource.request(APIResource.RequestMethod.DELETE, instanceURL(Coupon.class, userId, id), null, DeletedCoupon.class, options);
     }

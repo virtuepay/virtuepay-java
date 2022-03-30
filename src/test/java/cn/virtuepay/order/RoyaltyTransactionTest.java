@@ -1,6 +1,6 @@
 package cn.virtuepay.order;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.RoyaltyTransaction;
 import cn.virtuepay.XPayTestBase;
 import cn.virtuepay.model.RoyaltyTransactionCollection;
@@ -16,7 +16,7 @@ public class RoyaltyTransactionTest extends XPayTestBase {
      * 查询单个 royalty_transaction
      */
     @Test
-    public void testRoyaltyTransactionRetrieve() throws XPayException {
+    public void testRoyaltyTransactionRetrieve() throws VirtuePayException {
         // 查询单个 royalty_transaction 方法
         // 参数: royalty_transaction id
         RoyaltyTransaction obj = RoyaltyTransaction.retrieve("170302171104000011");
@@ -27,7 +27,7 @@ public class RoyaltyTransactionTest extends XPayTestBase {
     /**
      * 查询 royalty_transaction list
      */
-    @Test public void testRoyaltyTransactionList() throws XPayException {
+    @Test public void testRoyaltyTransactionList() throws VirtuePayException {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("per_page", 3);
         params.put("page", 1);

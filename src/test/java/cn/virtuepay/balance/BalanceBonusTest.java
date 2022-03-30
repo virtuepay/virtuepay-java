@@ -1,6 +1,6 @@
 package cn.virtuepay.balance;
 
-import cn.virtuepay.exception.XPayException;
+import cn.virtuepay.exception.VirtuePayException;
 import cn.virtuepay.model.BalanceBonusCollection;
 import cn.virtuepay.XPayTestBase;
 import cn.virtuepay.XPayTestData;
@@ -17,7 +17,7 @@ public class BalanceBonusTest extends XPayTestBase {
      * 余额赠送 balance-bonus
      */
     @Test
-    public void testBalanceBonusCreate() throws XPayException {
+    public void testBalanceBonusCreate() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
         params.put("user", XPayTestData.userId);  // 受赠的用户 ID, 必传
         params.put("amount", 10);            // 支付受赠余额，单位：分, 必传
@@ -33,7 +33,7 @@ public class BalanceBonusTest extends XPayTestBase {
     /**
      * 查询单个 balance-bonus
      */
-    @Test public void testBalanceBonusRetrieve() throws XPayException {
+    @Test public void testBalanceBonusRetrieve() throws VirtuePayException {
         // 查询单个 balance-bonus 方法
         // 参数: balance-bonus id
         BalanceBonus obj = BalanceBonus.retrieve("650170821521710018560001");
@@ -44,7 +44,7 @@ public class BalanceBonusTest extends XPayTestBase {
     /**
      * 查询 balance-bonus 列表
      */
-    @Test public void testBalanceBonusList() throws XPayException {
+    @Test public void testBalanceBonusList() throws VirtuePayException {
         Map<String, Object> params = new HashMap<>();
         params.put("page", 1);
         params.put("per_page", 10);
