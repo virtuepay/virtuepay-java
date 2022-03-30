@@ -34,7 +34,7 @@ public class VirtuePayTest {
 
     @Test
     public void testVerifyVersions() {
-        assertEquals("XPay.VERSION should match", "2.4.0", VirtuePay.VERSION);
+        assertEquals("VirtuePay.VERSION should match", "2.4.0", VirtuePay.VERSION);
     }
 
     // 创建支付

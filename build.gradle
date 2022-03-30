@@ -74,7 +74,7 @@ bintray {
         repo = 'xpay'
         name = 'xpay-java'
         licenses = ['MIT']
-        labels = ['XPay', 'xpay', 'payment']
+        labels = ['VirtuePay', 'xpay', 'payment']
         vcsUrl = 'https://github.com/xxxpay/xpay-java.git'
         version {
             name = "1.0.2"

@@ -21,7 +21,7 @@ import cn.virtuepay.util.WxpubOAuth;
 public class WxPubOAuthExample {
 
     /**
-     * XPay 管理平台对应的应用 ID，app_id 获取方式：登录 [Dashboard](https://dashboard.xpay.com)->点击你创建的应用->应用首页->应用 ID(App ID)
+     * VirtuePay 管理平台对应的应用 ID，app_id 获取方式：登录 [Dashboard](https://dashboard.xpay.com)->点击你创建的应用->应用首页->应用 ID(App ID)
      */
     private static String appId;
 

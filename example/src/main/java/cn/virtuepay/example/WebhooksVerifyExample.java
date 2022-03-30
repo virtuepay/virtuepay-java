@@ -1,9 +1,9 @@
 /* *
- * XPay Server SDK
+ * VirtuePay Server SDK
  * 说明：
  * 以下代码只是为了方便商户测试而提供的样例代码，商户可根据自己网站需求按照技术文档编写, 并非一定要使用该代码。
  * 接入 webhooks 流程参考开发者中心：https://virtuepay.cn/docs/webhooks/webhooks
- * 该代码仅供学习和研究 XPay SDK 使用，仅供参考。
+ * 该代码仅供学习和研究 VirtuePay SDK 使用，仅供参考。
  */
 package cn.virtuepay.example;
 
@@ -22,8 +22,8 @@ import cn.virtuepay.model.XPayObject;
 import org.apache.commons.codec.binary.Base64;
 
 /**
- * 该实例演示如何对 XPay webhooks 通知进行验证。
- * 验证是为了让开发者确认该通知来自 XPay ，防止恶意伪造通知。用户如果有别的验证机制，可以不进行验证签名。
+ * 该实例演示如何对 VirtuePay webhooks 通知进行验证。
+ * 验证是为了让开发者确认该通知来自 VirtuePay ，防止恶意伪造通知。用户如果有别的验证机制，可以不进行验证签名。
  * <p>
  * 验证签名需要 签名、公钥、验证信息，该实例采用文件存储方式进行演示。
  * 实际项目中，需要用户从异步通知的 HTTP header 中读取签名，从 HTTP body 中读取验证信息。公钥的存储方式也需要用户自行设定。

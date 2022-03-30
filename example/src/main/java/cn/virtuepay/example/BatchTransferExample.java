@@ -1,9 +1,9 @@
 /* *
- * XPay Server SDK
+ * VirtuePay Server SDK
  * 说明：
  * 以下代码只是为了方便商户测试而提供的样例代码，商户可根据自己网站需求按照技术文档编写, 并非一定要使用该代码。
  * 接入企业付款流程参考开发者中心：https://virtuepay.cn/docs/server/transfer ，文档可筛选后端语言和接入渠道。
- * 该代码仅供学习和研究 XPay SDK 使用，仅供参考。
+ * 该代码仅供学习和研究 VirtuePay SDK 使用，仅供参考。
 */
 package cn.virtuepay.example;
 
@@ -16,7 +16,7 @@ import java.util.*;
 
 /**
  *
- * 该实例演示如何使用 XPay 进行批量转账。
+ * 该实例演示如何使用 VirtuePay 进行批量转账。
  *
  * 开发者需要填写 apiKey 和 appId ,
  *

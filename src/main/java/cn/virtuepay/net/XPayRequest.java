@@ -70,7 +70,7 @@ public class XPayRequest {
         } catch (IOException e) {
             throw new APIConnectionException(
                     String.format(
-                            "IOException during API request to XPay (%s): %s "
+                            "IOException during API request to VirtuePay (%s): %s "
                                     + "Please check your internet connection and try again.",
                             VirtuePay.getApiBase(), e.getMessage()),
                     e);
@@ -85,7 +85,7 @@ public class XPayRequest {
         if (spec.contains(APIResource.URIAppIdHolder)) {
             if (options.getAppId() == null) {
                 throw new InvalidRequestException(
-                        "Please set app_id using XPay.appId = <APP_ID> or ReqquestOptions",
+                        "Please set app_id using VirtuePay.appId = <APP_ID> or ReqquestOptions",
                         "invalid_request_error",
                         "request_param_error",
                         "app_id",
@@ -221,7 +221,7 @@ public class XPayRequest {
         String apiKey = options.getApiKey();
         if (apiKey == null) {
             throw new AuthenticationException(
-                    "No API key provided. Set your API key using `XPay.apiKey = \"<API-KEY>\"`.");
+                    "No API key provided. Set your API key using `VirtuePay.apiKey = \"<API-KEY>\"`.");
         } else if (apiKey.isEmpty()) {
             throw new AuthenticationException(
                     "Your API key is invalid, as it is an empty string.");

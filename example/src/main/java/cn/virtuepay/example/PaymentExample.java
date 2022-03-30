@@ -1,9 +1,9 @@
 /**
- * XPay Server SDK
+ * VirtuePay Server SDK
  * 说明：
  * 以下代码只是为了方便商户测试而提供的样例代码，商户可根据自己网站需求按照技术文档编写, 并非一定要使用该代码。
  * 接入支付流程参考开发者中心：https://virtuepay.cn/docs/server/payment ，文档可筛选后端语言和接入渠道。
- * 该代码仅供学习和研究 XPay SDK 使用，仅供参考。
+ * 该代码仅供学习和研究 VirtuePay SDK 使用，仅供参考。
  */
 package cn.virtuepay.example;
 
@@ -16,7 +16,7 @@ import java.util.*;
 /**
  * Payment 对象相关示例
  *
- * 该实例程序演示了如何从 XPay 服务器获得 payment ，查询 payment。
+ * 该实例程序演示了如何从 VirtuePay 服务器获得 payment ，查询 payment。
  *
  * 开发者需要填写 apiKey 和 appId ，
  *
@@ -269,7 +269,7 @@ public class PaymentExample {
         // 可选，支付取消的回调地址， app_pay 为true时，该字段无效，在本地测试不要写 localhost。URL 后面带参数的情况，可能会被渠道拒绝，建议把参数放到“路径”里，比如：`https://lucfish.com/result/user/12345/order_no/6789`。
         extra.put("cancel_url", "https://lucfish.com/cancel");
 
-        // 可选，2016 年 6 月 16 日之前登录 XPay 管理平台填写支付宝手机网站的渠道参数的旧接口商户，需要更新接口时设置此参数值为true，6月16号后接入的新接口商户不需要设置该参数。
+        // 可选，2016 年 6 月 16 日之前登录 VirtuePay 管理平台填写支付宝手机网站的渠道参数的旧接口商户，需要更新接口时设置此参数值为true，6月16号后接入的新接口商户不需要设置该参数。
         // extra.put("new_version", true);
 
         // 可选，是否使用支付宝客户端支付，该参数为true时，调用客户端支付。

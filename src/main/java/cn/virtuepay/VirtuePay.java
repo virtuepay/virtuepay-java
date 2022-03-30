@@ -1,11 +1,11 @@
 package cn.virtuepay;
 
 /**
- * XPay Base class
+ * VirtuePay Base class
  */
 public abstract class VirtuePay {
     /**
-     * XPay API BASE URL
+     * VirtuePay API BASE URL
      */
     public static final String LIVE_API_BASE = "https://api.lucfish.com/xpay";
     /**

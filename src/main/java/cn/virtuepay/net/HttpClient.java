@@ -28,7 +28,7 @@ public abstract class HttpClient {
     public HttpClient() {}
 
     /**
-     * Sends the given request to XPay's API.
+     * Sends the given request to VirtuePay's API.
      *
      * @param request the request
      * @return the response
@@ -37,7 +37,7 @@ public abstract class HttpClient {
     public abstract XPayResponse request(XPayRequest request) throws XPayException;
 
     /**
-     * Sends the given request to XPay's API, retrying the request in cases of intermittent
+     * Sends the given request to VirtuePay's API, retrying the request in cases of intermittent
      * problems.
      *
      * @param request the request
@@ -86,13 +86,13 @@ public abstract class HttpClient {
      * @return a string containing the value of the {@code User-Agent} header
      */
     protected static String buildUserAgentString() {
-        return String.format("XPay/v2 JavaBindings/%s", VirtuePay.VERSION);
+        return String.format("VirtuePay/v2 JavaBindings/%s", VirtuePay.VERSION);
     }
 
     /**
-     * Builds the value of the {@code X-XPay-Client-User-Agent} header.
+     * Builds the value of the {@code X-VirtuePay-Client-User-Agent} header.
      *
-     * @return a string containing the value of the {@code X-XPay-Client-User-Agent} header
+     * @return a string containing the value of the {@code X-VirtuePay-Client-User-Agent} header
      */
     protected static String buildXPayClientUserAgentString() {
         String[] propertyNames = {
@@ -111,7 +111,7 @@ public abstract class HttpClient {
         }
         propertyMap.put("bindings.version", VirtuePay.VERSION);
         propertyMap.put("lang", "Java");
-        propertyMap.put("publisher", "XPay");
+        propertyMap.put("publisher", "VirtuePay");
 
         return APIResource.GSON.toJson(propertyMap);
     }

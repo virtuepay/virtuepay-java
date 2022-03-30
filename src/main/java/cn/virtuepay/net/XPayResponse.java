@@ -1,7 +1,7 @@
 package cn.virtuepay.net;
 
 /**
- * Handler XPay response when you request payment from xpay
+ * Handler VirtuePay response when you request payment from xpay
  */
 public class XPayResponse {
 

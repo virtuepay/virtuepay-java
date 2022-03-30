@@ -78,8 +78,8 @@ public class RequestOptionsTest {
         String userId = "test_user_001";
         User obj = User.retrieve(userId, options);
 
-        assertNull("XPay.apiKey should be null", VirtuePay.apiKey);
-        assertNull("XPay.appId should be null", VirtuePay.appId);
+        assertNull("VirtuePay.apiKey should be null", VirtuePay.apiKey);
+        assertNull("VirtuePay.appId should be null", VirtuePay.appId);
         assertEquals("object should be user", "user", obj.getObject());
         assertEquals("id", userId, obj.getId());
         assertEquals("app", XPayTestData.getAppID(), obj.getApp());

@@ -17,7 +17,7 @@ public class HttpURLConnectionClient extends HttpClient {
     }
 
     /**
-     * Sends the given request to XPay's API.
+     * Sends the given request to VirtuePay's API.
      *
      * @param request the request
      * @return the response
@@ -45,7 +45,7 @@ public class HttpURLConnectionClient extends HttpClient {
         } catch (IOException e) {
             throw new APIConnectionException(
                     String.format(
-                            "IOException during API request to XPay (%s): %s "
+                            "IOException during API request to VirtuePay (%s): %s "
                                     + "Please check your internet connection and try again.",
                             VirtuePay.getApiBase(), e.getMessage()),
                     e);

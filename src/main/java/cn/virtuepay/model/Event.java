@@ -99,7 +99,7 @@ public class Event extends APIResource {
      * 查询 Event
      *
      * @param id
-     * @param options  XPay ApiKey
+     * @param options  VirtuePay ApiKey
      * @return Event
      * @throws XPayException
      */
