@@ -2,7 +2,7 @@
  * XPay Server SDK
  * 说明：
  * 以下代码只是为了方便商户测试而提供的样例代码，商户可根据自己网站需求按照技术文档编写, 并非一定要使用该代码。
- * 接入企业付款流程参考开发者中心：https://www.xpay.com/docs/server/transfer ，文档可筛选后端语言和接入渠道。
+ * 接入企业付款流程参考开发者中心：https://virtuepay.cn/docs/server/transfer ，文档可筛选后端语言和接入渠道。
  * 该代码仅供学习和研究 XPay SDK 使用，仅供参考。
 */
 package cn.virtuepay.example;
@@ -49,7 +49,7 @@ public class BatchTransferExample {
      * 创建批量转账
      *
      * 创建企业转账需要传递一个 map 给 BatchTransfer.create();
-     * map 填写的具体介绍可以参考：https://www.xpay.com/api
+     * map 填写的具体介绍可以参考：https://virtuepay.cn/api
      *
      * @return
      */
@@ -88,7 +88,7 @@ public class BatchTransferExample {
      * 根据 ID 查询
      *
      * 根据 ID 查询批量转账记录。
-     * 参考文档：https://www.xpay.com/api
+     * 参考文档：https://virtuepay.cn/api
      * @param id
      */
     public void retrieve(String id) {
@@ -203,10 +203,10 @@ public class BatchTransferExample {
         /**
          * open_bank_code 和 open_bank 两个参数必传一个，建议使用 open_bank_code ，若都传参则优先使用 open_bank_code 读取规则；prov 和 city 均为可选参数，如果不传参，则使用默认值 "上海" 给渠道接口。
          */
-        // 条件可选，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：https://www.xpay.com/api#%E9%93%B6%E8%A1%8C%E7%BC%96%E5%8F%B7%E8%AF%B4%E6%98%8E。
+        // 条件可选，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：https://virtuepay.cn/api#%E9%93%B6%E8%A1%8C%E7%BC%96%E5%8F%B7%E8%AF%B4%E6%98%8E。
         extra.put("open_bank_code", "0103");
 
-        // 条件可选，1~50位，开户银行，详情请参考 企业付款（银行卡）银行编号说明：https://www.xpay.com/api#%E9%93%B6%E8%A1%8C%E7%BC%96%E5%8F%B7%E8%AF%B4%E6%98%8E。
+        // 条件可选，1~50位，开户银行，详情请参考 企业付款（银行卡）银行编号说明：https://virtuepay.cn/api#%E9%93%B6%E8%A1%8C%E7%BC%96%E5%8F%B7%E8%AF%B4%E6%98%8E。
         extra.put("open_bank", "农业银行");
 
         // 可选，订单号，1 ~ 16 位数字。
@@ -229,7 +229,7 @@ public class BatchTransferExample {
         // 必须，收款人姓名。
         extra.put("name", "张三");
 
-        // 必须，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：https://www.xpay.com/api#%E9%93%B6%E8%A1%8C%E7%BC%96%E5%8F%B7%E8%AF%B4%E6%98%8E。
+        // 必须，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：https://virtuepay.cn/api#%E9%93%B6%E8%A1%8C%E7%BC%96%E5%8F%B7%E8%AF%B4%E6%98%8E。
         extra.put("open_bank_code", "0103");
 
         // 可选，5位，业务代码，根据通联业务人员提供，不填使用通联提供默认值09900。
@@ -258,7 +258,7 @@ public class BatchTransferExample {
         // 必须，1~100位，收款人姓名。
         extra.put("name", "张三");
 
-        // 必须，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：https://www.xpay.com/api#%E9%93%B6%E8%A1%8C%E7%BC%96%E5%8F%B7%E8%AF%B4%E6%98%8E。
+        // 必须，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：https://virtuepay.cn/api#%E9%93%B6%E8%A1%8C%E7%BC%96%E5%8F%B7%E8%AF%B4%E6%98%8E。
         extra.put("open_bank_code", "0103");
 
         // 可选，批量付款描述，最多 100 个 Unicode 字符。

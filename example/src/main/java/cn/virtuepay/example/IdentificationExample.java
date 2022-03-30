@@ -8,7 +8,7 @@ import java.util.Map;
 
 /**
  *
- * 身份证银行卡信息认证接口参考文档：https://www.xpay.com/api#身份证银行卡信息认证接口
+ * 身份证银行卡信息认证接口参考文档：https://virtuepay.cn/api#身份证银行卡信息认证接口
  *
  * 该实例演示如何调用身份证银行卡信息认证接口
  *
@@ -33,7 +33,7 @@ public class IdentificationExample {
     /**
      * 认证身份证信息
      *
-     * 参考文档：https://www.xpay.com/api#请求认证接口
+     * 参考文档：https://virtuepay.cn/api#请求认证接口
      */
     public void identifyIdCard() {
         try {
@@ -60,7 +60,7 @@ public class IdentificationExample {
     /**
      * 认证银行卡信息
      *
-     * 参考文档：https://www.xpay.com/api#请求认证接口
+     * 参考文档：https://virtuepay.cn/api#请求认证接口
      */
     public void identifyBankCard() {
         try {

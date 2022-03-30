@@ -6,7 +6,7 @@ import cn.virtuepay.model.Event;
 
 /**
  *
- * Event 事件参考文档：https://www.xpay.com/api#api-event
+ * Event 事件参考文档：https://virtuepay.cn/api#api-event
  *
  * 该实例演示如何查询 Event
  *
@@ -29,7 +29,7 @@ public class EventExample {
      * 根据 ID 查询 Evnet
      *
      * 传递 Event 的 Id 查询 Event。
-     * 参考文档：https://www.xpay.com/api#api-event-inquiry
+     * 参考文档：https://virtuepay.cn/api#api-event-inquiry
      * @param id
      */
     public void retrieve(String id) {

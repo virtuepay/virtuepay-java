@@ -77,7 +77,7 @@ public class TransferTest extends XPayTestBase {
         extra.put("card_number", "6220888888888888");
         // 必须，1~100位，收款人姓名。
         extra.put("user_name", "张三");
-        // 必须，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：必须，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：https://www.xpay.com/api#银行编号说明
+        // 必须，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：必须，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：https://virtuepay.cn/api#银行编号说明
         extra.put("open_bank_code", "0103");
         // 可选，5位，业务代码，根据通联业务人员提供，不填使用通联提供默认值09900。
         // extra.put("business_code", "09900");
@@ -115,7 +115,7 @@ public class TransferTest extends XPayTestBase {
         extra.put("card_number", "6220888888888888");
         // 必须，1~100位，收款人姓名。
         extra.put("user_name", "张三");
-        // 必须，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：必须，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：https://www.xpay.com/api#银行编号说明
+        // 必须，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：必须，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：https://virtuepay.cn/api#银行编号说明
         extra.put("open_bank_code", "0103");
         params.put("extra", extra);
 
@@ -152,7 +152,7 @@ public class TransferTest extends XPayTestBase {
         // open_bank_code 和 open_bank 两个参数必传一个，建议使用 open_bank_code ，
         /// 若都传参则优先使用 open_bank_code 读取规则；
         /// prov 和 city 均为可选参数，如果不传参，则使用默认值 "上海" 给渠道接口。
-        // 条件可选，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：必须，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：https://www.xpay.com/api#银行编号说明
+        // 条件可选，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：必须，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：https://virtuepay.cn/api#银行编号说明
         extra.put("open_bank_code", "0103");
         // 条件可选，1~50位，开户银行
         extra.put("open_bank", "农业银行");

@@ -2,7 +2,7 @@
  * XPay Server SDK
  * 说明：
  * 以下代码只是为了方便商户测试而提供的样例代码，商户可根据自己网站需求按照技术文档编写, 并非一定要使用该代码。
- * 接入红包流程参考开发者中心：https://www.xpay.com/docs/server/red-envelope ，文档可筛选后端语言和接入渠道。
+ * 接入红包流程参考开发者中心：https://virtuepay.cn/docs/server/red-envelope ，文档可筛选后端语言和接入渠道。
  * 该代码仅供学习和研究 XPay SDK 使用，仅供参考。
 */
 package cn.virtuepay.example;
@@ -56,7 +56,7 @@ public class RedEnvelopeExample {
      * 创建红包
      *
      * 创建红包需要传递一个 map 到 RedEnvelope.create(redenvelope)
-     * map 里面的具体参数参考：https://www.xpay.com/api#api-e-new
+     * map 里面的具体参数参考：https://virtuepay.cn/api#api-e-new
      * @return
      */
     public RedEnvelope create() {
@@ -91,7 +91,7 @@ public class RedEnvelopeExample {
      * 查询红包
      *
      * 根据红包的 ID 查询红包。
-     * 参考文档：https://www.xpay.com/api#api-e-inquiry
+     * 参考文档：https://virtuepay.cn/api#api-e-inquiry
      * @param id
      */
     public void retrieve(String id) {

@@ -2,7 +2,7 @@
  * XPay Server SDK
  * 说明：
  * 以下代码只是为了方便商户测试而提供的样例代码，商户可根据自己网站需求按照技术文档编写, 并非一定要使用该代码。
- * 接入支付流程参考开发者中心：https://www.xpay.com/docs/server/payment ，文档可筛选后端语言和接入渠道。
+ * 接入支付流程参考开发者中心：https://virtuepay.cn/docs/server/payment ，文档可筛选后端语言和接入渠道。
  * 该代码仅供学习和研究 XPay SDK 使用，仅供参考。
  */
 package cn.virtuepay.example;
@@ -46,7 +46,7 @@ public class PaymentExample {
      * 创建 Payment
      *
      * 创建 Payment 用户需要组装一个 map 对象作为参数传递给 Payment.create();
-     * map 里面参数的具体说明请参考：https://www.xpay.com/api#api-c-new
+     * map 里面参数的具体说明请参考：https://virtuepay.cn/api#api-c-new
      * @return Payment
      */
     public Payment createPayment() {
@@ -60,7 +60,7 @@ public class PaymentExample {
         paymentMap.put("body", "XPay支付");
         String orderNo = new Date().getTime() + Main.randomString(7);
         paymentMap.put("order_no", orderNo);// 推荐使用 8-20 位，要求数字或字母，不允许其他字符
-        paymentMap.put("channel", channel);// 支付使用的第三方支付渠道取值，请参考：https://www.xpay.com/api#api-c-new
+        paymentMap.put("channel", channel);// 支付使用的第三方支付渠道取值，请参考：https://virtuepay.cn/api#api-c-new
         paymentMap.put("client_ip", "127.0.0.1"); // 发起支付请求客户端的 IP 地址，格式为 IPV4，如: 127.0.0.1
         Map<String, String> app = new HashMap<String, String>();
         app.put("id", appId);
@@ -86,9 +86,9 @@ public class PaymentExample {
      * 查询 Payment
      *
      * 该接口根据 payment Id 查询对应的 payment 。
-     * 参考文档：https://www.xpay.com/api#api-c-inquiry
+     * 参考文档：https://virtuepay.cn/api#api-c-inquiry
      *
-     * 参考文档： https://www.xpay.com/api#api-expanding
+     * 参考文档： https://virtuepay.cn/api#api-expanding
      * @param id
      */
     public Payment retrieve(String id) {
@@ -429,13 +429,13 @@ public class PaymentExample {
 
     private Map<String, Object> yeepayWapExtra() {
         Map<String, Object> extra = new HashMap<>();
-        // 必须，商品类别码，商品类别码参考链接 ：https://www.xpay.com/api#%E6%98%93%E5%AE%9D%E6%94%AF%E4%BB%98%E5%95%86%E5%93%81%E7%B1%BB%E5%9E%8B%E7%A0%81 。
+        // 必须，商品类别码，商品类别码参考链接 ：https://virtuepay.cn/api#%E6%98%93%E5%AE%9D%E6%94%AF%E4%BB%98%E5%95%86%E5%93%81%E7%B1%BB%E5%9E%8B%E7%A0%81 。
         extra.put("product_category", "1");
 
         // 必须，用户标识,商户生成的用户账号唯一标识，最长 50 位字符串。
         extra.put("identity_id", "IDENTITY_ID");
 
-        // 必须，用户标识类型，用户标识类型参考链接：https://www.xpay.com/api#%E6%98%93%E5%AE%9D%E6%94%AF%E4%BB%98%E7%94%A8%E6%88%B7%E6%A0%87%E8%AF%86%E7%B1%BB%E5%9E%8B%E7%A0%81 。
+        // 必须，用户标识类型，用户标识类型参考链接：https://virtuepay.cn/api#%E6%98%93%E5%AE%9D%E6%94%AF%E4%BB%98%E7%94%A8%E6%88%B7%E6%A0%87%E8%AF%86%E7%B1%BB%E5%9E%8B%E7%A0%81 。
         extra.put("identity_type", 2);
 
         // 必须，终端类型，对应取值 0:IMEI, 1:MAC, 2:UUID, 3:other。

@@ -1,7 +1,6 @@
 package cn.virtuepay;
 
 import cn.virtuepay.model.*;
-import com.xpay.model.*;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

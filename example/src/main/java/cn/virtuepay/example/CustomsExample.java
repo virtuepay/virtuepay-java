@@ -2,7 +2,7 @@
  * XPay Server SDK
  * 说明：
  * 以下代码只是为了方便商户测试而提供的样例代码，商户可根据自己网站需求按照技术文档编写, 并非一定要使用该代码。
- * 接入支付流程参考开发者中心：https://www.xpay.com/docs/server/payment ，文档可筛选后端语言和接入渠道。
+ * 接入支付流程参考开发者中心：https://virtuepay.cn/docs/server/payment ，文档可筛选后端语言和接入渠道。
  * 该代码仅供学习和研究 XPay SDK 使用，仅供参考。
  */
 package cn.virtuepay.example;
@@ -47,7 +47,7 @@ public class CustomsExample {
      * 创建 Customs
      *
      * 创建 Customs 用户需要组装一个 map 对象作为参数传递给 Customs.create();
-     * map 里面参数的具体说明请参考：https://www.xpay.com/api
+     * map 里面参数的具体说明请参考：https://virtuepay.cn/api
      * @return Payment
      */
     public Customs createCustoms() {
@@ -56,14 +56,14 @@ public class CustomsExample {
         params.put("channel", "wx_wap");
         String orderNo = new Date().getTime() + Main.randomString(7);
         params.put("trade_no", orderNo); // 8-20 位，要求数字或字母，不允许其他字符
-        params.put("customs_code", "SHANGHAI"); // https://www.xpay.com/api#海关编号说明
+        params.put("customs_code", "SHANGHAI"); // https://virtuepay.cn/api#海关编号说明
         params.put("amount", 1); // 报关金额, 人民币单位：分（如金额为 100 元，此处请填 10000）
         params.put("payment", "<CH_ID>");
         params.put("app", appId);
         Map<String, Object> extra = new HashMap<String, Object>();
         // 根据不同渠道传不同参数
         // extra.put("pay_account", "<PAY_ACCOUNT>");
-        // extra.put("certif_type", "01"); // https://www.xpay.com/api#报关接口
+        // extra.put("certif_type", "01"); // https://virtuepay.cn/api#报关接口
         // extra.put("customer_name", "<NAME>");
         // extra.put("certif_id", "<CERTIF_ID>");
         params.put("extra", extra);
@@ -82,7 +82,7 @@ public class CustomsExample {
     /**
      * 查询 Customs
      *
-     * 参考文档：https://www.xpay.com/api
+     * 参考文档：https://virtuepay.cn/api
      *
      * @param id
      */
