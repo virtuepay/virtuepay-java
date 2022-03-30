@@ -29,7 +29,7 @@ public class RechargeTest extends VirtuePayTestBase {
         payment.put("subject", "发卡"); // 充值标题，该参数最长为 32 个 Unicode 字符, 必传
         payment.put("body", "莫兰迪色简约侧边发夹鸭嘴夹韩国网红刘海夹碎发卡后脑勺一字顶夹"); // 充值描述信息，该参数最长为 128 个 Unicode 字符, 必传
         Map<String, Object> extra = new HashMap<String, Object>(); // extra: 根据不同渠道传入相应的参数
-        extra.put("success_url", "https://api.fat.lucfish.com/xpay");
+        extra.put("success_url", "https://xpay.lucfish.com");
         payment.put("extra", extra);
         params.put("payment", payment);
         Recharge obj = Recharge.create(params); // 创建 recharge 方法
