@@ -66,3 +66,4 @@ example/out
 example/build
 .vscode
 .classpath
+.DS_Store
